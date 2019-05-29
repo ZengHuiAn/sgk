@@ -1,0 +1,21 @@
+local menus = {
+    [1] = {name = "资料柜", action = function()
+        DialogStack.Push("dataBox/DataBox")
+    end},
+    [2] = {name = "奖杯", action = function()
+        DialogStack.Push("rankList/rankListFrame")
+    end},
+    [3] = {name = "邮件", action = function()
+        DialogStack.Push("FriendSystemList", {idx = 3})
+    end},
+    [4] = {name = "变强", action = function()
+        DialogStack.Push("mapSceneUI/stronger/newStrongerFrame")
+    end},
+    [5] = {name = "传统竞技场", action = function()
+        DialogStack.Push("traditionalArena/traditionalArenaFrame")
+    end},
+}
+
+
+SetStoryOptions(menus)
+LoadStoryOptions()

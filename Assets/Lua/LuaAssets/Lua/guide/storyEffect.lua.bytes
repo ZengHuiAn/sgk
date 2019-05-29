@@ -1,0 +1,76 @@
+﻿print("----------------------------播放剧情特效")
+--utils.SGKTools.loadEffect("fx_box_kai_gold")
+--module.NPCModule.LoadNpcOBJ(10080023)
+--[[
+local gid = 2028108
+local npc_table = {
+	[2028106] = {"shixinzichuchang"},
+	[2040802] = {"UI/fx_longzi_red"},
+	[2040803] = {"UI/fx_longzi_red"},
+	[2040804] = {"UI/fx_longzi_red"},
+	[2028108] = {"xiaositayachuchang",Vector3.zero,3},
+}
+
+   utils.SGKTools.loadEffectVec3(npc_table[gid][1],npc_table[gid][2],npc_table[gid][3],true)
+
+
+if module.QuestModule.CanSubmit(900001) then
+   utils.SGKTools.loadEffectVec3("xiaositayachuchang",Vector3.zero,4,true,function()
+      utils.SGKTools.HeroShow(11025,function()
+         DispatchEvent("StoryFrameMaskBtn")--模仿玩家点击了一次
+      end,3)
+   end)
+elseif module.QuestModule.CanSubmit(900002) then
+   utils.SGKTools.loadEffectVec3("xiaositayachuchang",Vector3.zero,4,true,function()
+      utils.SGKTools.HeroShow(11025,function()
+         DispatchEvent("StoryFrameMaskBtn")--模仿玩家点击了一次
+      end,3)
+   end)
+elseif module.QuestModule.CanSubmit(110081) then
+   utils.SGKTools.loadEffectVec3("UI/fx_hunmixinglai",Vector3.zero,6,true)
+elseif module.QuestModule.CanSubmit(103051) then
+   utils.SGKTools.loadEffectVec3("UI/fx_szx_huishouji",Vector3.zero,3,true)
+else
+   utils.SGKTools.loadEffectVec3("UI/fx_hengxingnvshen_bianshen",Vector3.zero,1,true)
+end
+]]
+
+local function loadEffectVec(name,Vec3,time,lock,fun,scale)--加载一个全屏的UI特效
+	local eff = CS.UnityEngine.GameObject.Instantiate((SGK.ResourcesManager.Load("prefabs/effect/"..name .. ".prefab")))
+	local _scale = scale or 100
+
+    local lockObj = nil
+    if lock then
+    	lockObj = GetUIParent(SGK.ResourcesManager.Load("prefabs/base/LockFrame.prefab"))
+    end
+    SGK.Action.DelayTime.Create(time):OnComplete(function()
+    	if fun then
+    		fun()
+    	end
+    	if lockObj then
+	    	UnityEngine.GameObject.Destroy(lockObj.gameObject)
+	    end
+	    UnityEngine.GameObject.Destroy(eff.gameObject)
+    end)
+end
+
+local data = ...
+local story_id = data.id
+
+local npc_list ={
+     [10000118] = {{"game_cy",2.5}},
+     [10000317] = {{"game_cy",2.5}},
+     [10100327] = {{"game_cy",2.5}},
+     [1010010101] = {{"xiaositayachuchang",4}},
+}
+
+for _,v in ipairs(npc_list[story_id]) do
+    if story_id == 10000118 then
+        loadEffectVec(v[1],Vector3.zero,v[2],true, function ()
+            DispatchEvent("StoryFrameMaskBtn")     
+        end)
+    else
+        loadEffectVec(v[1],Vector3.zero,v[2],true)
+         --DispatchEvent("StoryFrameMaskBtn")--模仿玩家点击了一次
+    end
+end

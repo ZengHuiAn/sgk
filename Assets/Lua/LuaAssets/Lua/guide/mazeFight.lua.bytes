@@ -1,0 +1,132 @@
+local uuid,gid = ...
+gid = tonumber(gid)
+local mazeModule = require "module.mazeModule"
+
+local function callback1(err)
+    if err == 101 then 
+        showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight1"))--已获得该角色的馈赠
+    elseif
+        err == 102 then
+        showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight2"))--数据不再配置表中
+    elseif
+        err == 103 then
+        showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight3"))--该角色正在战斗中
+    elseif
+        err == 104 then
+        showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight4"))--必须战胜6位元素领主才能挑战西风
+    elseif
+        err == 105 then
+        showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight5"))--服务器无该选项
+    elseif
+        err == 106 then
+        showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight6"))--有队员正在战斗中，请稍侯
+    end
+end
+
+local FightList = {
+    [1601200] = {[1] = 
+                    {battleid = 50000001,desc = SGK.Localize:getInstance():getValue("maze_yuansu1"), title = SGK.Localize:getInstance():getValue("maze_yuansu13")},
+                [2] = 
+                    {battleid = 50000002,desc = SGK.Localize:getInstance():getValue("maze_yuansu2"), title = SGK.Localize:getInstance():getValue("maze_yuansu13")},
+                    },
+    [1601201] = {[1] = 
+                    {battleid = 50000004,desc = SGK.Localize:getInstance():getValue("maze_yuansu3"), title = SGK.Localize:getInstance():getValue("maze_yuansu14")},
+                [2] = 
+                    {battleid = 50000005,desc = SGK.Localize:getInstance():getValue("maze_yuansu4"), title = SGK.Localize:getInstance():getValue("maze_yuansu14")},
+                    },
+    [1601202] = {[1] = 
+                    {battleid = 50000007,desc = SGK.Localize:getInstance():getValue("maze_yuansu5"), title = SGK.Localize:getInstance():getValue("maze_yuansu15")},
+                [2] = 
+                    {battleid = 50000008,desc = SGK.Localize:getInstance():getValue("maze_yuansu6"), title = SGK.Localize:getInstance():getValue("maze_yuansu15")},
+                    },
+    [1601203] = {[1] = 
+                    {battleid = 50000010,desc = SGK.Localize:getInstance():getValue("maze_yuansu7"), title = SGK.Localize:getInstance():getValue("maze_yuansu16")},
+                [2] = 
+                    {battleid = 50000011,desc = SGK.Localize:getInstance():getValue("maze_yuansu8"), title = SGK.Localize:getInstance():getValue("maze_yuansu16")},
+                    },
+    [1601204] = {[1] = 
+                    {battleid = 50000013,desc = SGK.Localize:getInstance():getValue("maze_yuansu9"), title = SGK.Localize:getInstance():getValue("maze_yuansu17")},
+                [2] = 
+                    {battleid = 50000014,desc = SGK.Localize:getInstance():getValue("maze_yuansu10"), title = SGK.Localize:getInstance():getValue("maze_yuansu17")},
+                    },
+    [1601205] = {[1] = 
+                    {battleid = 50000016,desc = SGK.Localize:getInstance():getValue("maze_yuansu11"), title = SGK.Localize:getInstance():getValue("maze_yuansu18")},
+                [2] = 
+                    {battleid = 50000017,desc = SGK.Localize:getInstance():getValue("maze_yuansu12"), title = SGK.Localize:getInstance():getValue("maze_yuansu18")},
+                    },
+    [1601106] = {[1] = 
+                    {battleid = 50000019,desc = SGK.Localize:getInstance():getValue("maze_boss1"),
+                    title = SGK.Localize:getInstance():getValue("maze_boss8"),
+                    flag = SGK.Localize:getInstance():getValue("maze_fight4")},
+                    },
+    [1601100] = {[1] = 
+                    {battleid = 50000003,desc = SGK.Localize:getInstance():getValue("maze_boss2"), title = SGK.Localize:getInstance():getValue("maze_boss9")},
+                    },
+    [1601101] = {[1] = 
+                    {battleid = 50000006,desc = SGK.Localize:getInstance():getValue("maze_boss3"), title = SGK.Localize:getInstance():getValue("maze_boss10")},
+                    },
+    [1601102] = {[1] = 
+                    {battleid = 50000009,desc = SGK.Localize:getInstance():getValue("maze_boss4"), title = SGK.Localize:getInstance():getValue("maze_boss11")},
+                    },
+    [1601103] = {[1] = 
+                    {battleid = 50000012,desc = SGK.Localize:getInstance():getValue("maze_boss5"), title = SGK.Localize:getInstance():getValue("maze_boss12")},
+                    },
+    [1601104] = {[1] = 
+                    {battleid = 50000015,desc = SGK.Localize:getInstance():getValue("maze_boss6"), title = SGK.Localize:getInstance():getValue("maze_boss13")},
+                    },
+    [1601105] = {[1] = 
+                    {battleid = 50000018,desc = SGK.Localize:getInstance():getValue("maze_boss7"), title = SGK.Localize:getInstance():getValue("maze_boss14")},
+                    },
+}
+
+local function TryFight(gid)
+    if  gid == 1601106 then
+        if module.TeamModule.GetTeamInfo().leader.pid ~= module.playerModule.GetSelfID() then
+            showDlg(nil,SGK.Localize:getInstance():getValue("common_duizhangkaizhan"))--您不是队长，无法开启战斗
+        else
+            if FightList[gid] then
+                --准备确认
+                --TeamModule.NewReadyToFight(FightList[gid])
+                DialogStack.PushPrefStact("mazeBattle",{data = FightList[gid][1],callback = function() 
+                        if  module.mazeModule.GetNpcIsKill(1601100) == 1 and
+                            module.mazeModule.GetNpcIsKill(1601101) == 1 and
+                            module.mazeModule.GetNpcIsKill(1601102) == 1 and
+                            module.mazeModule.GetNpcIsKill(1601103) == 1 and
+                            module.mazeModule.GetNpcIsKill(1601104) == 1 and
+                            module.mazeModule.GetNpcIsKill(1601105) == 1 then
+                                module.TeamModule.NewReadyToFight(1,function ( error)
+                                    if error == 0 then
+                                        module.mazeModule.Interact(uuid,1, {callback = callback1}) 
+                                    end
+                                end)
+                        else
+                            showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight4"))--必须战胜6位元素领主才能挑战西风
+                        end
+                    end 
+                    });
+                --module.fightModule.StartFight(FightList[gid])
+            else
+                showDlgError(nil,SGK.Localize:getInstance():getValue("maze_fight2"))--数据不再配置表中
+            end
+        end
+    else
+        if  gid % 1000 < 300  then
+            local lord_id = gid - 100
+            local lord_dead = module.mazeModule.GetNpcIsKill(lord_id)
+            --local fight = FightList[gid][1][battleid] + 1
+            --if    iskill(lord) then
+                --DialogStack.PushPrefStact("mazeBattle",{FightList[gid][2],callback = function() module.mazeModule.Interact(uuid,1, callback1) end });
+            --end
+        --else
+            if lord_dead ~= 1 then   
+                DialogStack.PushPrefStact("mazeBattle",{data = FightList[gid][1],callback = function() 
+                    module.mazeModule.Interact(uuid,1, {callback = callback1}) end });
+            else
+                DialogStack.PushPrefStact("mazeBattle",{data = FightList[gid][2],callback = function() 
+                    module.mazeModule.Interact(uuid,1, {callback = callback1}) end });
+            end
+        end
+    end
+end
+
+TryFight(gid)

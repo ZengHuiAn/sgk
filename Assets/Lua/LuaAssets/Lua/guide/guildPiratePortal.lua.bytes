@@ -1,0 +1,21 @@
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local menus = {}
+if gid < 1347003 then
+	menus = {
+	{name = "传送到海盗船",icon = nil, action = function()
+		local obj = module.NPCModule.GetNPCALL(gid + 2)
+		local pos = obj.transform.localPosition
+		utils.SGKTools.PlayerTransfer(pos.x,pos.y,pos.z)
+	end}}
+else
+	menus = {
+	{name = "返回石斑鱼号",icon = nil, action = function()
+		local obj = module.NPCModule.GetNPCALL(gid - 2)
+		local pos = obj.transform.localPosition
+		utils.SGKTools.PlayerTransfer(pos.x,pos.y,pos.z)
+	end}}
+end
+SetStoryOptions(menus)
+LoadStoryOptions()

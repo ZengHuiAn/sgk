@@ -1,0 +1,18 @@
+local gid = ...
+gid = tonumber(gid)
+local nowWave = module.trialModule.GetNowWave()
+local isSweep = module.trialModule.IsSweep()
+if isSweep then
+	local SweepWave = module.trialModule.GetSweepWave()
+	if SweepWave == 10 then
+		return false
+	else
+		return true
+	end
+else
+	if nowWave == 10 then
+		return false 
+	else
+		return true 
+	end
+end

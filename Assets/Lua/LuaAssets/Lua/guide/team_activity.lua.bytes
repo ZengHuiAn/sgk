@@ -1,0 +1,110 @@
+local team_battle_conf = ...
+local activity_id = team_battle_conf.difficult
+local gid = team_battle_conf.gid_id
+local function CloseFrame()
+    DispatchEvent("KEYDOWN_ESCAPE")
+end
+
+local bounty_story = {
+	[51] = 390101,
+	[52] = 390201,
+	[53] = 390301,
+	[54] = 390401,
+}
+
+local function TeamLimit(num)
+	if module.TeamModule.GetTeamInfo().leader.pid ~= module.playerModule.GetSelfID() then
+		CloseFrame()
+		showDlg(nil,"您不是队长，只有队长才能开始任务", function()
+		end)
+		return false
+	elseif  #module.TeamModule.GetTeamMembers() < num then
+		CloseFrame()
+		showDlg(nil,"队伍人数不足"..num.."人，无法开始任务", function()
+		end)
+		return false
+	else
+		return true
+	end
+end
+
+--领取试炼任务
+local function acceptBountyQuest(bounty_type)
+--[[
+	LoadStory(bounty_story[bounty_type],function()
+        module.BountyModule.Start(bounty_type)
+        CloseFrame()
+	end)
+--]]
+
+	module.BountyModule.Start(bounty_type)
+	CloseFrame()
+end
+
+--处理试炼
+local function BountyFunction(bounty_type)
+	local BountyInfo = module.BountyModule.Get(bounty_type)
+	local quest = BountyInfo.quest
+
+	if not quest then
+		--判断领取试炼任务条件
+		if TeamLimit(1) then
+			if module.BountyModule.Get(bounty_type).normal_count >= 20 then
+				CloseFrame()
+				showDlg(nil,"今日已完成20次试炼，无法领取试炼任务", function()
+				end)
+			elseif module.BountyModule.Get(bounty_type).double_count >= 20 then
+				showDlg(nil,"今日已完成10次双倍试炼，试炼经验将下降\n是否继续", function()
+					acceptBountyQuest(bounty_type)
+				end, function() end)
+			else
+				acceptBountyQuest(bounty_type)
+			end
+		end
+	else
+		--前往试炼地图
+		CloseFrame()
+		--showDlg(nil,"已领取任务", function()
+		--end)
+		module.EncounterFightModule.GUIDE.EnterMap(quest.map_id)
+		--module.QuestModule.StartQuestGuideScript(quest)
+	end
+end
+
+--处理组队副本
+local function FubenFunction(fuben_id)
+	if TeamLimit(1) then
+		local myPos = {team_battle_conf.enter_x,team_battle_conf.enter_y,team_battle_conf.enter_z}
+		module.TeamModule.ENTER_BATTLE_REQUEST(fuben_id,team_battle_conf.mapid,myPos)
+
+		--module.CemeteryModule.Setactivityid(fuben_id)
+		--SceneStack.EnterMap(team_battle_conf.mapid, {mapid = team_battle_conf.mapid,pos = myPos})
+	end
+end
+
+local function NewRaidFunction(fuben_id)
+	if TeamLimit(1) then
+		if utils.SGKTools.CheckAllMemberAFK() then
+			if gid == 22 then --棱镜探险
+				module.mazeModule.Start(601);
+			elseif gid == 23 then	--基地保卫战
+				local myPos = {team_battle_conf.enter_x,team_battle_conf.enter_y,team_battle_conf.enter_z}
+				module.TeamModule.ENTER_BATTLE_REQUEST(fuben_id,team_battle_conf.mapid,myPos)
+			elseif gid == 21 then	--元素暴走
+				local myPos = {team_battle_conf.enter_x,team_battle_conf.enter_y,team_battle_conf.enter_z}
+				module.TeamModule.ENTER_BATTLE_REQUEST(fuben_id,team_battle_conf.mapid,myPos)
+			end
+		else
+			showDlgError(nil,"有队员暂离，无法开启副本")
+		end
+	end
+end
+if activity_id == 11 then
+	--日常试炼
+	BountyFunction(gid)
+elseif activity_id <= 2 then
+	--组队副本:1日2周
+	FubenFunction(gid)
+elseif activity_id == 4 then
+	NewRaidFunction(gid)
+end

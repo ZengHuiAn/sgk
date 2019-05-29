@@ -1,0 +1,77 @@
+--获取角色身上的参数
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local fights = {
+    {11010100,"1怪10级","暴揍肉肠龙"},
+    {90020002,"气泡buff战斗","气泡buff战斗"},
+    {90020003,"2怪20级","暴揍肉肠龙"},
+    {90020004,"2怪30级","暴揍肉肠龙"},
+    {90020005,"3怪40级","暴揍肉肠龙"},
+    {90020006,"3怪60级","暴揍肉肠龙"},
+    {90020007,"4怪80级","暴揍肉肠龙"},
+    {90020008,"4怪120级","暴揍肉肠龙"},
+    {90020009,"5怪160级","暴揍肉肠龙"},
+    {90020010,"5怪200级","暴揍肉肠龙"},
+    {11010103,"主线战斗","序章"},
+    {90010315,"基础npc","基础npc"},
+    {90010316,"进阶npc","进阶npc"},
+    {90010317,"特殊npc1","特殊npc1"},
+    {90010318,"特殊npc2","特殊npc2"},
+}
+local menus = {}
+
+local teamMember = module.TeamModule.GetTeamMembers()
+
+local fights2 = {
+    {11030102,"主线战斗","组队"},
+    {5202,"副本","组队"},
+}
+
+if gid == 2900991 then
+    for k,v in ipairs(fights) do
+    table.insert(menus, {name = v[2], action = function()
+            DispatchEvent("KEYDOWN_ESCAPE")
+            showDlg(nil,v[3], function()
+                --用户选择的是
+                module.fightModule.StartFight(v[1]) 
+                
+            end, function() 
+                --用户选择了否
+
+            end)    
+        end})
+    end
+elseif gid == 2900994 then
+    for k,v in ipairs(fights2) do
+    table.insert(menus, {name = v[2], action = function()
+            DispatchEvent("KEYDOWN_ESCAPE")
+            showDlg(nil,v[3], function()
+                --用户选择的是
+                if teamMember and #teamMember >= 1 then
+                    print("------#teamMember > 1,StartTeamFight")
+                    utils.SGKTools.StartTeamFight(v[1]) 
+                else
+                    print("-------#teamMember < 1,StartFight")
+                    module.fightModule.StartFight(v[1]) 
+                end
+            end, function() 
+                --用户选择了否
+
+            end)    
+        end})
+    end
+end
+
+SetStoryOptions(menus)
+
+--测试挂机战斗
+module.EncounterFightModule.SetFightData({type = "GuaJi", map_id = info.quest.map_id,depend_level = info.quest.depend_level,fun = function()
+    if teamMember and #teamMember >= 1 then
+        utils.SGKTools.StartTeamFight(v[1]) 
+    else
+        module.fightModule.StartFight(v[1]) 
+    end
+end});
+
+module.EncounterFightModule.RemoveFightDataByType("GuaJi")

@@ -1,0 +1,60 @@
+----------------庄园好友任务npc----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local cfg = module.ManorModule.GetManorNpcConfig(gid)
+if cfg then
+	if cfg.shop_type and cfg.shop_type ~= 0 then
+			-- 采集类交互
+			local icon = 79013;
+			local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+			local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+			CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+			local _view = CS.SGK.UIReference.Setup(_obj)
+			_view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("zhuangyuan_caiji_01")
+			_view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. icon)
+			utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})
+
+			Sleep(1.4)
+			print("购买", cfg.shop_type, cfg.shop_gid)
+			module.ShopModule.Buy(cfg.shop_type, cfg.shop_gid, 1, nil, function ()
+				local manor_friend_quest = utils.UserDefault.Load("manor_friend_quest", true);
+				if manor_friend_quest.quest and manor_friend_quest.quest[cfg.quest] then
+					for i,v in ipairs(manor_friend_quest.quest[cfg.quest]) do
+						if v.npc[gid] then
+							manor_friend_quest.quest[cfg.quest][i].npc[gid].active = false;
+							DispatchEvent("MANOR_REMOVE_FRIEND_NPC", gid)
+							break;
+						end
+					end
+				end
+			end)
+	else
+		AssociatedLuaScript("guide/NpcTalk.lua",...)
+		AssociatedLuaScript("guide/Story.lua",...)
+		if cfg.battle and cfg.battle ~= 0 then
+			local menus = {}
+			table.insert(menus, {name = "挑战", action = function()
+				DispatchEvent("KEYDOWN_ESCAPE")
+				module.fightModule.StartFight(cfg.battle, false, function (win, heros, starInfo, fightid, input_record, info)
+					if win then
+						local manor_friend_quest = utils.UserDefault.Load("manor_friend_quest", true);
+						if manor_friend_quest.quest and manor_friend_quest.quest[cfg.quest] then
+							for i,v in ipairs(manor_friend_quest.quest[cfg.quest]) do
+								if v.npc[gid] then
+									manor_friend_quest.quest[cfg.quest][i].npc[gid].active = false;
+									DispatchEvent("MANOR_REMOVE_FRIEND_NPC", gid)
+									break;
+								end
+							end
+						end
+						utils.UserDefault.Save();
+						-- print("战斗结束", sprinttb(manor_friend_quest.quest))
+						module.fightModule.CheckFight(cfg.battle, fightid, 0, input_record, info);
+					end
+				end)
+			end})
+			SetStoryOptions(menus)
+		end
+	end
+end

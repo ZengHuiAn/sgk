@@ -1,0 +1,6 @@
+local obj,gid = ...
+if module.CemeteryModule.GetMonsterg_state(gid) then
+	local tempObj = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_box_kai_gold.prefab")
+	local EffectObj = CS.UnityEngine.GameObject.Instantiate(tempObj,obj.gameObject.transform)
+	EffectObj.transform.localPosition = Vector3.zero
+end

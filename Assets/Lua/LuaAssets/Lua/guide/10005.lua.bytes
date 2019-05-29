@@ -1,0 +1,15 @@
+local obj = ...
+local x,y,z = obj.transform.localPosition.x,obj.transform.localPosition.y,obj.transform.localPosition.z
+local pid = obj:GetComponent("MapPlayer").id
+pid = tonumber(pid)
+x = tonumber(x)
+y = tonumber(y)
+z = tonumber(z)
+local player = module.playerModule.Get(pid)
+if pid ~= module.playerModule.GetSelfID() then
+	--showDlgError(nil,"你点击了玩家"..player.name)
+	--local NetworkService = require "utils.NetworkService"
+	--NetworkService.Send(18182, {nil,pid})--查询玩家队伍信息
+	DispatchEvent("Map_Click_Player",pid)
+	--DispatchEvent("Click_PLayer_MoveTo",module.playerModule.GetSelfID(),x,y,z)
+end

@@ -1,0 +1,55 @@
+-- 点击NPC可 离开场景/放弃组队任务
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local MapConfig = require "config.MapConfig"
+local npc_conf = MapConfig.GetMapMonsterConf(gid)
+local StoryConfig = require "config.StoryConfig"
+local menus = {}
+
+--组队副本
+local fubenTable = {
+	[2010006] = 101,
+	[2039800] = 102,
+	[2037004] = 103,
+	[2037005] = 104,
+	[2015800] = 105,
+    [2010004] = 201,
+	[2010007] = 202,
+	[2010005] = 203,
+}
+
+--通用对白
+if npc_conf and npc_conf.type == 2 then -- 功能NPC
+    local temp = 2 * math.random(1,3) - 1
+    local story_id = npc_conf.mode * 10 + temp
+    if StoryConfig.GetStoryConf(story_id) then
+        LoadStory(story_id,function ()            
+        end,true)
+    else
+        LoadStory(npc_conf.mode * 10 + 1,function ()            
+        end,true)
+    end
+end
+
+--重置副本进度
+local stage,max = module.CemeteryModule.GetTeam_stage(fubenTable[gid])
+
+if module.TeamModule.GetTeamInfo().id > 0 and module.TeamModule.GetTeamInfo().leader.pid == module.playerModule.GetSelfID() and stage < max then
+    table.insert(menus, {name = "放弃副本",icon = "bg_db_gongneng", action = function()
+        showDlg(nil,"放弃后您的进度将被重置，是否确认放弃？\n",function()
+            -- module.CemeteryModule.Setactivityid(fubenTable[gid]);
+            module.CemeteryModule.RestCemetery(function ()
+                module.QuestModule.Cancel(module.CemeteryModule.GetTEAM_PveStateUid(module.CemeteryModule.Getactivityid()))
+                module.CemeteryModule.Setactivityid(0)
+                SceneStack.EnterMap(10)
+            end)
+        end,function() end)
+    end})
+end
+
+table.insert(menus, {name = "离开副本",icon = "bg_db_chuansong", action = function()
+    SceneStack.EnterMap(10)
+end})
+
+SetStoryOptions(menus)

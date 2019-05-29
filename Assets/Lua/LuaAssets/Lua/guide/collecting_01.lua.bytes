@@ -1,0 +1,47 @@
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local _cfg = module.sharedQuestModule.GetCfg(nil, nil, gid)
+if _cfg then
+    for i,v in ipairs(_cfg) do
+        local _info = module.sharedQuestModule.GetQuestInfo(v.posIdx)
+        if _info then
+            local _status, _idx = module.sharedQuestModule.CanAccept(_info.id, false)
+            if _idx == 1 then
+                showDlgError(nil,string.format("需要<color=#f05025>%s</color>级可采集",v.depend_level))
+                return
+            elseif _idx == 2 then
+                showDlgError(nil,"采集人数已达上限")
+                return
+            elseif _idx == 4 then
+                showDlgError(nil,"今日采集<color=#f05025>次数已用尽</color>")
+                return
+            end
+            local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+            local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+            local _view = CS.SGK.UIReference.Setup(_obj)
+            _view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("zhuangyuan_caiji_01")
+            _view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. 79013)
+            utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})
+            CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+            Sleep(1.0)
+
+            -- if not _info.playerPisList[module.playerModule.GetSelfID()] then
+                if _status then
+                    local _data = module.sharedQuestModule.Accept(_info.id)
+                    if _data[2] == 0 then
+                        if v.only_accept_by_other_activity ~= 1 then
+                            local _dataF = module.sharedQuestModule.Finish(_info.id)
+                            if _dataF[2] ~= 0 then
+                                showDlgError(nil,"该物品已经被采集")
+                            end
+                        end
+                    else
+                        showDlgError(nil,"有玩家正在采集")
+                    end
+                end
+            -- end
+            Sleep(0.5)
+        end
+    end
+end

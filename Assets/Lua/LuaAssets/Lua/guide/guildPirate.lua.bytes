@@ -1,0 +1,35 @@
+local guildTaskModule = require "module.guildTaskModule"
+local guildTaskCfg = require "config.guildTaskConfig"
+local MapConfig = require "config.MapConfig"
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local Monster = MapConfig.GetMapMonsterConf(gid)
+local StoryID = Monster.mode;
+local obj = module.NPCModule.GetNPCALL(gid)
+obj.IsClick = 1
+
+local guildTask = guildTaskCfg.GetguildTaskByNpc(gid)[1]
+local guildmodule = #guildTaskModule.GetGuild_task_list() > 0 and guildTaskModule.GetGuild_task_list()[2][guildTask.quest_id] or nil
+local status = 1
+if guildmodule then
+	for k,v in pairs(guildmodule) do
+		if v.status == 0 then
+			status = 0
+			break
+		end
+	end
+end
+if status == 0 then
+	showDlgError(nil,"此海盗正在战斗中")
+else
+	local menus = {}
+	table.insert(menus, {name = "短兵相接",icon = "bg_db_zhandourenwu", action = function()
+		guildTaskModule.Start_GUILD_QUEST(guildTask.quest_id)
+	end})
+	SetStoryOptions(menus)
+	LoadStoryOptions()
+	LoadStory(StoryID,nil,nil,nil,function()
+        obj.IsClick = 0
+    end)
+end

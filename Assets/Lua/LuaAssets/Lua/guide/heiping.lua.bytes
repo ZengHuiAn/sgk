@@ -1,0 +1,6 @@
+
+--utils.SGKTools.StoryPlayFullscreenEffect("UI/fx_ui_dark_tra_1",Vector3.zero,0.8,true,function()
+    utils.SGKTools.StoryPlayFullscreenEffect("UI/fx_ui_dark_tra_2",Vector3.zero,0.8,true,function()
+         DispatchEvent("StoryFrameMaskBtn")--模仿玩家点击了一次
+    end,0.8)
+--end,0.8)

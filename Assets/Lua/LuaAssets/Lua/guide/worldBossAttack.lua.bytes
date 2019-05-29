@@ -1,0 +1,83 @@
+local map, gid = ...
+
+gid = tonumber(gid)
+
+local _cfg = module.worldBossModule.GetBossCfg(gid)
+
+if _cfg then
+    local _bossInfo = module.worldBossModule.GetBossInfo(_cfg.type)
+    if _bossInfo and _bossInfo.type == _cfg.type then
+        if _bossInfo.hp > 0 then
+            if _bossInfo.nextTime and module.Time.now() >= _bossInfo.nextTime then
+
+                -- if _cfg.type == 1 then
+                    module.worldBossModule.SendWatch(_bossInfo.watch);
+                -- end
+                local _data = module.worldBossModule.AttackBoss(_bossInfo.type,_bossInfo.watch)
+                ERROR_LOG("+++++++++++++++",sprinttb(_data));
+                if _data[2] == 0 then
+                    utils.SGKTools.LockMapClick(true,3)
+                    utils.SGKTools.loadEffect("fx_boss_hit", _bossInfo.id)
+                    local _obj = module.NPCModule.GetNPCALL(_bossInfo.id)
+                    if _obj then
+                        _obj.Root.spine[CS.Spine.Unity.SkeletonAnimation].AnimationState:SetAnimation(0 , "hit", false)
+                        _obj.Root.spine[CS.Spine.Unity.SkeletonAnimation].AnimationState:AddAnimation(0 , "idle", true, 0)
+                    end
+                    if _obj then
+                        Sleep(1)
+                        _obj.Root.spine[CS.Spine.Unity.SkeletonAnimation].AnimationState:SetAnimation(0 , "attack1", false)
+                        _obj.Root.spine[CS.Spine.Unity.SkeletonAnimation].AnimationState:AddAnimation(0 , "idle", true, 0)
+                        Sleep(1.3)
+                        utils.SGKTools.loadEffect("fx_boss_atk_".._bossInfo.id, _bossInfo.id)
+                        utils.SGKTools.loadEffect("death_boss", nil, {pid = module.playerModule.GetSelfID(), time = _data[4] - module.Time.now(), isWorldBoss = true, fun = function()
+                            DispatchEvent("DelPlayerEffect", {name = "death_boss", data = {pid = module.playerModule.GetSelfID()}})
+                        end})
+                    end
+                    Sleep(0.6)
+                    utils.SGKTools.DelEffect("fx_boss_hit", _bossInfo.id)
+                    utils.SGKTools.DelEffect("fx_boss_atk_".._bossInfo.id, _bossInfo.id)
+                    -- DispatchEvent("LOCAL_PLAYER_MOVETO_INITIALPOSITIO", {pid = module.playerModule.GetSelfID()})
+                    -- showDlgError(nil, "攻击成功")
+
+                    showDlgError(nil,"你受到领主强力一击，请稍后再进行挑战！");
+                    local status = module.worldBossModule.GetHunting();
+                    -- ERROR_LOG("==============",status);
+                    _bossInfo = module.worldBossModule.GetBossInfo(_cfg.type)
+                    ERROR_LOG("boss剩余血量========>>>>",sprinttb(_bossInfo));
+                    if status and _cfg.type == 1 and _bossInfo.hp > 0 then
+                        module.worldBossModule.DOATKTween(((_data[4] - module.Time.now() )or 0),function ( ... )
+                            if module.worldBossModule.GetHunting() then
+                                utils.SGKTools.Map_Interact(tonumber(_bossInfo.id))
+                            end
+                        end);
+                    end
+
+                elseif _data[2] == 7 then
+                    showDlgError(nil, "等级不足")
+                    module.worldBossModule.worldBossHunting();
+                else
+                    module.worldBossModule.worldBossHunting();
+                end
+            else
+                if _bossInfo.nextTime then
+                    showDlgError(nil, GetTimeFormat(_bossInfo.nextTime - module.Time.now(), 2).."后可以进行攻击")
+                    local status = module.worldBossModule.GetHunting();
+
+                    if status and _cfg.type == 1 then
+
+                        module.worldBossModule.DOATKTween(_bossInfo.nextTime - module.Time.now(),function ( ... )
+                            if module.worldBossModule.GetHunting() then
+                                utils.SGKTools.Map_Interact(tonumber(_bossInfo.id))
+                            end
+                        end);
+                    end
+
+                else
+                    ERROR_LOG("nextTime nil", sprinttb(_bossInfo))
+                end
+            end
+        else
+            ---击杀
+        end
+    end
+end

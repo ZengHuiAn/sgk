@@ -1,0 +1,61 @@
+local data = ...
+local story_id = data.id
+
+local obj = ...
+--ERROR_LOG(obj)
+local TypeName = StringSplit(obj.name,"_")
+local gid = tonumber(TypeName[2])
+
+local TableTalking = {
+    {2027113,"碧莲姐小心！",2},{2027114,"等等！我想我们可以谈谈！",2},{2027115,"我和你拼了！",2},{2027116,"呜呜呜，好痛……",1},{2027117,"哎呦！老娘的妆都要花了！",1},
+}
+
+
+local npc_list ={
+    [10004165] = {2052101},
+    [90010262] = {2052118},
+    [10011161] = {2052104,2052105},
+    [90101366] = {2029101,2029102},
+    [90102366] = {2029101,2029102},
+    [10202161] = {2027109,2027110,2027111},
+    [90201270] = {2027113,2027114,2027115,2027116,2027117},
+    [90200270] = {2027113,2027114,2027115,2027116,2027117},
+    [10202170] = {2027113,2027114,2027115,2027116,2027117},
+    [10305163] = {2009102},
+    [10403161] = {2019104},
+    [10404161] = {2019105},
+    [10412162] = {2019100},
+    [10505161] = {2019109},
+    [10510161] = {2019103},
+    [10709172] = {2037104},
+    [10406163] = {2019102},
+    [10006161] = {2052102},
+    [11202161] = {2021101},
+    [10009162] = {2052113},
+    [10211165] = {2027104},
+    [90200561] = {2027103},
+    [10103168] = {2029109},
+}
+
+for _,v in ipairs(npc_list[story_id]) do
+    if story_id == 10202170 then
+       module.NPCModule.LoadNpcOBJ(2027112,nil,true)
+       --LoadNpcDesc(v,TableTalking[2],nil,TableTalking[3])
+       module.NPCModule.deleteNPC(v,3)
+       utils.SGKTools.loadEffect("UI/fx_chuan_map_jisha",v)
+    elseif story_id == 10009162 then
+       module.NPCModule.deleteNPC(v)
+       module.NPCModule.LoadNpcOBJ(2052114,nil,true)
+    else
+       utils.SGKTools.loadEffect("UI/fx_chuan_map_jisha",v)
+       module.NPCModule.deleteNPC(v,1.3)
+    end
+end
+
+--[[
+if module.QuestModule.CanSubmit(101051) then
+   module.NPCModule.deleteNPC(1029100)
+else
+   module.NPCModule.deleteNPC(2028104)
+end
+]]

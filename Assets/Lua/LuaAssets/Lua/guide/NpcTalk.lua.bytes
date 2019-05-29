@@ -1,0 +1,68 @@
+﻿----------------通用脚本，用于加载其他脚本----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local MapConfig = require "config.MapConfig"
+local npc_conf = MapConfig.GetMapMonsterConf(gid)
+local StoryConfig = require "config.StoryConfig"
+
+--已接任务  0 未完成   1 完成  2  取消
+local cur_quests = module.QuestModule.GetList(10,0);
+
+local npc_list = {
+	--[npc_id] = {任务id（完成）,任务id（未完成），对话id}
+	[2012000] = {{350011,1,10,201200000}},
+}
+
+--不显示对话的npc
+local unShowDialogTab = {
+        -- [3010008]= true,--双子悬门公告板
+        -- [3019000]= true,--黄金矿脉公告板
+        -- [3030000]=true,--古墓新港公告板
+        -- [3008000]=true,--十字要塞公告板
+    }
+
+local x = {}
+if npc_list[gid] then
+	for _,v in ipairs(npc_list[gid]) do
+		if not module.QuestModule.Get(v[1]) or module.QuestModule.Get(v[1]).status ~= 1 then
+			local temp = module.MapNPCModule.GetIndex(gid,v[2],v[3])
+			local story_id = gid * 100 + temp
+			LoadStory(story_id,function ()            
+			end,true)
+		else
+			LoadStory(v[4],function ()            
+			end,true)
+		end
+	end
+	-- (function()
+	-- 	for _,v1 in ipairs(cur_quests) do
+	-- 		for _,v2 in ipairs(npc_list[gid]) do
+	-- 		    local quest_1 = module.QuestModule.Get(v2[1])
+ --                local quest_2 = module.QuestModule.Get(v2[2]) 
+	-- 			if (quest_1 and quest_1.status == 1) and (not quest_2 or quest_2.status ~= 1) then
+	-- 				LoadStory(v2[3],function ()            
+ --                    end,true)
+	-- 				return
+	-- 			end
+	-- 		end
+	-- 	end
+	-- end)()
+	--print("----------11111")
+elseif npc_conf.gid == 6029980 then
+	LoadStory(999999,function ()            
+    end,true)
+	--通用对白
+elseif npc_conf then
+	local temp = 2 * math.random(1,3) - 1
+	local story_id = npc_conf.mode * 10 + temp
+	if npc_conf.type ~= 4 and not unShowDialogTab[gid] then
+		if StoryConfig.GetStoryConf(story_id) then
+			LoadStory(story_id,function ()            
+			end,true)
+		elseif StoryConfig.GetStoryConf(npc_conf.mode * 10 + 1) then
+			LoadStory(npc_conf.mode * 10 + 1,function ()            
+			end,true)
+		end
+	end
+end

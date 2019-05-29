@@ -1,0 +1,19 @@
+local gid = ...
+gid = tonumber(gid)
+local wave = module.trialModule.GetWaveByNPCHelpID(gid)
+local nowWave = module.trialModule.GetNowWave()
+local isSweep = module.trialModule.IsSweep()
+if isSweep then
+	local SweepWave = module.trialModule.GetSweepWave()
+	if SweepWave == wave then
+		return true
+	else
+		return false
+	end
+else
+	if wave == nowWave then
+		return true 
+	else
+		return false 
+	end
+end

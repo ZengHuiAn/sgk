@@ -1,0 +1,21 @@
+-- 生成NPC的同时，脚底出现特效
+local obj,gid = ...
+gid = tonumber(gid)
+
+local effect_name = "prefabs/effect/UI/fx_chuans_door.prefab"
+
+local special_transport = {
+    [2021981] = "prefabs/effect/UI/fx_huoche_chuan.prefab",
+    [2022981] = "prefabs/effect/UI/fx_huoche_chuan.prefab",
+    [2023982] = "prefabs/effect/UI/fx_huoche_chuan.prefab",
+}
+
+
+if special_transport[gid] then
+    effect_name = special_transport[gid]
+end
+
+local tempObj = SGK.ResourcesManager.Load(effect_name)
+local EffectObj = CS.UnityEngine.GameObject.Instantiate(tempObj,obj.gameObject.transform)
+EffectObj.transform.localPosition = Vector3(0,-0.3,0.3)
+EffectObj.transform.localEulerAngles = Vector3(-45,0,0)

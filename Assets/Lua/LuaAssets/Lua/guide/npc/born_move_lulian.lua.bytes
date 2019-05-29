@@ -1,0 +1,42 @@
+local obj = module.NPCModule.GetNPCALL(2029104)
+local gid = 2029104
+local skeleton_ani = obj:GetComponentInChildren(typeof(CS.Spine.Unity.SkeletonAnimation))
+
+
+local function Npc_showDialog(id, desc, duration, type)
+    LoadNpcDesc(id, desc, nil, type, duration)
+end
+
+local function Npc_changeDirection(obj, direction)
+    obj[SGK.MapPlayer]:SetDirection(direction)
+end
+
+local function Npc_move(obj, Vector)
+    local x,y,z = Vector[1],Vector[2],Vector[3]
+    obj[SGK.MapPlayer]:MoveTo(x,y,z)
+end
+
+local fun_list = {}
+
+function fun_list:Npc_2029104(gid) 
+    utils.SGKTools.LockMapClick(true)
+    utils.SGKTools.ClearMapPlayer(true)
+    utils.SGKTools.MapCameraMoveTo(2029104)
+    Npc_showDialog(2029104 ,"水银谢谢你！", 2, 1)
+    Sleep(0.5)
+    Npc_move(obj ,{-3.13, 0.07, 19.21})
+    Sleep(3.5)
+    skeleton_ani.AnimationState:SetAnimation(0 , "animation1", false)
+    skeleton_ani.AnimationState:AddAnimation(0 , "animation2", true, 0)    
+    -- Npc_changeDirection(obj, 6)
+    module.NPCModule.LoadNpcOBJ(2029111,nil,true)
+    Sleep(2)
+    utils.SGKTools.MapCameraMoveTo()
+    utils.SGKTools.ClearMapPlayer(false)
+    utils.SGKTools.LockMapClick(false)
+end
+
+local fun_name = "Npc_".. gid
+if fun_list[fun_name] then
+    fun_list[fun_name]()
+end

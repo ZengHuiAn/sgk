@@ -1,0 +1,15 @@
+----------------通用脚本，用于加载其他脚本----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local MapConfig = require "config.MapConfig"
+local StoryConfig = require "config.StoryConfig"
+local mapHelper = require"utils.MapHelper"
+
+local npc_conf = MapConfig.GetMapMonsterConf(gid)
+local npc_id = npc_conf.mode
+local fight_id = npc_conf.fight_config
+
+mapHelper.OpFightInfo(fight_id, gid)
+
+AssociatedLuaScript("guide/npc/npc_move.lua",...)

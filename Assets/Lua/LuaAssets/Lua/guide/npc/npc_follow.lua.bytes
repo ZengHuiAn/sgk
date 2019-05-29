@@ -1,0 +1,86 @@
+local obj = ...
+local TypeName = StringSplit(obj.name,"_")
+local gid = tonumber(TypeName[2])
+
+
+
+--已接任务  0 未完成   1 完成  2  取消
+local cur_quests = module.QuestModule.GetList(10,0);
+
+local npc_list = {
+	--[npc_id] = {跟随任务id（领取）,不跟随任务id（完成）}
+    [2052114] = {{900091,900093},{900103,900104}},
+}
+
+--[[
+	满足条件时生成npc：
+	身上已领取一个任务，该任务id >= 出现任务id 且该任务id <= 消失任务id
+]]
+
+local follow_flag = false
+for k,_ in pairs(npc_list) do
+	if k == gid then
+		follow_flag = true
+	end
+end
+
+if follow_flag and module.TeamModule.GetTeamInfo().id <= 0 then
+	(function()
+        for _,v1 in ipairs(cur_quests) do
+            for _,v2 in ipairs(npc_list[gid]) do
+                if v1.id >= v2[1] and v1.id <= v2[2] then
+					utils.SGKTools.NPC_Follow_Player(gid,true)
+					AssociatedLuaScript("guide/npc_move.lua")
+					return
+				end
+			end
+		end
+	end)()
+end
+
+local obj = ...
+--ERROR_LOG(obj)
+local TypeName = StringSplit(obj.name,"_")
+local gid = tonumber(TypeName[2])
+
+--local npc = module.EncounterFightModule.GUIDE.NPCInit(...);
+
+--[[local i=1while true do
+    --移动至坐标
+    npc:MoveTo(Vector3(5,5,5))
+    --移动至标志物
+    npc:Interact("dengzuo_1 (2)");
+    npc:Roll(3);
+    npc:Interact("dengzuo_2 (3)");
+    npc:Sleep(3);
+    --npcid（nil为自己），对话，function，框id
+    LoadNpcDesc(nil,"测试消息测试、\n消息测试消息测试",nil,2)
+end]]
+--ERROR_LOG(obj.name)
+
+local TableTalking = {
+    {2052114,"少主我们快去解决盗墓者！",1},
+}
+
+
+local i=0
+local BattleNum = #TableTalking
+
+while true do
+    for j = 1 , BattleNum do
+        if gid == TableTalking[j][1] then
+            if gid == 10010024 then
+                LoadNpcDesc(gid,TableTalking[j][2],nil,TableTalking[j][3])
+                Sleep(math.random(10,15))
+            else
+                Sleep(math.random(5,15))
+                LoadNpcDesc(gid,TableTalking[j][2],nil,TableTalking[j][3])  
+            end 
+            i = 1
+        end 
+    end 
+    if i == 0 then
+        break
+    end 
+
+end

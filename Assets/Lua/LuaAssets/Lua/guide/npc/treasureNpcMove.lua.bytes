@@ -1,0 +1,33 @@
+local obj = ...
+local TypeName = StringSplit(obj.name,"_")
+local gid = tonumber(TypeName[2])
+
+local Talk1 = {
+	{"只有装备了探测器才能发现黑甲胄的碎片！",2},
+	{"还没有装备探测器的来我这里领取！",2},
+	{"探测器分为披风探测器和黑盾探测器！",2}
+}
+
+local index1 = 0;
+if gid == 2401001 then
+	while true do
+		index1 = index1 + 1;
+		Sleep(5)
+		LoadNpcDesc(gid,Talk1[index1 % 3 + 1][1],nil,Talk1[index1 % 3 + 1][2])
+	end
+end
+
+local Talk2 = {
+	{"赶紧去收集食材，还在磨蹭什么！",2},
+	{"对于我来说，肚子饿的人，就是我的客人！",2},
+	{"在海上，招惹厨师不高兴就等于跟自杀没什么两样，你给我记住这句话！",2}
+}
+
+local index2 = 0;
+if gid == 1346701 then
+	while true do
+		index2 = index2 + 1;
+		Sleep(5)
+		LoadNpcDesc(gid,Talk2[index2 % 3 + 1][1],nil,Talk2[index2 % 3 + 1][2])
+	end
+end

@@ -1,0 +1,3 @@
+local siteId = ...
+siteId=tonumber(siteId)
+DispatchEvent("CLICK_ADD_OBSTRUCT",{siteId=siteId});

@@ -1,0 +1,47 @@
+return (function (id)
+	local playerModule = require "module.playerModule"
+	--print("id->"..playerModule.Get().id)
+	local ActivityData = module.ActivityModule.GetManager(1)
+	local Time = require "module.Time"
+	if id == "draw1" then
+		local item = utils.ItemHelper.Get(utils.ItemHelper.TYPE.ITEM, 90002);
+		local time =  math.floor(Time.now()  - ActivityData[1].CardData.last_free_time)
+		if time >= ActivityData[1].free_gap then
+			--showDlg(nil,"是否抽取？",function()
+				DispatchEvent("StartDraw",{itemid = 90002})
+			--end)
+		else
+			showDlgError(nil,"时间未到")
+			--showDlg(nil,"是否消耗"..item.name.."抽取？",function()
+			--	print("点击了确定")
+			--	DispatchEvent("StartDraw",{itemid = 90002})
+			-- end,function()
+			--	print("点击了取消")
+			--end)
+		end
+	elseif id == "draw2" then
+		local item = utils.ItemHelper.Get(utils.ItemHelper.TYPE.ITEM, 90006);
+		local time =  math.floor(Time.now()  - ActivityData[2].CardData.last_free_time)
+		local price = ActivityData[2].price
+		local desc = "是否消耗<color=#55FDFEFF>"..price..item.name.."</color>刷新法阵？\n（刷新后未开启的宝箱将会消失）"
+		if time >= ActivityData[2].free_gap then
+			desc = "是否使用免费次数刷新法阵？"
+		end
+		showDlg(nil,desc,function()
+			--print("点击了确定")
+			DispatchEvent("StartDraw",{itemid = 90006})
+		 end,function()
+		 	--print("点击了取消")
+		end)
+	else
+		local ActivityData = module.ActivityModule.GetManager(1)
+		local price = ActivityData[2].price
+		local item = utils.ItemHelper.Get(utils.ItemHelper.TYPE.ITEM, 90006);
+		showDlg(nil,"是否消耗<color=#55FDFEFF>"..price..item.name.."</color>打开",function()
+			--print("点击了确定")
+			DispatchEvent("DrawClickBox",{idx = tonumber(id)})
+		 end,function()
+		 	--print("点击了取消")
+		end)
+	end
+end)(...)

@@ -1,0 +1,27 @@
+local guildTaskModule = require "module.guildTaskModule"
+local mapid,gid = ...
+gid = tonumber(gid)
+local guildTask = guildTaskModule.Getnow_guildTask_npc(gid)
+local guildmodule = #guildTaskModule.GetGuild_task_list() > 0 and guildTaskModule.GetGuild_task_list()[2][guildTask.quest_id] or nil
+local status = 1
+if guildmodule then
+	for k,v in pairs(guildmodule) do
+		if v.status == 0 then
+			status = 0
+			break
+		end
+	end
+end
+if status == 0 then
+	showDlgError(nil,"正在被拾取！")
+else
+    utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})
+	local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+	local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+	CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+    local _view = CS.SGK.UIReference.Setup(_obj)
+    _view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("拾取中...")
+    _view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. 79013)
+    Sleep(1.5)
+	guildTaskModule.Start_GUILD_QUEST(guildTask.quest_id)
+end

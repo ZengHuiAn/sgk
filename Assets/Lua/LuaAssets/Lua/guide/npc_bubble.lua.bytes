@@ -1,0 +1,16 @@
+local NpcConfig = require "config.npcConfig"
+local mapid,npcid = ...
+local npc_id = tonumber(npcid)
+local npcBubble = NpcConfig.GetBubbleByNpcID(npc_id)
+-- print("----------------------------",sprinttb(npcBubble))
+if not npcBubble then
+	return
+end
+local index = 1
+local inter = this.interaction;
+-- print("----------------------------",inter)
+--LoadNpcDesc(id, desc, nil, style, duration)
+if npcBubble[inter] and #npcBubble[inter] > 0 then
+	index = math.floor(math.random(1,#npcBubble[inter]))
+	LoadNpcDesc(npc_id, npcBubble[inter][index].desc, nil, npcBubble[inter][index].style, npcBubble[inter][index].duration)
+end

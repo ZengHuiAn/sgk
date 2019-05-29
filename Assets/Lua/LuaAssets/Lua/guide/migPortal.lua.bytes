@@ -1,0 +1,15 @@
+local _,npcid = ...
+
+-- utils.SGKTools.PlayerTransfer(75,0,18)
+-- local random = math.random( 1,4 )
+-- DispatchEvent("MOVE_TO_SMALL_GAME",4);
+
+
+print(...)
+local mazeConfig = require "config.mazeConfig"
+
+local cfg = mazeConfig.GetInfo(tonumber(npcid));
+module.QuestModule.CanAccept(cfg.fight_id)
+module.QuestModule.Accept(cfg.fight_id);
+
+module.TreasureMapModule.EnterSmallGame();

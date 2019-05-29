@@ -1,0 +1,74 @@
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local MapHelper = require "utils.MapHelper"
+local map_table = MapHelper.GetConfigTable("all_map","gid")
+local npc_table = MapHelper.GetConfigTable("all_npc","gid")
+
+local curMap = SceneStack.CurrentSceneID()
+--选择可去地图（多个选项）
+local map_list = {
+    [13] = {1,{201,202,203,204}},
+    [23] = {2,{21,22,49}},
+    [21] = {3,{22,23,49}},
+    [22] = {2,{21,23,49}},
+    [49] = {2,{21,23,22}},
+    [37] = {1,{66}},
+    [10] = {1,{9,52}},
+    [19] = {1,{15,16}}, 
+    [27] = {1,{39,41}},     
+}
+--人传送点（一个选项直接传送）
+local man_enter_position = {
+    [21] = 6021980,  
+    [22] = 6022980,
+    [23] = 6023981,
+    [49] = 6049980,
+    [50] = 6050980,
+    [37] = 6037982,
+    [10] = 6010980,
+    [19] = 6019980,          
+}
+
+local menus = {}
+for _,v in ipairs(map_list[curMap][2]) do
+    table.insert(menus,{name = "前往:"..map_table[v][1].map_name, icon = "bg_db_chuansong", action = function ()
+        utils.SGKTools.LockMapClick(true)
+        if module.TeamModule.GetTeamInfo().id <= 0 then 
+            
+            local level = module.playerModule.Get().level;
+            if level < map_table[v][1].depend_level  then
+                utils.SGKTools.LockMapClick()
+                return showDlgError(nil,SGK.Localize:getInstance():getValue("tongyong_02",map_table[v][1].depend_level));
+            end
+
+            AssociatedLuaScript("guide/TransprotList_team.lua",mapid,gid,v)
+        else
+            DispatchEvent("RecordPlayerMove")
+            --ERROR_LOG(manMove.Position_x, manMove.Position_y, manMove.Position_z,v,map_table[v][1].map_type)
+            local member = module.TeamModule.GetTeamInfo()
+            utils.SGKTools.LockMapClick()
+            print(sprinttb(member.afk_list))
+            for k,_v in pairs(member.afk_list) do
+                
+                if _v ~= true and module.playerModule.Get(math.floor(k)).level < (map_table[v][1].depend_level or 0) then
+                    utils.SGKTools.LockMapClick()
+                    return showDlgError(nil,SGK.Localize:getInstance():getValue("ditu_9",module.playerModule.Get(math.floor(k)).name,map_table[v][1].depend_level));
+                end
+            end
+
+            utils.SGKTools.TeamScript({"guide/TransprotList_team.lua",mapid,gid,v})--全队传送
+            
+            if man_enter_position[v] then
+                local manMove = npc_table[man_enter_position[v]][1]
+                if manMove then
+                    module.TeamModule.MapMoveTo(manMove.Position_x, manMove.Position_y, manMove.Position_z,v,map_table[v][1].map_type);
+                end
+            end
+        end
+    end})
+end
+
+SetStoryOptions(menus,true)
+    LoadStory(999999,function ()           
+    end,true)

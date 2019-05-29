@@ -1,0 +1,4 @@
+
+
+all :
+	gcc -fPIC -m64 -O3 -shared amf.c lua_amf.c network.c buffer.c  -o ..\Plugins\x86_64\network.dll -I./ -I..\luajit\src -Inetwork -lws2_32 -Wl,--out-implib,..\window\x86_64\libluajit.a

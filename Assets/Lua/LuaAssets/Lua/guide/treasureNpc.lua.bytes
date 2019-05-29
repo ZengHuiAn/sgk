@@ -1,0 +1,31 @@
+local guildTaskModule = require "module.guildTaskModule"
+local obj = ...
+local TypeName = StringSplit(obj.name,"_")
+local gid = tonumber(TypeName[2])
+
+LoadStory(19201,function ()            
+    end,true,true)
+				
+local menus = {}
+table.insert(menus, {name = "离开场景",icon = "bg_db_chuansong", action = function()
+    SceneStack.EnterMap(10);
+end})
+
+table.insert(menus, {name = "装备<color=#00FFFF>披风探测器</color>",icon = "bg_db_copper", action = function()
+	guildTaskModule.Start_GUILD_QUEST(10120100)
+	showDlgError(nil,"获得<color=#00FFFF>披风探测器</color>!")
+--	utils.SGKTools.SynchronousPlayStatus({5,{0,module.playerModule.GetSelfID(),"prober_yellow"}})   
+	utils.SGKTools.SynchronousPlayStatus({5,{1,module.playerModule.GetSelfID(),"prober_blue"}})   
+	DispatchEvent("KEYDOWN_ESCAPE")      
+end})
+
+table.insert(menus, {name = "装备<color=#FF8C00>黑盾探测器</color>",icon = "bg_db_gold", action = function()
+	guildTaskModule.Start_GUILD_QUEST(10120200)
+	showDlgError(nil,"获得<color=#FF8C00>黑盾探测器</color>!")
+--	utils.SGKTools.SynchronousPlayStatus({5,{0,module.playerModule.GetSelfID(),"prober_blue"}})   
+	utils.SGKTools.SynchronousPlayStatus({5,{1,module.playerModule.GetSelfID(),"prober_yellow"}}) 
+	DispatchEvent("KEYDOWN_ESCAPE")  
+end})
+
+SetStoryOptions(menus)
+--LoadStoryOptions()

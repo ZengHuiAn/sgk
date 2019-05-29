@@ -1,0 +1,30 @@
+local gid = ...
+gid = tonumber(gid)
+local fight_id,wave = module.trialModule.GetFightIDAndWaveByNpcID(gid)
+local nowWave = module.trialModule.GetNowWave()
+--ERROR_LOG(gid,fight_id,wave,nowWave)
+local isSweep = module.trialModule.IsSweep()
+if isSweep then
+    local SweepWave = module.trialModule.GetSweepWave()
+    if SweepWave == wave then
+        local count = fight_id - 60000000
+        local curr = module.trialModule.SetSweepLayer()
+        if curr < count then
+            return true
+        else
+            return false
+        end
+    else
+        return false
+    end
+else
+    if wave == nowWave then
+        if module.fightModule.GetFightInfo(fight_id):IsPassed() then
+            return false
+        else
+            return true
+        end
+    else
+        return false
+    end
+end

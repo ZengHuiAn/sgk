@@ -1,0 +1,31 @@
+local gid = ...
+gid = tonumber(gid)
+
+local quest_table = {
+    [6007980] = 110051,
+    [6027981] = 102121,
+    [2028000] = 101071,
+    [6028980] = 101071,
+    [6029980] = 101071,
+    [2027000] = 102171,
+    [2020000] = 102071,
+    [2020001] = 102081,
+    [2020002] = 102091,
+    [6010980] = 103061,
+}
+
+local flag = false
+for k,quest_id in pairs(quest_table) do
+    if k == gid then
+        --已接任务  0 未完成   1 完成  2  取消
+        local allQuests = module.QuestModule.GetList(10,1);
+        local isTrue = false
+        for _,v in ipairs(allQuests) do
+            if v.id == quest_id then
+                flag = true
+                break
+            end
+        end
+    end
+end
+return flag

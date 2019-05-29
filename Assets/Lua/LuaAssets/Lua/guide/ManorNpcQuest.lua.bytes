@@ -1,0 +1,112 @@
+local MapConfig = require "config.MapConfig"
+
+
+----------------庄园随机任务npc----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local operation, menuName, t, npc = module.ManorRandomQuestNPCModule.GetOperation(gid)
+print("交互", operation, menuName, t, sprinttb(npc))
+if npc == nil then
+	return;
+end
+local quest = module.QuestModule.Get(npc.quest)
+if quest then
+	print("任务状态", quest.id, quest.status)
+	if quest.status == 0 then
+		print("任务状态", module.QuestModule.CanSubmit(quest.id))
+		-- module.QuestModule.Submit(quest.id);
+	end
+else
+	print("任务不存在", npc.quest)
+end	
+
+if npc.group == 2 and module.ItemModule.GetItemCount(1405) == 0 then
+	showDlgError(nil, "您今天已完成10次新闻，明天再来吧！");
+	return;
+elseif npc.group == 3 and module.ItemModule.GetItemCount(1401) == 0 then
+	showDlgError(nil, "您今天已完成10次基地事件，明天再来吧！");
+	return;
+end
+
+if not operation then
+	if t == "reward" then
+		showDlgError(nil, string.format("您已经采集过了，剩余%s次采集后消失", npc.reward_count - #npc.interact))
+		return;
+	elseif t == "fight" and quest and quest.status == 1 then
+		AssociatedLuaScript("guide/NpcTalk.lua",...)
+		showDlgError(nil, string.format("您已经战斗过了，剩余%s次战斗后消失", npc.reward_count - #npc.interact))
+		return;
+	end
+end
+
+if t == 'reward' then
+	-- 采集类交互
+	local icon = 79013;
+	local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+	local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+	local _view = CS.SGK.UIReference.Setup(_obj)
+	_view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("zhuangyuan_caiji_01")
+	_view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. icon)
+	utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})
+	CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+	Sleep(1.0)
+	module.ManorRandomQuestNPCModule.Interact(nil, gid, operation);
+else
+	-- 其他npc，任务或者战斗
+	AssociatedLuaScript("guide/NpcTalk.lua",...)
+	AssociatedLuaScript("guide/Story.lua",...)
+	local quest_cfg = module.QuestModule.GetCfg(npc.quest)
+	if t == "fight" then
+		if quest == nil or quest.status ~= 0 then
+			local menus = {}
+			table.insert(menus, {name = quest_cfg.button_des, icon = "bg_db_zhandourenwu", action = function()
+				DispatchEvent("KEYDOWN_ESCAPE")
+				module.ManorRandomQuestNPCModule.Interact(nil, gid, operation);
+			end})
+			SetStoryOptions(menus)
+		elseif quest.status == 0 then
+			local menus = {}
+			table.insert(menus, {name = quest_cfg.button_des, icon = "bg_db_zhandourenwu", action = function()
+				DispatchEvent("KEYDOWN_ESCAPE")
+				if npc.group == 3 then
+					module.fightModule.StartFight(npc.fight, false)
+				else
+					local teamInfo = module.TeamModule.GetTeamInfo();
+					if teamInfo.group == 0 then
+						module.fightModule.StartFight(npc.fight, false)
+					else
+						utils.SGKTools.StartTeamFight(npc.fight) 
+					end
+				end
+			end})
+			SetStoryOptions(menus)
+		end
+	elseif t == "quest" and operation == 0 then
+		if quest_cfg then
+			local riddle_cfg = module.ManorModule.GetManorRiddle(gid)
+			if riddle_cfg then --谜语宝箱
+				-- table.insert(menus, {name = quest_cfg.button_des, icon = "bg_db_songli", action = function()
+				-- 	DispatchEvent("KEYDOWN_ESCAPE")
+				-- end})
+				DialogStack.PushPref("manor/ManorQuestion", {npc_id = gid, quest = npc.quest})
+			else
+				local menus = {}
+				table.insert(menus, {name = quest_cfg.button_des, icon = "bg_db_duihuarenwu", action = function()
+					DispatchEvent("KEYDOWN_ESCAPE")
+					if quest_cfg.type == 23 then
+						local _list = module.QuestModule.GetList(23, 0)
+						if #_list > 0 then
+							showDlgError(nil, "做事情要一心一意哦，您当前已经有任务啦！")
+						else
+							module.ManorRandomQuestNPCModule.Interact(nil, gid, operation);
+						end
+					else
+						module.ManorRandomQuestNPCModule.Interact(nil, gid, operation);
+					end 
+				end})
+				SetStoryOptions(menus)
+			end
+		end
+	end
+end

@@ -1,0 +1,64 @@
+--[[
+    ----------------地图传送通用脚本----------------------
+
+
+    ---------------------地图类型：map type------------------------
+    1：个人地图
+    2：公共地图
+    3：小队地图
+    4：军团地图
+
+]]
+----------------通用脚本，用于加载其他脚本----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local MapHelper = require "utils.MapHelper"
+local map_table = MapHelper.GetConfigTable("all_map","gid")
+
+local curMap = SceneStack.CurrentSceneID()
+local nextMap_npc = map_table[curMap][1].from_pos
+local nextMap_str = map_table[curMap][1].from_mapid
+local nextMap_pos = nil
+local npc_object = nil
+
+local npc_table = MapHelper.GetConfigTable("all_npc","gid")
+if nextMap_npc > 0 then
+    npc_object = npc_table[nextMap_npc][1]
+    nextMap_pos = {npc_object.Position_x,npc_object.Position_y,npc_object.Position_z}
+end
+
+local function string_split(str,split_char)
+    local sub_str_tab = {};
+    while (true) do
+        local pos = string.find(str, split_char);
+        if (not pos) then
+            sub_str_tab[#sub_str_tab + 1] = tonumber(str);
+            break;
+        end
+        local sub_str = string.sub(str, 1, pos - 1);
+        sub_str_tab[#sub_str_tab + 1] = tonumber(sub_str);
+        str = string.sub(str, pos + 1, #str);
+    end
+ 
+    return sub_str_tab;
+end
+
+local nextMap_list = string_split(nextMap_str,';')
+
+local menus = {}
+for _,v in ipairs(nextMap_list) do
+    utils.SGKTools.loadEffect("UI/fx_chuan_ren")
+    Sleep(0.5)
+    local level = module.playerModule.Get().level;
+    if level < map_table[v][1].depend_level  then
+        return showDlgError(nil,SGK.Localize:getInstance():getValue("tongyong_02",map_table[v][1].depend_level));
+    end
+
+    utils.SGKTools.PLayerConceal(true)
+    if nextMap_pos and npc_object.mapid == v then
+        SceneStack.EnterMap(v,{pos = nextMap_pos})
+    else
+        SceneStack.EnterMap(v)
+    end
+end

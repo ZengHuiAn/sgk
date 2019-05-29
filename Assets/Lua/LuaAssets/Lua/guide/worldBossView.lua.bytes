@@ -1,0 +1,79 @@
+local map, gid = ...
+
+local ActivityConfig = require "config.activityConfig"
+local activityId = {4011}
+
+gid = tonumber(gid)
+map = tonumber(map)
+
+local _type = 1
+if map == 251 then
+    _type = 2
+else
+    _type = 1
+end
+
+local _bossInfo = module.worldBossModule.GetBossInfo(_type)
+
+-- if _type == 2 then
+--     if ActivityConfig.CheckActivityOpen(4011) then
+--         if _bossInfo and _bossInfo.type == _type then
+--             DialogStack.Push("mapSceneUI/worldBossReward", {idx = _type})
+-- 	    else
+-- 			showDlgError(nil, "公会首领每日20:00刷新！")
+--         end
+-- 	else
+-- 	    showDlgError(nil, "公会首领每日20:00刷新！")
+--     end
+-- else
+--     if _bossInfo and _bossInfo.type == _type then
+--         DialogStack.Push("mapSceneUI/worldBossReward", {idx = _type})
+--     else
+--         showDlgError(nil, "不在开放时间")
+--     end
+-- end
+
+if _type == 2 then
+    for k,v in pairs(activityId) do
+        if ActivityConfig.CheckActivityOpen(v) then
+            local menus = {}
+            print("=====",sprinttb(_bossInfo));
+            if _bossInfo then
+                -- if _bossInfo.allHp == _bossInfo.hp then
+                --     local _title = module.unionModule.Manage:GetSelfTitle()
+                --     if (_title == 1 or _title == 2) then
+                --         table.insert(menus, {name = "开启", auto = false, action = function()
+
+                --             coroutine.resume(coroutine.create(function ( ... )
+                --                 module.worldBossModule.SendWatch(_bossInfo.watch);
+                --                 local data = module.worldBossModule.AttackBoss(_type)
+                --                 if data[2] == 0 then
+                --                     module.worldBossModule.QueryUnionInfo()
+                --                     module.worldBossModule.QueryUnionReplay()
+                --                 end
+                --                 ERROR_LOG("=================",sprinttb(data))
+                --             end))
+
+                --         end})
+                --     end
+                -- else
+                -- end
+                DialogStack.Push("guild/unionBossReward", {idx = _type})
+                    -- table.insert(menus, {name = "领主详情", auto = false, action = function()
+                    -- end})
+            end
+
+            
+            -- SetStoryOptions(menus)
+            -- LoadStoryOptions()
+            return
+        end
+    end
+    showDlgError(nil, "公会首领每日20:00刷新！")
+else
+    if _bossInfo and _bossInfo.type == _type then
+        DialogStack.Push("mapSceneUI/worldBossReward", {idx = _type})
+    else
+        showDlgError(nil, "公会首领每日20:00刷新！")
+    end
+end

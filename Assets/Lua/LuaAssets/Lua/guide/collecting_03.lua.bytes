@@ -1,0 +1,43 @@
+local mapid,gid = ...
+gid = tonumber(gid)
+local _cfg = module.sharedQuestModule.GetCfg(nil, nil, gid)
+
+if _cfg then
+    for i,v in ipairs(_cfg) do
+        local _info = module.sharedQuestModule.GetQuestInfo(v.posIdx)
+        if _info then
+            ERROR_LOG("1046:",utils.ItemHelper.Get(1046).count)
+            if utils.ItemHelper.Get(41,1046).count <= 0 and utils.ItemHelper.Get(41,2046).count <= 0 then
+                showDlgError(nil,"每日奖励次数已用尽，继续挑战不再获得奖励");
+            end
+
+            local _status, _idx = module.sharedQuestModule.CanAccept(_info.id, false)
+            if _idx == 1 then
+                showDlgError(nil, string.format("需要<color=#f05025>%d</color>级才能挑战", v.depend_level))
+                return
+            elseif _idx == 4 then
+                showDlgError(nil,"挑战<color=#f05025>次数已用尽</color>")
+                return
+            end
+            utils.MapHelper.OpenActivityMonster({monsterId = gid, func = function()
+                if not _info.playerPisList[module.playerModule.GetSelfID()] then
+                    if _status then
+                        local _data = module.sharedQuestModule.Accept(_info.id)
+                        if _data[2] == 0 then
+                            if v.only_accept_by_other_activity ~= 1 then
+                                local _dataF = module.sharedQuestModule.Finish(_info.id)
+                                if _dataF[2] ~= 0 then
+                                    showDlgError(nil,"该怪物已经被击杀")
+                                    return
+                                end
+                            end
+                        else
+                            showDlgError(nil,"有玩家正在战斗")
+                            return
+                        end
+                    end
+                end
+            end})
+        end
+    end
+end

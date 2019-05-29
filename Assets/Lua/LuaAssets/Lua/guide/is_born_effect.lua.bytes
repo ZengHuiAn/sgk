@@ -1,0 +1,23 @@
+-- 满足条件才生成该NPC（主线/支线剧情用到的NPC和怪）
+
+local NPC_OBJ,gid = ...
+NPC_OBJ:SetActive(false)
+utils.SGKTools.loadEffect("UI/fx_chuan_ren",gid,3)
+--[[
+local tempFlag = 0
+--已接任务
+local allQuests = module.QuestModule.GetList(10,0);
+
+for _,v in ipairs(allQuests) do
+	if v.id == 100081 then
+		tempFlag == 1
+	end 
+end
+]]
+local allQuests = module.QuestModule.GetList()
+module.QuestModule.GetNpcStatus(gid,function (NpcStatus,isShow)
+	if NpcStatus and NpcStatus ~= 2 then
+		NPC_OBJ:SetActive(true)
+    end
+end)
+

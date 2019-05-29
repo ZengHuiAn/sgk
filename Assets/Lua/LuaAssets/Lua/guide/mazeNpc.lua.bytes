@@ -1,0 +1,187 @@
+local uuid,gid = ...
+gid = tonumber(gid)
+local mazeModule = require "module.mazeModule"
+local View = {}
+
+local function LoadText( key )
+    return SGK.Localize:getInstance():getValue(key)
+end
+
+function View:GetDiolag(opt)
+    return {
+    [1601300] = {
+        {name = LoadText("maze_1601300_Opt1"),icon = "bg_db_xianliao", action = function()--成交！
+            module.mazeModule.Interact(uuid,1,{callback = function(error)
+                if error == 0 then
+                    self:storyLoad(1601300,opt,-1)
+                elseif error == 101 then    --其他玩家选择了奖励
+                elseif error == 103 then    --其他玩家选择了战斗
+                end
+            end})
+        end},
+        {name = LoadText("maze_1601300_Opt2"),icon = "bg_db_zhandourenwu", action = function()--有钱，抢！
+            module.mazeModule.Interact(uuid,2,{callback = function(error)
+                if error == 103 then
+                    showDlg(nil,"正在战斗中")
+                end
+            end})
+        end},
+    },
+    [1601301] = {
+        {name = LoadText("maze_1601301_Opt1"),icon = "bg_db_xianliao", action = function()--威胁他说出来，进入战斗无奖励，npc消失
+            self:storyLoad(1601301,opt,-1,
+                function( ... )
+                    module.mazeModule.Interact(uuid,1)
+                end)
+        end},
+        {name = LoadText("maze_1601301_Opt2"),icon = "bg_db_xianliao", action = function()--虚心请教，tips，npc不消失
+            module.mazeModule.Interact(uuid,2)
+            self:storyLoad(1601301,opt,2)
+        end},
+        {name = LoadText("maze_beybey"),icon = "bg_db_xianliao", action = function()--tips，npc不消失
+            DispatchEvent("CloseStoryReset")
+        end},
+    },
+    [1601302] = {
+        {name = LoadText("maze_1601302_Opt1"),icon = "bg_db_xianliao", action = function()--同意阿尔最强，获得小buff，npc消失
+            self:storyLoad(1601302,opt,-1,
+                module.mazeModule.Interact(uuid,1)
+            )
+        end},
+        {name = LoadText("maze_1601302_Opt2"),icon = "bg_db_zhandourenwu", action = function()--不服！挑战阿尔，进入战斗无奖励，npc消失
+            module.mazeModule.Interact(uuid,2,{callback = function(error)
+            end})
+        end},
+        {name = LoadText("maze_1601302_Opt3"),icon = "bg_db_xianliao", action = function()--交换水系心得
+            module.mazeModule.Interact(uuid,3,{callback = function(error)
+                if error == 0 then
+                    self:storyLoad(1601302,opt,-4)--达到条件，获得大buff，npc消失
+                else
+                    self:storyLoad(1601302,opt,-3)--未达到条件，无奖励，npc不消失
+                end
+            end})
+        end},
+    },
+    [1601303] = {
+        {name = LoadText("maze_1601303_Opt1"),icon = "bg_db_xianliao", action = function()--请教元素的奥义，tips，npc不消失
+            self:storyLoad(1601303,opt,1)
+        end},
+        {name = LoadText("maze_1601303_Opt2"),icon = "bg_db_xianliao", action = function()--请求帮助，获得buff，npc不消失，选项消失
+            module.mazeModule.Interact(uuid,2,{callback = function(error)
+                if error == 0  then
+                    self:storyLoad(1601303,opt,-2)
+                elseif error == 101 then
+                    self:storyLoad(1601303,opt,-3)
+                end
+            end})
+        end},
+        {name = LoadText("maze_beybey"),icon = "bg_db_xianliao", action = function()--tips，npc不消失
+            DispatchEvent("CloseStoryReset")
+        end},
+    },
+    [1601304] = {
+        {name = LoadText("maze_1601304_Opt1"),icon = "bg_db_xianliao", action = function()--土元素的能力
+            self:storyLoad(1601304,opt,1)
+        end},
+        {name = LoadText("maze_1601304_Opt2"),icon = "bg_db_xianliao", action = function()--光元素的能力
+            self:storyLoad(1601304,opt,2)
+        end},
+        {name = LoadText("maze_1601304_Opt3"),icon = "bg_db_xianliao", action = function()--暗元素的能力
+            self:storyLoad(1601304,opt,3)
+        end},
+        {name = LoadText("maze_beybey"),icon = "bg_db_xianliao", action = function()--谢谢！
+            DispatchEvent("CloseStoryReset")
+        end},
+    },
+    [1601307] = {
+        {name = LoadText("maze_1601307_Opt1"),icon = "bg_db_xianliao", action = function()--水元素的能力
+            self:storyLoad(1601307,opt,1)
+        end},
+        {name = LoadText("maze_1601307_Opt2"),icon = "bg_db_xianliao", action = function()--火元素的能力
+            self:storyLoad(1601307,opt,2)
+        end},
+        {name = LoadText("maze_1601307_Opt3"),icon = "bg_db_xianliao", action = function()--风元素的能力
+            self:storyLoad(1601307,opt,3)
+        end},
+        {name = LoadText("maze_beybey"),icon = "bg_db_xianliao", action = function()--谢谢！
+            DispatchEvent("CloseStoryReset")
+        end},
+    },
+    [1601305] = {
+        {name = LoadText("maze_1601305_Opt1"),icon = "bg_db_xianliao", action = function()--如何拯救西风，tips,npc不消失
+            self:storyLoad(1601305,opt,1)
+        end},
+        {name = LoadText("maze_1601305_Opt2"),icon = "bg_db_xianliao", action = function()--请求帮助，获得奖励，npc不消失，选项消失
+            module.mazeModule.Interact(uuid,2,{callback = function(error)
+                if error == 0 then--获得奖励成功
+                   self:storyLoad(1601305,opt,2)
+                elseif error == 101 then--已获得奖励
+                    self:storyLoad(1601305,opt,4)
+                end
+            end})
+        end},
+        {name = LoadText("maze_1601305_Opt3"),icon = "bg_db_xianliao", action = function()--交给我吧
+            DispatchEvent("CloseStoryReset")
+        end},
+    },
+    [1601306] = {
+        {name = LoadText("maze_1601306_Opt1"),icon = "bg_db_xianliao", action = function()--询问原因,tips，npc不消失
+            self:storyLoad(1601306,opt,1)
+        end},
+        {name = LoadText("maze_1601306_Opt2"),icon = "bg_db_xianliao", action = function()--请求帮助
+            module.mazeModule.Interact(uuid,2,{callback = function(error)
+                if error == 0 then
+                    self:storyLoad(1601306,opt,-4)--达成目标，获得奖励，npc消失
+                else
+                    self:storyLoad(1601306,opt,2)--未达成目标，npc不消失
+                end
+             end})
+        end},
+        {name = LoadText("maze_beybey"),icon = "bg_db_xianliao", action = function()
+            self:storyLoad(1601306,opt,-3)
+        end},
+    },
+}
+end
+
+function View:storyLoad(gid,opt,id,Fun)
+    local menus = {}
+    local _menus = {}
+    local NpcDiolag = self:GetDiolag(opt);
+    SGK.Action.DelayTime.Create(0.1):OnComplete(function()
+        local data = mazeModule.GetNpcData(gid)
+        -- print(sprinttb(data))
+        local opt = data.value[4]
+        if id >= 0 then    --是否显示选项
+            if NpcDiolag[gid] then
+                menus = NpcDiolag[gid]
+            else
+                showDlg(nil,"nothing")
+                return
+            end
+            for i=1,#menus do
+                print("屏蔽",i,menus[i],opt & (1 << (i-1)))
+                if opt & (1 << (i-1)) == 0 then --屏蔽npc隐藏的选项
+                    if i ~= math.abs(id) then --屏蔽当前选项
+                        table.insert(_menus, menus[i])
+                    end
+                end
+            end
+            -- print(sprinttb(_menus))
+            SetStoryOptions(_menus)
+            LoadStoryOptions()
+        end
+    end)
+    LoadStory(gid * 10 + math.abs(id),function ( ... )
+        if Fun then
+            Fun()
+        end
+    end,nil,nil,function ( ... )
+        print("===========>>>>")
+        SGK.Action.DelayTime.Create(0.5):OnComplete(function ( ... )
+            UnityEngine.Camera.main.orthographicSize = 4.5
+            -- body
+        end)
+    end)
+end
+View:storyLoad(gid,0,0)

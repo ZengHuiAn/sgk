@@ -1,0 +1,21 @@
+local type,npcid,gid = ...
+local inter = this.interaction;
+local _gid = gid
+local npc_id = tonumber(npcid)
+if inter == 1 then
+    module.TreasureMapModule.KillGame1ObsStatus(npc_id)
+    if tonumber(type) == 11 then --火
+        showDlgError(nil,SGK.Localize:getInstance():getValue("migong_huo"))
+        utils.SGKTools.PlayerTransfer(75,0,18)
+    elseif tonumber(type) == 12 then --水
+        showDlgError(nil,SGK.Localize:getInstance():getValue("migong_shuii"))
+        utils.SGKTools.PlayerTransfer(67.4,0,31)
+        -- module.TreasureMapModule.ClearGame1ObsStatus()
+    elseif tonumber(type) == 13 then --风
+        showDlgError(nil,SGK.Localize:getInstance():getValue("migong_feng"))
+        DispatchEvent("PLAYER_SPEED_OFFEST",1)
+    elseif tonumber(type) == 14 then  --土
+        showDlgError(nil,SGK.Localize:getInstance():getValue("migong_tu"))
+        DispatchEvent("PLAYER_SPEED_OFFEST",2)
+    end
+end

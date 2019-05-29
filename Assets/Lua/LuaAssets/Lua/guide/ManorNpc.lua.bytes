@@ -1,0 +1,72 @@
+----------------庄园npc----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+
+if gid == 2026000 then --打开庄园主页
+    utils.MapHelper.EnterManorBuilding()
+elseif gid == 9026001 then --打开酒馆
+	utils.MapHelper.EnterManorBuilding(1)
+elseif gid == 9026002 then --打开商铺
+	--utils.MapHelper.EnterManorBuilding(2)
+elseif gid == 9026003 then --打开研究院
+	utils.MapHelper.EnterManorBuilding(2)
+elseif gid == 9026004 then --打开工坊
+	utils.MapHelper.EnterManorBuilding(3)
+elseif gid == 9026005 then --打开矿洞
+	utils.MapHelper.EnterManorBuilding(4)
+elseif gid == 9026732 then --矿洞小偷
+	if module.ManorManufactureModule.CheckThiefOwner(11) then
+		LoadStory(900003)
+	else
+		LoadStory(900001, function() end,true)
+		local menus = {}
+		table.insert(menus, {name="开战", auto = false, action = function()
+			if utils.SGKTools.GetTeamState() then
+				showDlgError(nil, "请先解散队伍")
+				DispatchEvent("KEYDOWN_ESCAPE")
+			else
+				DispatchEvent("MANOR_START_THIEF_FIGHT", 11)
+			end
+		end})
+		SetStoryOptions(menus)
+	end
+elseif gid == 9026731 then --工坊小偷
+	if module.ManorManufactureModule.CheckThiefOwner(2) then
+		LoadStory(900003)
+	else
+		LoadStory(900001, function() end,true)
+		local menus = {}
+		table.insert(menus, {name="开战", auto = false, action = function()
+			if utils.SGKTools.GetTeamState() then
+				showDlgError(nil, "请先解散队伍")
+				DispatchEvent("KEYDOWN_ESCAPE")
+			else
+				DispatchEvent("MANOR_START_THIEF_FIGHT", 2)
+			end
+		end})
+		SetStoryOptions(menus)
+	end
+elseif gid == 9026730 then --研究院小偷
+	if module.ManorManufactureModule.CheckThiefOwner(1) then
+		LoadStory(900003)
+	else
+		LoadStory(900001, function() end,true)
+		local menus = {}
+		table.insert(menus, {name="开战", auto = false, action = function()
+			if utils.SGKTools.GetTeamState() then
+				showDlgError(nil, "请先解散队伍")
+				DispatchEvent("KEYDOWN_ESCAPE")
+			else
+				DispatchEvent("MANOR_START_THIEF_FIGHT", 1)
+			end
+		end})
+		SetStoryOptions(menus)
+	end
+else
+	--任务通用脚本
+	AssociatedLuaScript("guide/Story.lua",...)
+	--通用对白
+	AssociatedLuaScript("guide/NpcTalk.lua",...)
+	DispatchEvent("MANOR_SET_NPC_MOVE_STATE", {id = gid, state = true})
+end

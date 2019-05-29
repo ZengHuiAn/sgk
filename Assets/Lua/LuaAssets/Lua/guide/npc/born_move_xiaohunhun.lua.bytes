@@ -1,0 +1,35 @@
+local obj = module.NPCModule.GetNPCALL(2029105)
+local gid = 2029105
+local skeleton_ani = obj:GetComponentInChildren(typeof(CS.Spine.Unity.SkeletonAnimation))
+
+
+local function Npc_showDialog(id, desc, duration, type)
+    LoadNpcDesc(id, desc, nil, type, duration)
+end
+
+local function Npc_changeDirection(obj, direction)
+    obj[SGK.MapPlayer]:SetDirection(direction)
+end
+
+local function Npc_move(obj, Vector)
+    local x,y,z = Vector[1],Vector[2],Vector[3]
+    obj[SGK.MapPlayer]:MoveTo(x,y,z)
+end
+
+local fun_list = {}
+
+function fun_list:Npc_2029105(gid) 
+    Npc_showDialog(2029105 ,"跟我走！！",0.5, 1, 2)
+    Sleep(0.5)
+    Npc_move(obj ,{-3.13, 0.07, 19.21}, 0.5)
+    Sleep(3.5)
+    skeleton_ani.AnimationState:SetAnimation(0 , "animation1", false)
+    skeleton_ani.AnimationState:AddAnimation(0 , "animation2", true, 0)
+end
+
+
+
+local fun_name = "Npc_".. gid
+if fun_list[fun_name] then
+    fun_list[fun_name]()
+end

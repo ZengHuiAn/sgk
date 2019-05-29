@@ -1,0 +1,26 @@
+-- local function endStory()
+--     coroutine.resume(coroutine.create(function()
+--         module.QuestModule.Finish(10002)
+--         module.QuestModule.Get(10002).status = 1
+--         SceneStack.ClearBattleToggleScene()
+--         SceneStack.EnterMap(1)
+--     end))
+-- end
+
+local function Storybranch()
+    --local story_id = tonumber(v.id.."01")
+    LoadStory(10200103, function()
+        utils.SGKTools.Iphone_18(function()
+            LoadStory(10200105,nil,false,true)
+        end, function()
+            Storybranch()
+        end, {text = "神秘来电", soundName = "the_game"})
+    end)
+end
+
+utils.SGKTools.Iphone_18(function ( ... )
+    LoadStory(10200105,nil,false,true)
+    end
+, function ( ... )
+    Storybranch()
+end,{text = "神秘来电", soundName = "the_game"})

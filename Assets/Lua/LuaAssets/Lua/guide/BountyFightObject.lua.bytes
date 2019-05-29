@@ -1,0 +1,39 @@
+local mapid,gid = ...
+mapid = tonumber(mapid)
+gid = tonumber(gid)
+
+AssociatedLuaScript("guide/NpcTalk.lua",...)
+
+local map_table = {
+    [6] = 51,
+    [27] = 53,
+    [201] = 54,
+    [204] = 54,
+    [203] = 54,
+    [202] = 54,
+    [38] = 52,
+}
+
+local BountyModule = require "module.BountyModule"
+local BountyType = map_table[mapid]
+local info = BountyModule.Get(BountyType)
+
+--大眼睛试炼第一个npc
+local first_npc_id = info.quest.mode_id
+
+local menus = {}
+if info.quest then
+    if BountyType ~= 52 or (BountyType == 52 and gid == (first_npc_id + info.count)) then
+        local cur_quest = utils.SGKTools.GetTaskId()
+        local aa = {name = string.format("%s (%d/%d)", info.quest.name, info.count + 1, info.quest.times), 
+            icon = "bg_db_zhandourenwu", action = function() BountyModule.Fight(BountyType) end}
+
+        if info.quest.id == cur_quest then
+            --aa.auto = true
+            aa.effect = "effect/UI/fx_guide_kuan"
+        end
+        table.insert(menus, aa)
+    end
+end
+
+SetStoryOptions(menus)

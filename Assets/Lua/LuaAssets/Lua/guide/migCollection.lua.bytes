@@ -1,0 +1,16 @@
+local _,npcid = ...
+local TreasureMapModule =require "module.TreasureMapModule"
+
+local function GetConfig( npc_id )
+    local mazeConfig = require "config.mazeConfig"
+    local info = mazeConfig.GetInfo(tonumber(npc_id));
+    if info then
+        return info
+    end
+end
+local cfg = GetConfig(npcid)
+if cfg then
+    if module.QuestModule.CanAccept(cfg.fight_id) then
+		module.QuestModule.Accept(cfg.fight_id)
+	end
+end

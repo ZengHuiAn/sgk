@@ -1,0 +1,245 @@
+﻿----------------通用脚本，用于加载其他脚本----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local MapConfig = require "config.MapConfig"
+local npc_conf = MapConfig.GetMapMonsterConf(gid)
+local npc_id = npc_conf.mode
+local StoryConfig = require "config.StoryConfig"
+local MapHelper = require "utils.MapHelper"
+
+
+--组队活动
+local fubenTable = {
+    [6022982] = 101,
+    [6022982] = 101,
+    [6019981] = 102,
+    [6019981] = 102,
+    [6030982] = 103,
+    [6030982] = 103,
+    [6015981] = 104,
+    [6015981] = 104,
+    [6008981] = 105,
+    [6008981] = 105,
+    [6022983] = 106,
+    [6022983] = 106,
+    [6032981] = 107,
+    [6032981] = 107,
+    [6040982] = 108,
+    [6040982] = 108,
+    [6052981] = 109,
+    [6052981] = 109,
+    [6030983] = 110,
+    [6030983] = 110,
+    -- [2027004] = 111,
+    -- [6030982] = 111,
+    -- [2037003] = 112,
+    -- [6030982] = 112,
+    -- [2030006] = 113,
+    -- [6030982] = 113,
+    -- [2019002] = 114,
+    -- [6030982] = 114,
+    -- [2049000] = 115,
+    -- [6030982] = 115,
+    -- [2037000] = 116,
+    -- [6030982] = 116,
+    [2010011] = 117,
+    [2037000] = 21,--元素暴走
+    [2013002] = 22,--棱镜探险
+    [2010004] = 23,--基地保卫战
+	[2010007] = 202,
+    [2030009] = 203,
+    [2037005] = 51,
+    [2038000] = 52,
+    --[2027000] = 53,
+    [2013000] = 54, 
+}
+
+for k,_ in pairs(fubenTable) do
+    if gid == k then
+        print(gid,k)
+        AssociatedLuaScript("guide/graveyardDay.lua",...)
+        break
+    end
+end
+
+--通用对白
+local npc_list = {
+    [2030005] = 1104233,
+    [2010017] = 999998,
+    [2019114] = 999997,
+    [2019115] = 999996,
+    [2010016] = 999995,
+    [6029980] = 999994,
+}
+
+    if npc_list[gid] then
+        LoadStory(npc_list[gid],function ()            
+            end,true)
+    else
+        AssociatedLuaScript("guide/NpcTalk.lua",...)
+    end
+
+--任务通用脚本
+AssociatedLuaScript("guide/Story.lua",...)
+--加载赠送按钮
+--获取某npc好感度数值utils.SGKTools.GetNPCBribeValue(real_npc_id)
+--打开某个NPC的赠送礼物界utils.SGKTools.GetNPCBribeView(npc_id)
+
+local real_npc_id = npc_conf.npc_id
+local npc_arguments_value = utils.SGKTools.GetNPCBribeValue(real_npc_id)
+
+if real_npc_id and real_npc_id ~= 0 then
+    local menus = {}
+    table.insert(menus, {name="赠送", auto = false, icon = "bg_db_songli", action = function()
+        DispatchEvent("KEYDOWN_ESCAPE")
+        utils.SGKTools.OpenNPCBribeView(real_npc_id)
+    end})
+    SetStoryOptions(menus)
+end 
+
+--剧情测试
+if gid == 2900993 then
+    local menus = {}
+    table.insert(menus, {name="测试剧情1", auto = false, action = function()
+        LoadStory(1010010101)
+        --utils.SGKTools.showScrollingMarquee("测试测试测试")
+    end})
+    table.insert(menus, {name="测试剧情2", auto = false, action = function()
+        LoadStory(10001)
+    end})
+    table.insert(menus, {name="测试剧情3", auto = false, action = function()
+        LoadStory(10105164)
+    end})
+    table.insert(menus, {name="生成npc", auto = false, action = function()
+        module.NPCModule.LoadNpcOBJ(2009104,nil,true)
+        --module.NPCModule.LoadNpcOBJ(2009002,Vector3(2.5,0,4),true)
+        --module.NPCModule.LoadNpcOBJ(2009100,Vector3(2.5,0,4),true)
+    end})
+    table.insert(menus, {name="移除测试npc", auto = false, action = function()
+        utils.SGKTools.loadEffect("longzi_hit",2009001)
+        Sleep(0.5)
+        module.NPCModule.deleteNPC(2009104)
+        module.NPCModule.deleteNPC(2009002)
+
+    end})
+
+    SetStoryOptions(menus)
+end
+
+--发放物品
+if gid == 2900990 then
+    AssociatedLuaScript("guide/Gift.lua",...)
+end
+
+--战斗测试
+if gid == 2900991 or gid == 8026000 or gid == 2900994 then
+    AssociatedLuaScript("guide/TestFight.lua",...)
+end
+
+
+if real_npc_id and real_npc_id ~= 0 then
+    AssociatedLuaScript("guide/NPC_speak.lua",...) 
+end 
+        
+--地图彩蛋
+local map_hide_reward = {
+    [2012000] = 1,
+}
+
+local map_npc_effect = {
+    [6028000] = 1,
+    [6028001] = 2,
+    [6028002] = 3,
+    [6028003] = 4,
+}
+
+local map_npc_szxm = {
+    [6014002] = true,
+    [6014003] = true,
+    [6014004] = true,
+    [6014005] = true,
+    [6014006] = true,
+}
+
+----------------室内NPC彩蛋-----------------
+if map_hide_reward[gid] then
+    module.MapNPCModule.SetNPCCount( gid )
+    if module.MapNPCModule.GetNPCCount(gid) >= 10 then
+        module.QuestModule.Accept(350011)
+        -- module.QuestModule.Submit(350011)
+    end
+end
+----------------室内NPC彩蛋-----------------
+
+----------------沙漠宝箱彩蛋-----------------
+if map_npc_effect[gid] then
+    if not module.QuestModule.Get(350012) or module.QuestModule.Get(350012).status ~= 1 then
+        utils.SGKTools.loadEffect("effect/number_appare",gid)
+        DispatchEvent("UpdateNpcMapEffect6",{gid = gid,flag = true});
+        local result = module.MapNPCModule.SetPSW(map_npc_effect[gid])
+        if result == 1 then
+            utils.SGKTools.DestroySceneEffect("number_correct",1)
+            utils.SGKTools.loadSceneEffect("number_correct",UnityEngine.Vector3(-3.263,0,11.5),1,true,function()
+            module.QuestModule.Accept(350012)
+            showDlgError(nil,"所有数字都发光了，箱子似乎传来了声音。")
+            end)
+        elseif result == 0 then
+            showDlgError(nil,"数字消失了，似乎并没有什么事情发生。")
+            Sleep(0.5)
+            for k,v in pairs(map_npc_effect) do
+                utils.SGKTools.loadEffect("effect/number_disappare",k)
+                DispatchEvent("UpdateNpcMapEffect6",{gid = k,flag = false});
+            end 
+        end   
+    else
+        showDlgError(nil,"柱子上的数字正在发光，明天再来看看吧。")
+    end
+end
+
+if gid == 6028004 then
+    if not module.QuestModule.Get(350012) or module.QuestModule.Get(350012).status ~= 1 then
+        showDlgError(nil,"无法打开，或许可以从周围的石柱着手。")
+    else
+        module.QuestModule.Accept(350013)
+    end
+end
+----------------沙漠宝箱彩蛋-----------------
+
+----------------玄门喷泉彩蛋-----------------
+if gid == 6010000 then
+    if utils.SGKTools.GetSceneEffect("rainbow_jjc") then
+        showDlgError(nil,"隔一会再玩水")
+    else
+        showDlgError(nil,"运气真好，神奇彩虹出现了！")
+        utils.SGKTools.loadSceneEffect("rainbow_jjc",UnityEngine.Vector3(2.74,2,10.7),0.1,true,function()
+        utils.SGKTools.DestroySceneEffect("rainbow_jjc",5)
+            if  module.MapNPCModule.RandomRegion(15) then
+                module.QuestModule.Accept(350014)
+                showDlgError(nil,"嗯？神奇彩虹里好像掉下来了什么东西！")
+            end
+        end)
+    end 
+end
+----------------玄门喷泉彩蛋-----------------
+
+----------------玄门室内彩蛋-----------------
+-- if map_npc_szxm[gid] then
+--     if module.QuestModule.CanAccept(350015) then
+--         showDlgError(nil,"这家主人似乎不在还是不要乱碰了！")
+--     else
+--         if module.QuestModule.CanSubmit(350015) then
+--             if module.MapNPCModule.RandomHammer(gid) then
+--                 local count = module.MapNPCModule.GetHammerCount()
+--                 if count == 3 then
+--                     module.QuestModule.Accept(350014)
+                
+--                 end 
+--         else
+
+--         end
+
+--     end
+
+
+-- end

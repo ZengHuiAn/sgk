@@ -1,0 +1,13 @@
+local mapid,gid = ...
+LoadStory(11022)
+local menus = {}
+table.insert(menus, {name = "离开副本", action = function()
+	SceneStack.EnterMap(14)
+end})
+table.insert(menus, {name = "放弃副本", action = function()
+	 module.CemeteryModule.RestCemetery(function ()
+        module.QuestModule.Cancel(module.CemeteryModule.GetTEAM_PveStateUid(module.CemeteryModule.Getactivityid()))
+        SceneStack.EnterMap(14)
+    end)
+end})
+SetStoryOptions(menus)
