@@ -1,0 +1,479 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_new6_4_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 013990fbe9882af439eb8088a76e363b, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 55a81a3cdc6936d4285581c4f5342bb4, type: 2}
+  atlas:
+    pages:
+    - name: cg_new6_4.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 55a81a3cdc6936d4285581c4f5342bb4, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: 0g
+      x: 1254
+      y: 590
+      width: 171
+      height: 394
+      u: 0.6123047
+      v: 0.71191406
+      u2: 0.6958008
+      v2: 0.51953125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 171
+      originalHeight: 394
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 0qiliu1
+      x: 706
+      y: 124
+      width: 229
+      height: 355
+      u: 0.34472656
+      v: 0.9394531
+      u2: 0.45654297
+      v2: 0.7661133
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 229
+      originalHeight: 355
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 0qiliu2
+      x: 1228
+      y: 986
+      width: 197
+      height: 330
+      u: 0.5996094
+      v: 0.5185547
+      u2: 0.6958008
+      v2: 0.35742188
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 197
+      originalHeight: 330
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 0ren
+      x: 812
+      y: 956
+      width: 414
+      height: 399
+      u: 0.39648438
+      v: 0.5332031
+      u2: 0.5986328
+      v2: 0.3383789
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 416
+      originalHeight: 401
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 0tt1
+      x: 1131
+      y: 110
+      width: 132
+      height: 365
+      u: 0.5522461
+      v: 0.94628906
+      u2: 0.6166992
+      v2: 0.7680664
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 134
+      originalHeight: 367
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 0word1
+      x: 1028
+      y: 477
+      width: 224
+      height: 477
+      u: 0.5019531
+      v: 0.76708984
+      u2: 0.6113281
+      v2: 0.5341797
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 226
+      originalHeight: 479
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 0xian
+      x: 1265
+      y: 258
+      width: 189
+      height: 330
+      u: 0.6176758
+      v: 0.87402344
+      u2: 0.70996094
+      v2: 0.7128906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 189
+      originalHeight: 330
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg
+      x: 937
+      y: 141
+      width: 192
+      height: 334
+      u: 0.45751953
+      v: 0.93115234
+      u2: 0.55126953
+      v2: 0.7680664
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg1
+      x: 1454
+      y: 1487
+      width: 450
+      height: 250
+      u: 0.70996094
+      v: 0.27392578
+      u2: 0.9296875
+      v2: 0.15185547
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 450
+      originalHeight: 252
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg2
+      x: 1277
+      y: 1318
+      width: 422
+      height: 175
+      u: 0.62353516
+      v: 0.3564453
+      u2: 0.7089844
+      v2: 0.15039062
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 430
+      originalHeight: 175
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg3
+      x: 1427
+      y: 966
+      width: 385
+      height: 263
+      u: 0.69677734
+      v: 0.5283203
+      u2: 0.8847656
+      v2: 0.39990234
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 264
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg4
+      x: 1477
+      y: 1739
+      width: 478
+      height: 289
+      u: 0.7211914
+      v: 0.1508789
+      u2: 0.95458984
+      v2: 0.009765625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 479
+      originalHeight: 291
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg5
+      x: 777
+      y: 481
+      width: 473
+      height: 249
+      u: 0.37939453
+      v: 0.7651367
+      u2: 0.50097656
+      v2: 0.5341797
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 474
+      originalHeight: 251
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg6
+      x: 1454
+      y: 1231
+      width: 422
+      height: 254
+      u: 0.70996094
+      v: 0.39892578
+      u2: 0.9160156
+      v2: 0.27490234
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 422
+      originalHeight: 254
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bgggggg
+      x: 1456
+      y: 348
+      width: 191
+      height: 261
+      u: 0.7109375
+      v: 0.8300781
+      u2: 0.8041992
+      v2: 0.7026367
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 191
+      originalHeight: 261
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: body
+      x: 2
+      y: 998
+      width: 514
+      height: 1030
+      u: 0.0009765625
+      v: 0.5126953
+      u2: 0.25195312
+      v2: 0.009765625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 516
+      originalHeight: 1032
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: cloud
+      x: 2
+      y: 451
+      width: 479
+      height: 545
+      u: 0.0009765625
+      v: 0.77978516
+      u2: 0.23486328
+      v2: 0.5136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 479
+      originalHeight: 545
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: effect1
+      x: 436
+      y: 77
+      width: 372
+      height: 268
+      u: 0.21289062
+      v: 0.96240234
+      u2: 0.34375
+      v2: 0.7807617
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 372
+      originalHeight: 268
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: effect2
+      x: 1427
+      y: 611
+      width: 344
+      height: 353
+      u: 0.69677734
+      v: 0.70166016
+      u2: 0.8647461
+      v2: 0.5292969
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 344
+      originalHeight: 353
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair1
+      x: 839
+      y: 1357
+      width: 436
+      height: 383
+      u: 0.40966797
+      v: 0.33740234
+      u2: 0.6225586
+      v2: 0.15039062
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 438
+      originalHeight: 385
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hand1
+      x: 518
+      y: 1408
+      width: 319
+      height: 620
+      u: 0.2529297
+      v: 0.3125
+      u2: 0.4086914
+      v2: 0.009765625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 321
+      originalHeight: 622
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hand2
+      x: 839
+      y: 1742
+      width: 286
+      height: 636
+      u: 0.40966797
+      v: 0.14941406
+      u2: 0.72021484
+      v2: 0.009765625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 288
+      originalHeight: 638
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: lighting
+      x: 2
+      y: 2
+      width: 432
+      height: 447
+      u: 0.0009765625
+      v: 0.99902344
+      u2: 0.21191406
+      v2: 0.7807617
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 432
+      originalHeight: 447
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: word1
+      x: 518
+      y: 962
+      width: 292
+      height: 444
+      u: 0.2529297
+      v: 0.53027344
+      u2: 0.3955078
+      v2: 0.31347656
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 294
+      originalHeight: 446
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: word2
+      x: 483
+      y: 499
+      width: 292
+      height: 461
+      u: 0.23583984
+      v: 0.75634766
+      u2: 0.37841797
+      v2: 0.53125
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 294
+      originalHeight: 463
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

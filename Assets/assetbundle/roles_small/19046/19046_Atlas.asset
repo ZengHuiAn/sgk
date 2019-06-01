@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19046_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: c60bf5343fcb6194eaa5c80ee2e3f92b, type: 3}
+  materials:
+  - {fileID: 2100000, guid: bd8f134521204284087de639fe0efbf4, type: 2}
+  atlas:
+    pages:
+    - name: 19046.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: bd8f134521204284087de639fe0efbf4, type: 2}
+      width: 512
+      height: 128
+    regions:
+    - pageIndex: 0
+      name: 1
+      x: 180
+      y: 34
+      width: 103
+      height: 85
+      u: 0.3515625
+      v: 0.734375
+      u2: 0.5527344
+      v2: 0.0703125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 103
+      originalHeight: 85
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2
+      x: 285
+      y: 99
+      width: 147
+      height: 20
+      u: 0.5566406
+      v: 0.2265625
+      u2: 0.84375
+      v2: 0.0703125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 147
+      originalHeight: 20
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 3
+      x: 2
+      y: 2
+      width: 176
+      height: 117
+      u: 0.00390625
+      v: 0.984375
+      u2: 0.34765625
+      v2: 0.0703125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 176
+      originalHeight: 117
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 4
+      x: 180
+      y: 2
+      width: 30
+      height: 58
+      u: 0.3515625
+      v: 0.984375
+      u2: 0.46484375
+      v2: 0.75
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 30
+      originalHeight: 58
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shadow1
+      x: 285
+      y: 79
+      width: 48
+      height: 18
+      u: 0.5566406
+      v: 0.3828125
+      u2: 0.6503906
+      v2: 0.2421875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 48
+      originalHeight: 18
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

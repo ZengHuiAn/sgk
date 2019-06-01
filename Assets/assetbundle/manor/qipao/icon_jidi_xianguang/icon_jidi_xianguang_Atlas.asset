@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: icon_jidi_xianguang_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: a6376d10845112242bade6807614eb8d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f77cc845a57d11b47a6d51a723e4335d, type: 2}
+  atlas:
+    pages:
+    - name: icon_jidi_xianguang.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: f77cc845a57d11b47a6d51a723e4335d, type: 2}
+      width: 64
+      height: 64
+    regions:
+    - pageIndex: 0
+      name: images/1
+      x: 2
+      y: 2
+      width: 33
+      height: 34
+      u: 0.03125
+      v: 0.96875
+      u2: 0.546875
+      v2: 0.4375
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 35
+      originalHeight: 36
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

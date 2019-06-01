@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 10998_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 487fb73cbbf15b147b27f9c5282a6b17, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8e37515e0676d2d448aa8ed743c80152, type: 2}
+  atlas:
+    pages:
+    - name: 10998.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 8e37515e0676d2d448aa8ed743c80152, type: 2}
+      width: 1024
+      height: 1024
+    regions:
+    - pageIndex: 0
+      name: nan1
+      x: 2
+      y: 64
+      width: 279
+      height: 842
+      u: 0.001953125
+      v: 0.9375
+      u2: 0.27441406
+      v2: 0.115234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 279
+      originalHeight: 842
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: nan2
+      x: 2
+      y: 2
+      width: 60
+      height: 275
+      u: 0.001953125
+      v: 0.9980469
+      u2: 0.2705078
+      v2: 0.9394531
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 60
+      originalHeight: 275
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: nan3
+      x: 283
+      y: 627
+      width: 56
+      height: 279
+      u: 0.2763672
+      v: 0.3876953
+      u2: 0.3310547
+      v2: 0.115234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 56
+      originalHeight: 279
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

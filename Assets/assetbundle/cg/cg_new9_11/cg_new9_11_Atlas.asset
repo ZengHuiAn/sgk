@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_new9_11_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 072dceac2c531cb4aa5b99937877f938, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 059521c3e99f1cd4eb45f0d6983c2c2b, type: 2}
+  atlas:
+    pages:
+    - name: cg_new9_11.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 059521c3e99f1cd4eb45f0d6983c2c2b, type: 2}
+      width: 2048
+      height: 1024
+    regions:
+    - pageIndex: 0
+      name: 1bg1
+      x: 1616
+      y: 826
+      width: 195
+      height: 382
+      u: 0.7890625
+      v: 0.19335938
+      u2: 0.97558594
+      v2: 0.0029296875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 197
+      originalHeight: 384
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1bg2
+      x: 2
+      y: 261
+      width: 317
+      height: 428
+      u: 0.0009765625
+      v: 0.7451172
+      u2: 0.15576172
+      v2: 0.32714844
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 319
+      originalHeight: 430
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1bg3
+      x: 1153
+      y: 790
+      width: 231
+      height: 461
+      u: 0.5629883
+      v: 0.22851562
+      u2: 0.78808594
+      v2: 0.0029296875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 233
+      originalHeight: 463
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1guozi1
+      x: 657
+      y: 300
+      width: 119
+      height: 164
+      u: 0.32080078
+      v: 0.70703125
+      u2: 0.37890625
+      v2: 0.546875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 121
+      originalHeight: 166
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1guozi2
+      x: 2
+      y: 2
+      width: 68
+      height: 89
+      u: 0.0009765625
+      v: 0.9980469
+      u2: 0.044433594
+      v2: 0.9316406
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 70
+      originalHeight: 91
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1hand1
+      x: 784
+      y: 529
+      width: 163
+      height: 276
+      u: 0.3828125
+      v: 0.48339844
+      u2: 0.5175781
+      v2: 0.32421875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 165
+      originalHeight: 278
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1head
+      x: 321
+      y: 466
+      width: 223
+      height: 461
+      u: 0.15673828
+      v: 0.5449219
+      u2: 0.38183594
+      v2: 0.32714844
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 225
+      originalHeight: 463
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1role2
+      x: 772
+      y: 694
+      width: 327
+      height: 379
+      u: 0.37695312
+      v: 0.32226562
+      u2: 0.5620117
+      v2: 0.0029296875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 329
+      originalHeight: 381
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2bg
+      x: 2
+      y: 691
+      width: 768
+      height: 330
+      u: 0.0009765625
+      v: 0.3251953
+      u2: 0.37597656
+      v2: 0.0029296875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 770
+      originalHeight: 332
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2han
+      x: 1153
+      y: 731
+      width: 57
+      height: 281
+      u: 0.5629883
+      v: 0.2861328
+      u2: 0.7001953
+      v2: 0.23046875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 59
+      originalHeight: 283
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2tongkong
+      x: 2
+      y: 72
+      width: 318
+      height: 187
+      u: 0.0009765625
+      v: 0.9296875
+      u2: 0.15625
+      v2: 0.7470703
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 320
+      originalHeight: 189
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg
+      x: 321
+      y: 272
+      width: 192
+      height: 334
+      u: 0.15673828
+      v: 0.734375
+      u2: 0.31982422
+      v2: 0.546875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

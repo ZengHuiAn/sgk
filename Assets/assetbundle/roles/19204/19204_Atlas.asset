@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19204_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 30a3b62cedff36b47895fb06905e824d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8cee92530694226488ae5afb4d93c824, type: 2}
+  atlas:
+    pages:
+    - name: 19204.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 8cee92530694226488ae5afb4d93c824, type: 2}
+      width: 1024
+      height: 1024
+    regions:
+    - pageIndex: 0
+      name: shenti
+      x: 2
+      y: 2
+      width: 704
+      height: 1015
+      u: 0.001953125
+      v: 0.9980469
+      u2: 0.6894531
+      v2: 0.0068359375
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 706
+      originalHeight: 1017
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

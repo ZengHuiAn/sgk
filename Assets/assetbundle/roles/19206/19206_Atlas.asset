@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19206_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: bd638af5e6efd0843aaf209630a32b13, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 3c63bbeb9dd5258479c68cb0c3e3c47a, type: 2}
+  atlas:
+    pages:
+    - name: 19206.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 3c63bbeb9dd5258479c68cb0c3e3c47a, type: 2}
+      width: 512
+      height: 256
+    regions:
+    - pageIndex: 0
+      name: shang
+      x: 275
+      y: 12
+      width: 134
+      height: 238
+      u: 0.5371094
+      v: 0.953125
+      u2: 0.7988281
+      v2: 0.0234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 134
+      originalHeight: 238
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xia
+      x: 2
+      y: 108
+      width: 142
+      height: 271
+      u: 0.00390625
+      v: 0.578125
+      u2: 0.5332031
+      v2: 0.0234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 142
+      originalHeight: 272
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan
+      x: 2
+      y: 2
+      width: 104
+      height: 146
+      u: 0.00390625
+      v: 0.9921875
+      u2: 0.2890625
+      v2: 0.5859375
+      offsetX: 1
+      offsetY: 3
+      originalWidth: 106
+      originalHeight: 155
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

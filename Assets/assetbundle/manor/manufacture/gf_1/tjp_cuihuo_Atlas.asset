@@ -1,0 +1,299 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: tjp_cuihuo_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 929b497b2e27b4647ad920fe75cc06f0, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 7bcda8cf7d71ab04b8d3a31a659cc171, type: 2}
+  atlas:
+    pages:
+    - name: tjp_cuihuo.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 7bcda8cf7d71ab04b8d3a31a659cc171, type: 2}
+      width: 1024
+      height: 256
+    regions:
+    - pageIndex: 0
+      name: cuihuo1
+      x: 236
+      y: 45
+      width: 211
+      height: 182
+      u: 0.23046875
+      v: 0.82421875
+      u2: 0.43652344
+      v2: 0.11328125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 211
+      originalHeight: 182
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: cuihuo2
+      x: 449
+      y: 167
+      width: 171
+      height: 60
+      u: 0.43847656
+      v: 0.34765625
+      u2: 0.60546875
+      v2: 0.11328125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 171
+      originalHeight: 60
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: dyanwu_13
+      x: 2
+      y: 10
+      width: 232
+      height: 217
+      u: 0.001953125
+      v: 0.9609375
+      u2: 0.22851562
+      v2: 0.11328125
+      offsetX: 26
+      offsetY: 1
+      originalWidth: 277
+      originalHeight: 243
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_10
+      x: 292
+      y: 7
+      width: 36
+      height: 48
+      u: 0.28515625
+      v: 0.97265625
+      u2: 0.33203125
+      v2: 0.83203125
+      offsetX: 35
+      offsetY: 1
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_12
+      x: 236
+      y: 2
+      width: 41
+      height: 54
+      u: 0.23046875
+      v: 0.9921875
+      u2: 0.28320312
+      v2: 0.83203125
+      offsetX: 32
+      offsetY: 1
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_14
+      x: 930
+      y: 184
+      width: 43
+      height: 60
+      u: 0.9082031
+      v: 0.28125
+      u2: 0.9667969
+      v2: 0.11328125
+      offsetX: 31
+      offsetY: 1
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_16
+      x: 862
+      y: 182
+      width: 45
+      height: 66
+      u: 0.8417969
+      v: 0.2890625
+      u2: 0.90625
+      v2: 0.11328125
+      offsetX: 30
+      offsetY: 2
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_18
+      x: 789
+      y: 179
+      width: 48
+      height: 71
+      u: 0.7705078
+      v: 0.30078125
+      u2: 0.83984375
+      v2: 0.11328125
+      offsetX: 28
+      offsetY: 4
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_20
+      x: 709
+      y: 174
+      width: 53
+      height: 78
+      u: 0.6923828
+      v: 0.3203125
+      u2: 0.7685547
+      v2: 0.11328125
+      offsetX: 26
+      offsetY: 4
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_22
+      x: 622
+      y: 169
+      width: 58
+      height: 85
+      u: 0.6074219
+      v: 0.33984375
+      u2: 0.6904297
+      v2: 0.11328125
+      offsetX: 24
+      offsetY: 4
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_24
+      x: 516
+      y: 103
+      width: 62
+      height: 89
+      u: 0.50390625
+      v: 0.59765625
+      u2: 0.5908203
+      v2: 0.35546875
+      offsetX: 23
+      offsetY: 7
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_26
+      x: 449
+      y: 77
+      width: 65
+      height: 88
+      u: 0.43847656
+      v: 0.69921875
+      u2: 0.5019531
+      v2: 0.35546875
+      offsetX: 22
+      offsetY: 12
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_4
+      x: 516
+      y: 84
+      width: 10
+      height: 17
+      u: 0.50390625
+      v: 0.671875
+      u2: 0.5136719
+      v2: 0.60546875
+      offsetX: 48
+      offsetY: 1
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_6
+      x: 449
+      y: 46
+      width: 19
+      height: 29
+      u: 0.43847656
+      v: 0.8203125
+      u2: 0.45703125
+      v2: 0.70703125
+      offsetX: 43
+      offsetY: 1
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yan/lsmoke_8
+      x: 992
+      y: 189
+      width: 30
+      height: 38
+      u: 0.96875
+      v: 0.26171875
+      u2: 0.9980469
+      v2: 0.11328125
+      offsetX: 38
+      offsetY: 2
+      originalWidth: 103
+      originalHeight: 111
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

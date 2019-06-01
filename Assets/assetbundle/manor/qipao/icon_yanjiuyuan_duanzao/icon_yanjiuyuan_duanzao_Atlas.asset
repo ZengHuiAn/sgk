@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: icon_yanjiuyuan_duanzao_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 7ab8034180ceab14aaa88a340cad9393, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 20808f06f9d6fdd46a3d0bd52c551ba1, type: 2}
+  atlas:
+    pages:
+    - name: icon_yanjiuyuan_duanzao.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 20808f06f9d6fdd46a3d0bd52c551ba1, type: 2}
+      width: 64
+      height: 64
+    regions:
+    - pageIndex: 0
+      name: duanzao
+      x: 2
+      y: 2
+      width: 60
+      height: 35
+      u: 0.03125
+      v: 0.96875
+      u2: 0.96875
+      v2: 0.421875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 60
+      originalHeight: 35
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

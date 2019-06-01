@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 12023_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 6e4e88659f480404a890d710c5ed6bc9, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 9adfd17f1f8ddd64bbb982e4f9a1f66a, type: 2}
+  atlas:
+    pages:
+    - name: 12023.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 9adfd17f1f8ddd64bbb982e4f9a1f66a, type: 2}
+      width: 1024
+      height: 1024
+    regions:
+    - pageIndex: 0
+      name: chibang
+      x: 2
+      y: 644
+      width: 556
+      height: 370
+      u: 0.001953125
+      v: 0.37109375
+      u2: 0.5449219
+      v2: 0.009765625
+      offsetX: 41
+      offsetY: 0
+      originalWidth: 597
+      originalHeight: 370
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: chibang1
+      x: 2
+      y: 56
+      width: 586
+      height: 242
+      u: 0.001953125
+      v: 0.9453125
+      u2: 0.23828125
+      v2: 0.37304688
+      offsetX: 0
+      offsetY: 6
+      originalWidth: 588
+      originalHeight: 248
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shangzui
+      x: 2
+      y: 2
+      width: 52
+      height: 62
+      u: 0.001953125
+      v: 0.9980469
+      u2: 0.0625
+      v2: 0.9472656
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 52
+      originalHeight: 62
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shenti
+      x: 560
+      y: 691
+      width: 312
+      height: 323
+      u: 0.546875
+      v: 0.3251953
+      u2: 0.8515625
+      v2: 0.009765625
+      offsetX: 1
+      offsetY: 0
+      originalWidth: 313
+      originalHeight: 323
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiazui
+      x: 246
+      y: 598
+      width: 43
+      height: 44
+      u: 0.24023438
+      v: 0.41601562
+      u2: 0.28222656
+      v2: 0.37304688
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 43
+      originalHeight: 44
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19201_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: bc0e18460e1f8c84bafbf84ec4e61efb, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f1975e9b15f3a324d85f8f51c4826723, type: 2}
+  atlas:
+    pages:
+    - name: 19201.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: f1975e9b15f3a324d85f8f51c4826723, type: 2}
+      width: 2048
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: shenti
+      x: 2
+      y: 131
+      width: 343
+      height: 924
+      u: 0.0009765625
+      v: 0.7441406
+      u2: 0.45214844
+      v2: 0.07421875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 345
+      originalHeight: 926
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: youbi
+      x: 928
+      y: 347
+      width: 127
+      height: 671
+      u: 0.453125
+      v: 0.32226562
+      u2: 0.7807617
+      v2: 0.07421875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 129
+      originalHeight: 673
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zuobi
+      x: 2
+      y: 2
+      width: 127
+      height: 721
+      u: 0.0009765625
+      v: 0.99609375
+      u2: 0.35302734
+      v2: 0.7480469
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 129
+      originalHeight: 723
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

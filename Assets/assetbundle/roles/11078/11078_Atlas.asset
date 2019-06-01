@@ -1,0 +1,965 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 11078_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: f7d76334bdf96fc47aa90907d87b8f83, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 6926ab22bcd08b5458789a2cf1d0fd9b, type: 2}
+  atlas:
+    pages:
+    - name: 11078.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 6926ab22bcd08b5458789a2cf1d0fd9b, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: guang
+      x: 2
+      y: 2
+      width: 125
+      height: 127
+      u: 0.0009765625
+      v: 0.99902344
+      u2: 0.06201172
+      v2: 0.9370117
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 125
+      originalHeight: 127
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: jingmian
+      x: 2
+      y: 433
+      width: 548
+      height: 673
+      u: 0.0009765625
+      v: 0.7885742
+      u2: 0.2685547
+      v2: 0.45996094
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 548
+      originalHeight: 673
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: jingzi
+      x: 2
+      y: 1108
+      width: 651
+      height: 932
+      u: 0.0009765625
+      v: 0.45898438
+      u2: 0.31884766
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 651
+      originalHeight: 932
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: qiugaoguang
+      x: 129
+      y: 91
+      width: 40
+      height: 38
+      u: 0.06298828
+      v: 0.9555664
+      u2: 0.08251953
+      v2: 0.9370117
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 40
+      originalHeight: 38
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tongkong
+      x: 655
+      y: 1126
+      width: 8
+      height: 66
+      u: 0.31982422
+      v: 0.4501953
+      u2: 0.35205078
+      v2: 0.44628906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 8
+      originalHeight: 66
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00000
+      x: 764
+      y: 924
+      width: 210
+      height: 210
+      u: 0.37304688
+      v: 0.5488281
+      u2: 0.47558594
+      v2: 0.44628906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00001
+      x: 764
+      y: 712
+      width: 210
+      height: 210
+      u: 0.37304688
+      v: 0.65234375
+      u2: 0.47558594
+      v2: 0.5498047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00002
+      x: 976
+      y: 924
+      width: 210
+      height: 210
+      u: 0.4765625
+      v: 0.5488281
+      u2: 0.57910156
+      v2: 0.44628906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00003
+      x: 976
+      y: 712
+      width: 210
+      height: 210
+      u: 0.4765625
+      v: 0.65234375
+      u2: 0.57910156
+      v2: 0.5498047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00004
+      x: 1188
+      y: 924
+      width: 210
+      height: 210
+      u: 0.5800781
+      v: 0.5488281
+      u2: 0.6826172
+      v2: 0.44628906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00005
+      x: 1188
+      y: 712
+      width: 210
+      height: 210
+      u: 0.5800781
+      v: 0.65234375
+      u2: 0.6826172
+      v2: 0.5498047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00006
+      x: 1400
+      y: 924
+      width: 210
+      height: 210
+      u: 0.68359375
+      v: 0.5488281
+      u2: 0.7861328
+      v2: 0.44628906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00007
+      x: 1400
+      y: 712
+      width: 210
+      height: 210
+      u: 0.68359375
+      v: 0.65234375
+      u2: 0.7861328
+      v2: 0.5498047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00008
+      x: 1612
+      y: 924
+      width: 210
+      height: 210
+      u: 0.7871094
+      v: 0.5488281
+      u2: 0.88964844
+      v2: 0.44628906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00009
+      x: 1612
+      y: 712
+      width: 210
+      height: 210
+      u: 0.7871094
+      v: 0.65234375
+      u2: 0.88964844
+      v2: 0.5498047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00010
+      x: 764
+      y: 500
+      width: 210
+      height: 210
+      u: 0.37304688
+      v: 0.7558594
+      u2: 0.47558594
+      v2: 0.6533203
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00011
+      x: 976
+      y: 500
+      width: 210
+      height: 210
+      u: 0.4765625
+      v: 0.7558594
+      u2: 0.57910156
+      v2: 0.6533203
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00012
+      x: 1188
+      y: 500
+      width: 210
+      height: 210
+      u: 0.5800781
+      v: 0.7558594
+      u2: 0.6826172
+      v2: 0.6533203
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00013
+      x: 1400
+      y: 500
+      width: 210
+      height: 210
+      u: 0.68359375
+      v: 0.7558594
+      u2: 0.7861328
+      v2: 0.6533203
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00014
+      x: 1612
+      y: 500
+      width: 210
+      height: 210
+      u: 0.7871094
+      v: 0.7558594
+      u2: 0.88964844
+      v2: 0.6533203
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00015
+      x: 1824
+      y: 924
+      width: 210
+      height: 210
+      u: 0.890625
+      v: 0.5488281
+      u2: 0.99316406
+      v2: 0.44628906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00016
+      x: 1824
+      y: 712
+      width: 210
+      height: 210
+      u: 0.890625
+      v: 0.65234375
+      u2: 0.99316406
+      v2: 0.5498047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00017
+      x: 1824
+      y: 500
+      width: 210
+      height: 210
+      u: 0.890625
+      v: 0.7558594
+      u2: 0.99316406
+      v2: 0.6533203
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00018
+      x: 638
+      y: 288
+      width: 210
+      height: 210
+      u: 0.31152344
+      v: 0.859375
+      u2: 0.4140625
+      v2: 0.75683594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00019
+      x: 850
+      y: 288
+      width: 210
+      height: 210
+      u: 0.41503906
+      v: 0.859375
+      u2: 0.5175781
+      v2: 0.75683594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00020
+      x: 1062
+      y: 288
+      width: 210
+      height: 210
+      u: 0.5185547
+      v: 0.859375
+      u2: 0.62109375
+      v2: 0.75683594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00021
+      x: 1274
+      y: 288
+      width: 210
+      height: 210
+      u: 0.6220703
+      v: 0.859375
+      u2: 0.7246094
+      v2: 0.75683594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/fire2_00022
+      x: 1486
+      y: 288
+      width: 210
+      height: 210
+      u: 0.72558594
+      v: 0.859375
+      u2: 0.828125
+      v2: 0.75683594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 210
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00000
+      x: 655
+      y: 1740
+      width: 210
+      height: 300
+      u: 0.31982422
+      v: 0.15039062
+      u2: 0.42236328
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00001
+      x: 2
+      y: 131
+      width: 210
+      height: 300
+      u: 0.0009765625
+      v: 0.93603516
+      u2: 0.103515625
+      v2: 0.7895508
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00002
+      x: 655
+      y: 1438
+      width: 210
+      height: 300
+      u: 0.31982422
+      v: 0.29785156
+      u2: 0.42236328
+      v2: 0.15136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00003
+      x: 867
+      y: 1740
+      width: 210
+      height: 300
+      u: 0.42333984
+      v: 0.15039062
+      u2: 0.5258789
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00004
+      x: 214
+      y: 131
+      width: 210
+      height: 300
+      u: 0.10449219
+      v: 0.93603516
+      u2: 0.20703125
+      v2: 0.7895508
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00005
+      x: 655
+      y: 1136
+      width: 210
+      height: 300
+      u: 0.31982422
+      v: 0.4453125
+      u2: 0.42236328
+      v2: 0.29882812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00006
+      x: 867
+      y: 1438
+      width: 210
+      height: 300
+      u: 0.42333984
+      v: 0.29785156
+      u2: 0.5258789
+      v2: 0.15136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00007
+      x: 1079
+      y: 1740
+      width: 210
+      height: 300
+      u: 0.52685547
+      v: 0.15039062
+      u2: 0.62939453
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00008
+      x: 867
+      y: 1136
+      width: 210
+      height: 300
+      u: 0.42333984
+      v: 0.4453125
+      u2: 0.5258789
+      v2: 0.29882812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00009
+      x: 1079
+      y: 1438
+      width: 210
+      height: 300
+      u: 0.52685547
+      v: 0.29785156
+      u2: 0.62939453
+      v2: 0.15136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00010
+      x: 1291
+      y: 1740
+      width: 210
+      height: 300
+      u: 0.6303711
+      v: 0.15039062
+      u2: 0.73291016
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00011
+      x: 1079
+      y: 1136
+      width: 210
+      height: 300
+      u: 0.52685547
+      v: 0.4453125
+      u2: 0.62939453
+      v2: 0.29882812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00012
+      x: 1291
+      y: 1438
+      width: 210
+      height: 300
+      u: 0.6303711
+      v: 0.29785156
+      u2: 0.73291016
+      v2: 0.15136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00013
+      x: 1503
+      y: 1740
+      width: 210
+      height: 300
+      u: 0.7338867
+      v: 0.15039062
+      u2: 0.8364258
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00014
+      x: 1291
+      y: 1136
+      width: 210
+      height: 300
+      u: 0.6303711
+      v: 0.4453125
+      u2: 0.73291016
+      v2: 0.29882812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00015
+      x: 1503
+      y: 1438
+      width: 210
+      height: 300
+      u: 0.7338867
+      v: 0.29785156
+      u2: 0.8364258
+      v2: 0.15136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00016
+      x: 1715
+      y: 1740
+      width: 210
+      height: 300
+      u: 0.83740234
+      v: 0.15039062
+      u2: 0.9399414
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00017
+      x: 1503
+      y: 1136
+      width: 210
+      height: 300
+      u: 0.7338867
+      v: 0.4453125
+      u2: 0.8364258
+      v2: 0.29882812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00018
+      x: 1715
+      y: 1438
+      width: 210
+      height: 300
+      u: 0.83740234
+      v: 0.29785156
+      u2: 0.9399414
+      v2: 0.15136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00019
+      x: 1715
+      y: 1136
+      width: 210
+      height: 300
+      u: 0.83740234
+      v: 0.4453125
+      u2: 0.9399414
+      v2: 0.29882812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00020
+      x: 426
+      y: 131
+      width: 210
+      height: 300
+      u: 0.20800781
+      v: 0.93603516
+      u2: 0.31054688
+      v2: 0.7895508
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00021
+      x: 552
+      y: 806
+      width: 210
+      height: 300
+      u: 0.26953125
+      v: 0.6064453
+      u2: 0.3720703
+      v2: 0.45996094
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xiaoguo/jingzi_00022
+      x: 552
+      y: 504
+      width: 210
+      height: 300
+      u: 0.26953125
+      v: 0.75390625
+      u2: 0.3720703
+      v2: 0.6074219
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 210
+      originalHeight: 300
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zhuzi
+      x: 1927
+      y: 1973
+      width: 67
+      height: 67
+      u: 0.94091797
+      v: 0.036621094
+      u2: 0.9736328
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 67
+      originalHeight: 67
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

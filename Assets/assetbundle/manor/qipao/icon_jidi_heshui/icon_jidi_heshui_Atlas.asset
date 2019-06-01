@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: icon_jidi_heshui_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 3a58b838b76fe714f8e84aedda3304c4, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 0caa59b268c13914e9ab685ad5978bd4, type: 2}
+  atlas:
+    pages:
+    - name: icon_jidi_heshui.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 0caa59b268c13914e9ab685ad5978bd4, type: 2}
+      width: 64
+      height: 64
+    regions:
+    - pageIndex: 0
+      name: 1
+      x: 2
+      y: 2
+      width: 32
+      height: 29
+      u: 0.03125
+      v: 0.96875
+      u2: 0.53125
+      v2: 0.515625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 34
+      originalHeight: 31
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

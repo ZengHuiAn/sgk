@@ -1,0 +1,281 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: kd2_paishui_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: ea7a197a58401f74989ef2c4d474beca, type: 3}
+  materials:
+  - {fileID: 2100000, guid: c0a814b296e823c4dade2a2f6f185597, type: 2}
+  atlas:
+    pages:
+    - name: kd2_paishui.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: c0a814b296e823c4dade2a2f6f185597, type: 2}
+      width: 512
+      height: 256
+    regions:
+    - pageIndex: 0
+      name: penshui/peng_1
+      x: 71
+      y: 2
+      width: 27
+      height: 32
+      u: 0.13867188
+      v: 0.9921875
+      u2: 0.20117188
+      v2: 0.88671875
+      offsetX: 47
+      offsetY: 17
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_11
+      x: 237
+      y: 8
+      width: 53
+      height: 100
+      u: 0.46289062
+      v: 0.96875
+      u2: 0.6582031
+      v2: 0.76171875
+      offsetX: 32
+      offsetY: 20
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_13
+      x: 2
+      y: 3
+      width: 67
+      height: 104
+      u: 0.00390625
+      v: 0.98828125
+      u2: 0.13476562
+      v2: 0.58203125
+      offsetX: 20
+      offsetY: 16
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_15
+      x: 365
+      y: 68
+      width: 82
+      height: 123
+      u: 0.7128906
+      v: 0.734375
+      u2: 0.953125
+      v2: 0.4140625
+      offsetX: 9
+      offsetY: 11
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_17
+      x: 98
+      y: 81
+      width: 77
+      height: 137
+      u: 0.19140625
+      v: 0.68359375
+      u2: 0.45898438
+      v2: 0.3828125
+      offsetX: 16
+      offsetY: 6
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_19
+      x: 98
+      y: 160
+      width: 85
+      height: 141
+      u: 0.19140625
+      v: 0.375
+      u2: 0.46679688
+      v2: 0.04296875
+      offsetX: 21
+      offsetY: 9
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_21
+      x: 2
+      y: 109
+      width: 94
+      height: 136
+      u: 0.00390625
+      v: 0.57421875
+      u2: 0.1875
+      v2: 0.04296875
+      offsetX: 17
+      offsetY: 13
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_23
+      x: 241
+      y: 154
+      width: 91
+      height: 134
+      u: 0.47070312
+      v: 0.3984375
+      u2: 0.7324219
+      v2: 0.04296875
+      offsetX: 17
+      offsetY: 13
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_25
+      x: 377
+      y: 152
+      width: 93
+      height: 127
+      u: 0.7363281
+      v: 0.40625
+      u2: 0.984375
+      v2: 0.04296875
+      offsetX: 18
+      offsetY: 21
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_27
+      x: 237
+      y: 63
+      width: 89
+      height: 126
+      u: 0.46289062
+      v: 0.75390625
+      u2: 0.7089844
+      v2: 0.40625
+      offsetX: 21
+      offsetY: 22
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_3
+      x: 458
+      y: 24
+      width: 37
+      height: 42
+      u: 0.89453125
+      v: 0.90625
+      u2: 0.9667969
+      v2: 0.7421875
+      offsetX: 41
+      offsetY: 11
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_5
+      x: 184
+      y: 31
+      width: 48
+      height: 51
+      u: 0.359375
+      v: 0.87890625
+      u2: 0.45898438
+      v2: 0.69140625
+      offsetX: 35
+      offsetY: 6
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_7
+      x: 71
+      y: 31
+      width: 48
+      height: 111
+      u: 0.13867188
+      v: 0.87890625
+      u2: 0.35546875
+      v2: 0.69140625
+      offsetX: 36
+      offsetY: 8
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: penshui/peng_9
+      x: 365
+      y: 18
+      width: 48
+      height: 91
+      u: 0.7128906
+      v: 0.9296875
+      u2: 0.890625
+      v2: 0.7421875
+      offsetX: 35
+      offsetY: 23
+      originalWidth: 111
+      originalHeight: 150
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

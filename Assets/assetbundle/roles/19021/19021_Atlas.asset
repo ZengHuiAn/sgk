@@ -1,0 +1,461 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19021_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 5137fef85db0ff14aad3e692f63c01e1, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 440e6bde35778c34f953111b2cc8557e, type: 2}
+  atlas:
+    pages:
+    - name: 19021.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 440e6bde35778c34f953111b2cc8557e, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: biaoqing_atk
+      x: 1107
+      y: 1720
+      width: 76
+      height: 85
+      u: 0.54052734
+      v: 0.16015625
+      u2: 0.58203125
+      v2: 0.123046875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 76
+      originalHeight: 85
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: biaoqing_hit
+      x: 1198
+      y: 1786
+      width: 84
+      height: 72
+      u: 0.58496094
+      v: 0.12792969
+      u2: 0.62597656
+      v2: 0.09277344
+      offsetX: 1
+      offsetY: 0
+      originalWidth: 85
+      originalHeight: 75
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: biaoqing_idle
+      x: 1194
+      y: 1712
+      width: 76
+      height: 72
+      u: 0.5830078
+      v: 0.1640625
+      u2: 0.6201172
+      v2: 0.12890625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 76
+      originalHeight: 72
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: biaoqing_win
+      x: 1963
+      y: 1956
+      width: 84
+      height: 77
+      u: 0.9584961
+      v: 0.044921875
+      u2: 0.99609375
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 0
+      originalWidth: 85
+      originalHeight: 77
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shenti
+      x: 2
+      y: 175
+      width: 185
+      height: 347
+      u: 0.0009765625
+      v: 0.9145508
+      u2: 0.091308594
+      v2: 0.7451172
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 185
+      originalHeight: 347
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tou1
+      x: 2
+      y: 40
+      width: 133
+      height: 193
+      u: 0.0009765625
+      v: 0.98046875
+      u2: 0.095214844
+      v2: 0.91552734
+      offsetX: 0
+      offsetY: 2
+      originalWidth: 133
+      originalHeight: 195
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tou2
+      x: 1570
+      y: 1916
+      width: 124
+      height: 170
+      u: 0.76660156
+      v: 0.064453125
+      u2: 0.8496094
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 124
+      originalHeight: 170
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toufa11
+      x: 1742
+      y: 1966
+      width: 74
+      height: 130
+      u: 0.85058594
+      v: 0.040039062
+      u2: 0.9140625
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 74
+      originalHeight: 130
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toufa12
+      x: 1284
+      y: 1782
+      width: 76
+      height: 80
+      u: 0.6269531
+      v: 0.12988281
+      u2: 0.6660156
+      v2: 0.09277344
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 76
+      originalHeight: 80
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toufa13
+      x: 1107
+      y: 1798
+      width: 119
+      height: 89
+      u: 0.54052734
+      v: 0.12207031
+      u2: 0.5839844
+      v2: 0.063964844
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 119
+      originalHeight: 89
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toufa2
+      x: 1874
+      y: 1957
+      width: 87
+      height: 83
+      u: 0.91503906
+      v: 0.044433594
+      u2: 0.95751953
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 89
+      originalHeight: 83
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toufa3
+      x: 374
+      y: 1516
+      width: 283
+      height: 147
+      u: 0.18261719
+      v: 0.25976562
+      u2: 0.32080078
+      v2: 0.18798828
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 283
+      originalHeight: 147
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toufa4
+      x: 906
+      y: 1919
+      width: 290
+      height: 121
+      u: 0.4423828
+      v: 0.06298828
+      u2: 0.5839844
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 290
+      originalHeight: 121
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: wuqi
+      x: 259
+      y: 1350
+      width: 113
+      height: 690
+      u: 0.12646484
+      v: 0.3408203
+      u2: 0.18164062
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 113
+      originalHeight: 690
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yaodai1
+      x: 906
+      y: 1724
+      width: 193
+      height: 199
+      u: 0.4423828
+      v: 0.15820312
+      u2: 0.5395508
+      v2: 0.063964844
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 193
+      originalHeight: 199
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yaodai2
+      x: 1198
+      y: 1860
+      width: 192
+      height: 180
+      u: 0.58496094
+      v: 0.091796875
+      u2: 0.67871094
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 180
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yaodai3
+      x: 374
+      y: 1410
+      width: 104
+      height: 276
+      u: 0.18261719
+      v: 0.31152344
+      u2: 0.3173828
+      v2: 0.2607422
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 104
+      originalHeight: 276
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yaohua
+      x: 374
+      y: 1665
+      width: 300
+      height: 375
+      u: 0.18261719
+      v: 0.18701172
+      u2: 0.32910156
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 300
+      originalHeight: 375
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: youbi
+      x: 1392
+      y: 1914
+      width: 176
+      height: 126
+      u: 0.6796875
+      v: 0.06542969
+      u2: 0.765625
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 176
+      originalHeight: 126
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: youtui
+      x: 2
+      y: 524
+      width: 209
+      height: 745
+      u: 0.0009765625
+      v: 0.7441406
+      u2: 0.103027344
+      v2: 0.3803711
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 209
+      originalHeight: 745
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zuobi
+      x: 676
+      y: 1720
+      width: 228
+      height: 320
+      u: 0.33007812
+      v: 0.16015625
+      u2: 0.44140625
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 228
+      originalHeight: 320
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zuoshou
+      x: 259
+      y: 1268
+      width: 80
+      height: 93
+      u: 0.12646484
+      v: 0.38085938
+      u2: 0.171875
+      v2: 0.34179688
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 80
+      originalHeight: 93
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zuoshoulian
+      x: 374
+      y: 1351
+      width: 61
+      height: 57
+      u: 0.18261719
+      v: 0.34033203
+      u2: 0.21240234
+      v2: 0.3125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 61
+      originalHeight: 57
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zuotui
+      x: 2
+      y: 1271
+      width: 255
+      height: 769
+      u: 0.0009765625
+      v: 0.37939453
+      u2: 0.12548828
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 255
+      originalHeight: 769
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

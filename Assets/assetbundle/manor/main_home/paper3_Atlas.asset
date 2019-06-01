@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: paper3_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: cc604750c15a9ab4c9e0a3a5b5fbdf33, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 9ec4e87e5b4dbd443ad9225602bf8f19, type: 2}
+  atlas:
+    pages:
+    - name: paper3.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 9ec4e87e5b4dbd443ad9225602bf8f19, type: 2}
+      width: 64
+      height: 64
+    regions:
+    - pageIndex: 0
+      name: paper3
+      x: 2
+      y: 2
+      width: 32
+      height: 52
+      u: 0.03125
+      v: 0.96875
+      u2: 0.53125
+      v2: 0.15625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 32
+      originalHeight: 52
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

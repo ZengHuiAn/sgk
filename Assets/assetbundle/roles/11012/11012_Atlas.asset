@@ -1,0 +1,281 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 11012_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 10b92c880aa47d342a80cd6c7f429b01, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 5f15e669c6fa94a46ab33fd9b703bb84, type: 2}
+  atlas:
+    pages:
+    - name: 11012.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 5f15e669c6fa94a46ab33fd9b703bb84, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: gongji
+      x: 2
+      y: 7
+      width: 152
+      height: 224
+      u: 0.0009765625
+      v: 0.99658203
+      u2: 0.07519531
+      v2: 0.88720703
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 152
+      originalHeight: 224
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: guangxiao
+      x: 1376
+      y: 1763
+      width: 462
+      height: 283
+      u: 0.671875
+      v: 0.13916016
+      u2: 0.89746094
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 462
+      originalHeight: 283
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_shou
+      x: 1376
+      y: 1650
+      width: 111
+      height: 223
+      u: 0.671875
+      v: 0.19433594
+      u2: 0.7807617
+      v2: 0.14013672
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 111
+      originalHeight: 224
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_shoubi
+      x: 1840
+      y: 1898
+      width: 148
+      height: 206
+      u: 0.8984375
+      v: 0.07324219
+      u2: 0.99902344
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 148
+      originalHeight: 206
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: r_shou
+      x: 713
+      y: 1059
+      width: 87
+      height: 177
+      u: 0.34814453
+      v: 0.48291016
+      u2: 0.4345703
+      v2: 0.4404297
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 87
+      originalHeight: 177
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: r_shoubi
+      x: 156
+      y: 43
+      width: 153
+      height: 188
+      u: 0.076171875
+      v: 0.9790039
+      u2: 0.1508789
+      v2: 0.88720703
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 153
+      originalHeight: 188
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shenti
+      x: 713
+      y: 1148
+      width: 343
+      height: 465
+      u: 0.34814453
+      v: 0.43945312
+      u2: 0.515625
+      v2: 0.21240234
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 343
+      originalHeight: 465
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shouji
+      x: 446
+      y: 822
+      width: 152
+      height: 224
+      u: 0.21777344
+      v: 0.5986328
+      u2: 0.2919922
+      v2: 0.4892578
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 152
+      originalHeight: 224
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toushi1
+      x: 1840
+      y: 1771
+      width: 40
+      height: 125
+      u: 0.8984375
+      v: 0.1352539
+      u2: 0.91796875
+      v2: 0.07421875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 40
+      originalHeight: 125
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toushi2
+      x: 446
+      y: 724
+      width: 52
+      height: 96
+      u: 0.21777344
+      v: 0.6464844
+      u2: 0.24316406
+      v2: 0.5996094
+      offsetX: 9
+      offsetY: 0
+      originalWidth: 61
+      originalHeight: 96
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui
+      x: 2
+      y: 1048
+      width: 709
+      height: 998
+      u: 0.0009765625
+      v: 0.48828125
+      u2: 0.34716797
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 709
+      originalHeight: 998
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: wuqi
+      x: 713
+      y: 1615
+      width: 661
+      height: 431
+      u: 0.34814453
+      v: 0.21142578
+      u2: 0.67089844
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 661
+      originalHeight: 431
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: wuqi1
+      x: 2
+      y: 233
+      width: 442
+      height: 813
+      u: 0.0009765625
+      v: 0.88623047
+      u2: 0.21679688
+      v2: 0.4892578
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 442
+      originalHeight: 815
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zhengc
+      x: 1058
+      y: 1397
+      width: 152
+      height: 216
+      u: 0.51660156
+      v: 0.3178711
+      u2: 0.5908203
+      v2: 0.21240234
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 152
+      originalHeight: 216
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

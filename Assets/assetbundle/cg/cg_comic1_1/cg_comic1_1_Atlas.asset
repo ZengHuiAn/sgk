@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_comic1_1_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 62a9efd7954ab5c4a902c7b306600db2, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 559839fd2f48a004cb618fc813b9bbd8, type: 2}
+  atlas:
+    pages:
+    - name: cg_comic1_1.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 559839fd2f48a004cb618fc813b9bbd8, type: 2}
+      width: 2048
+      height: 1024
+    regions:
+    - pageIndex: 0
+      name: images/bg
+      x: 1639
+      y: 668
+      width: 192
+      height: 334
+      u: 0.80029297
+      v: 0.34765625
+      u2: 0.89404297
+      v2: 0.021484375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/fenjing1
+      x: 814
+      y: 419
+      width: 823
+      height: 583
+      u: 0.39746094
+      v: 0.5908203
+      u2: 0.7993164
+      v2: 0.021484375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 823
+      originalHeight: 583
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/fenjing2
+      x: 2
+      y: 2
+      width: 810
+      height: 1000
+      u: 0.0009765625
+      v: 0.9980469
+      u2: 0.39648438
+      v2: 0.021484375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 810
+      originalHeight: 1000
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/word1
+      x: 814
+      y: 202
+      width: 349
+      height: 215
+      u: 0.39746094
+      v: 0.8027344
+      u2: 0.5678711
+      v2: 0.59277344
+      offsetX: 0
+      offsetY: 3
+      originalWidth: 352
+      originalHeight: 218
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 11050_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: c5e2597b71e661c428d34810aa0cf5db, type: 3}
+  materials:
+  - {fileID: 2100000, guid: effeae4637191dd499639cb668d24233, type: 2}
+  atlas:
+    pages:
+    - name: 11050.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: effeae4637191dd499639cb668d24233, type: 2}
+      width: 256
+      height: 64
+    regions:
+    - pageIndex: 0
+      name: 1
+      x: 124
+      y: 3
+      width: 80
+      height: 44
+      u: 0.484375
+      v: 0.953125
+      u2: 0.796875
+      v2: 0.265625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 80
+      originalHeight: 44
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shadow1
+      x: 2
+      y: 2
+      width: 120
+      height: 45
+      u: 0.0078125
+      v: 0.96875
+      u2: 0.4765625
+      v2: 0.265625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 120
+      originalHeight: 45
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

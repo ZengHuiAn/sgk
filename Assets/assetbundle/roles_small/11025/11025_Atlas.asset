@@ -1,0 +1,1451 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 11025_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: d220d913ef059e14e9800762a834bf0d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 81d244689a70ec6489bfd6b01f5c98c1, type: 2}
+  atlas:
+    pages:
+    - name: 11025.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 81d244689a70ec6489bfd6b01f5c98c1, type: 2}
+      width: 512
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: b_kua
+      x: 34
+      y: 78
+      width: 34
+      height: 15
+      u: 0.06640625
+      v: 0.84765625
+      u2: 0.095703125
+      v2: 0.78125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 34
+      originalHeight: 15
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_liuhai
+      x: 2
+      y: 362
+      width: 51
+      height: 50
+      u: 0.00390625
+      v: 0.29296875
+      u2: 0.1015625
+      v2: 0.19335938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 51
+      originalHeight: 50
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_piaodai1
+      x: 445
+      y: 486
+      width: 22
+      height: 63
+      u: 0.8691406
+      v: 0.05078125
+      u2: 0.9921875
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 22
+      originalHeight: 63
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_shouqiang1
+      x: 269
+      y: 400
+      width: 8
+      height: 14
+      u: 0.5253906
+      v: 0.21875
+      u2: 0.5527344
+      v2: 0.203125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 8
+      originalHeight: 14
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_shouqiang2
+      x: 253
+      y: 422
+      width: 13
+      height: 27
+      u: 0.49414062
+      v: 0.17578125
+      u2: 0.51953125
+      v2: 0.123046875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 13
+      originalHeight: 27
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_tou
+      x: 54
+      y: 436
+      width: 62
+      height: 72
+      u: 0.10546875
+      v: 0.1484375
+      u2: 0.2265625
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 62
+      originalHeight: 72
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_xiongbu
+      x: 2
+      y: 80
+      width: 30
+      height: 47
+      u: 0.00390625
+      v: 0.84375
+      u2: 0.0625
+      v2: 0.7519531
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 30
+      originalHeight: 47
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_youdatui
+      x: 25
+      y: 233
+      width: 16
+      height: 37
+      u: 0.048828125
+      v: 0.5449219
+      u2: 0.12109375
+      v2: 0.5136719
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 37
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_youshouzhang
+      x: 269
+      y: 410
+      width: 16
+      height: 15
+      u: 0.5253906
+      v: 0.19921875
+      u2: 0.5546875
+      v2: 0.16796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 15
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_youxiaotui
+      x: 92
+      y: 307
+      width: 15
+      height: 45
+      u: 0.1796875
+      v: 0.40039062
+      u2: 0.20898438
+      v2: 0.3125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 15
+      originalHeight: 45
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_zuodatui
+      x: 109
+      y: 305
+      width: 16
+      height: 37
+      u: 0.21289062
+      v: 0.40429688
+      u2: 0.28515625
+      v2: 0.37304688
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 37
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_zuoshouzhang
+      x: 68
+      y: 220
+      width: 12
+      height: 13
+      u: 0.1328125
+      v: 0.5703125
+      u2: 0.15625
+      v2: 0.5449219
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 12
+      originalHeight: 13
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b_zuoxiaotui
+      x: 101
+      y: 364
+      width: 15
+      height: 45
+      u: 0.19726562
+      v: 0.2890625
+      u2: 0.28515625
+      v2: 0.25976562
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 15
+      originalHeight: 45
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_erdou1
+      x: 64
+      y: 235
+      width: 16
+      height: 17
+      u: 0.125
+      v: 0.5410156
+      u2: 0.15625
+      v2: 0.5078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 17
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_erdou2
+      x: 2
+      y: 3
+      width: 22
+      height: 26
+      u: 0.00390625
+      v: 0.9941406
+      u2: 0.046875
+      v2: 0.9433594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 22
+      originalHeight: 27
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_houfa
+      x: 267
+      y: 455
+      width: 53
+      height: 70
+      u: 0.5214844
+      v: 0.111328125
+      u2: 0.6582031
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 55
+      originalHeight: 71
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_kua
+      x: 32
+      y: 44
+      width: 32
+      height: 15
+      u: 0.0625
+      v: 0.9140625
+      u2: 0.091796875
+      v2: 0.8515625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 32
+      originalHeight: 15
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_piaodai1
+      x: 445
+      y: 458
+      width: 26
+      height: 57
+      u: 0.8691406
+      v: 0.10546875
+      u2: 0.98046875
+      v2: 0.0546875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 26
+      originalHeight: 57
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_piaodai2
+      x: 27
+      y: 306
+      width: 23
+      height: 54
+      u: 0.052734375
+      v: 0.40234375
+      u2: 0.09765625
+      v2: 0.296875
+      offsetX: 0
+      offsetY: 5
+      originalWidth: 24
+      originalHeight: 59
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_shouqiang1
+      x: 303
+      y: 409
+      width: 7
+      height: 11
+      u: 0.5917969
+      v: 0.20117188
+      u2: 0.60546875
+      v2: 0.1796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 7
+      originalHeight: 11
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_shouqiang2
+      x: 197
+      y: 422
+      width: 16
+      height: 27
+      u: 0.38476562
+      v: 0.17578125
+      u2: 0.41601562
+      v2: 0.123046875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 27
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_tou
+      x: 339
+      y: 454
+      width: 54
+      height: 59
+      u: 0.6621094
+      v: 0.11328125
+      u2: 0.77734375
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 54
+      originalHeight: 70
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_toufa1
+      x: 27
+      y: 294
+      width: 10
+      height: 41
+      u: 0.052734375
+      v: 0.42578125
+      u2: 0.1328125
+      v2: 0.40625
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 10
+      originalHeight: 42
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_toufa2
+      x: 25
+      y: 251
+      width: 17
+      height: 41
+      u: 0.048828125
+      v: 0.5097656
+      u2: 0.08203125
+      v2: 0.4296875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 41
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_toufa3
+      x: 2
+      y: 179
+      width: 29
+      height: 52
+      u: 0.00390625
+      v: 0.6503906
+      u2: 0.060546875
+      v2: 0.5488281
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 29
+      originalHeight: 52
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_xiongbu
+      x: 2
+      y: 31
+      width: 28
+      height: 47
+      u: 0.00390625
+      v: 0.9394531
+      u2: 0.05859375
+      v2: 0.84765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 28
+      originalHeight: 47
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_youdabi
+      x: 170
+      y: 431
+      width: 14
+      height: 25
+      u: 0.33203125
+      v: 0.15820312
+      u2: 0.38085938
+      v2: 0.13085938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 14
+      originalHeight: 25
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_youdatui
+      x: 63
+      y: 254
+      width: 16
+      height: 38
+      u: 0.123046875
+      v: 0.50390625
+      u2: 0.15429688
+      v2: 0.4296875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 38
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_youjiandai
+      x: 353
+      y: 423
+      width: 8
+      height: 12
+      u: 0.6894531
+      v: 0.17382812
+      u2: 0.7050781
+      v2: 0.15039062
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 8
+      originalHeight: 12
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_youshouzhang
+      x: 155
+      y: 382
+      width: 16
+      height: 14
+      u: 0.30273438
+      v: 0.25390625
+      u2: 0.33398438
+      v2: 0.2265625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 14
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_youxiaobi
+      x: 253
+      y: 400
+      width: 14
+      height: 20
+      u: 0.49414062
+      v: 0.21875
+      u2: 0.5214844
+      v2: 0.1796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 14
+      originalHeight: 20
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_youxiaotui
+      x: 52
+      y: 190
+      width: 14
+      height: 41
+      u: 0.1015625
+      v: 0.62890625
+      u2: 0.12890625
+      v2: 0.5488281
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 14
+      originalHeight: 41
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_zuodabi
+      x: 268
+      y: 428
+      width: 16
+      height: 25
+      u: 0.5234375
+      v: 0.1640625
+      u2: 0.5546875
+      v2: 0.115234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 25
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_zuodatui
+      x: 44
+      y: 251
+      width: 17
+      height: 41
+      u: 0.0859375
+      v: 0.5097656
+      u2: 0.119140625
+      v2: 0.4296875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 41
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_zuojiandai
+      x: 314
+      y: 423
+      width: 18
+      height: 12
+      u: 0.61328125
+      v: 0.17382812
+      u2: 0.6484375
+      v2: 0.15039062
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 18
+      originalHeight: 12
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_zuoshouzhang
+      x: 334
+      y: 422
+      width: 13
+      height: 17
+      u: 0.65234375
+      v: 0.17578125
+      u2: 0.6855469
+      v2: 0.15039062
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 13
+      originalHeight: 17
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_zuoxiaobi
+      x: 197
+      y: 399
+      width: 16
+      height: 21
+      u: 0.38476562
+      v: 0.22070312
+      u2: 0.41601562
+      v2: 0.1796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 21
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_zuoxiaotui
+      x: 73
+      y: 307
+      width: 17
+      height: 45
+      u: 0.14257812
+      v: 0.40039062
+      u2: 0.17578125
+      v2: 0.3125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 45
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: weiba
+      x: 2
+      y: 415
+      width: 50
+      height: 93
+      u: 0.00390625
+      v: 0.18945312
+      u2: 0.1015625
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 50
+      originalHeight: 93
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_kua
+      x: 53
+      y: 115
+      width: 33
+      height: 13
+      u: 0.103515625
+      v: 0.7753906
+      u2: 0.12890625
+      v2: 0.7109375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 33
+      originalHeight: 13
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_liuhai
+      x: 54
+      y: 384
+      width: 51
+      height: 50
+      u: 0.10546875
+      v: 0.25
+      u2: 0.20507812
+      v2: 0.15234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 51
+      originalHeight: 50
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_piaodai2
+      x: 2
+      y: 297
+      width: 23
+      height: 63
+      u: 0.00390625
+      v: 0.41992188
+      u2: 0.048828125
+      v2: 0.296875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 23
+      originalHeight: 64
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_shouqiang2
+      x: 286
+      y: 439
+      width: 14
+      height: 27
+      u: 0.55859375
+      v: 0.14257812
+      u2: 0.6113281
+      v2: 0.115234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 14
+      originalHeight: 27
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_tou
+      x: 118
+      y: 447
+      width: 61
+      height: 73
+      u: 0.23046875
+      v: 0.12695312
+      u2: 0.37304688
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 61
+      originalHeight: 73
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_xiongbu
+      x: 2
+      y: 129
+      width: 30
+      height: 48
+      u: 0.00390625
+      v: 0.7480469
+      u2: 0.0625
+      v2: 0.6542969
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 30
+      originalHeight: 48
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_youdabi
+      x: 215
+      y: 424
+      width: 17
+      height: 25
+      u: 0.41992188
+      v: 0.171875
+      u2: 0.453125
+      v2: 0.123046875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 25
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_youdatui
+      x: 109
+      y: 323
+      width: 17
+      height: 39
+      u: 0.21289062
+      v: 0.36914062
+      u2: 0.24609375
+      v2: 0.29296875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 39
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_youjiandai
+      x: 68
+      y: 205
+      width: 13
+      height: 12
+      u: 0.1328125
+      v: 0.5996094
+      u2: 0.15625
+      v2: 0.57421875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 13
+      originalHeight: 12
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_youshouzhang
+      x: 68
+      y: 190
+      width: 12
+      height: 13
+      u: 0.1328125
+      v: 0.62890625
+      u2: 0.15625
+      v2: 0.6035156
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 12
+      originalHeight: 13
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_youxiaobi
+      x: 389
+      y: 436
+      width: 16
+      height: 20
+      u: 0.7597656
+      v: 0.1484375
+      u2: 0.7988281
+      v2: 0.1171875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 20
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_youxiaotui
+      x: 107
+      y: 415
+      width: 14
+      height: 49
+      u: 0.20898438
+      v: 0.18945312
+      u2: 0.3046875
+      v2: 0.16210938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 14
+      originalHeight: 49
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_zuodabi
+      x: 234
+      y: 424
+      width: 17
+      height: 25
+      u: 0.45703125
+      v: 0.171875
+      u2: 0.49023438
+      v2: 0.123046875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 25
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_zuodatui
+      x: 128
+      y: 323
+      width: 17
+      height: 39
+      u: 0.25
+      v: 0.36914062
+      u2: 0.28320312
+      v2: 0.29296875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 39
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_zuojiandai
+      x: 67
+      y: 176
+      width: 13
+      height: 12
+      u: 0.13085938
+      v: 0.65625
+      u2: 0.15625
+      v2: 0.6328125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 13
+      originalHeight: 12
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_zuoshouzhang
+      x: 32
+      y: 28
+      width: 16
+      height: 14
+      u: 0.0625
+      v: 0.9453125
+      u2: 0.09375
+      v2: 0.91796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 14
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_zuoxiaobi
+      x: 411
+      y: 436
+      width: 16
+      height: 20
+      u: 0.8027344
+      v: 0.1484375
+      u2: 0.8417969
+      v2: 0.1171875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 20
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_zuoxiaotui
+      x: 107
+      y: 399
+      width: 14
+      height: 49
+      u: 0.20898438
+      v: 0.22070312
+      u2: 0.3046875
+      v2: 0.19335938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 14
+      originalHeight: 49
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_erdou1
+      x: 176
+      y: 401
+      width: 19
+      height: 28
+      u: 0.34375
+      v: 0.21679688
+      u2: 0.38085938
+      v2: 0.16210938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 19
+      originalHeight: 28
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_erdou2
+      x: 215
+      y: 399
+      width: 18
+      height: 23
+      u: 0.41992188
+      v: 0.22070312
+      u2: 0.45507812
+      v2: 0.17578125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 18
+      originalHeight: 23
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_kua
+      x: 158
+      y: 398
+      width: 31
+      height: 16
+      u: 0.30859375
+      v: 0.22265625
+      u2: 0.33984375
+      v2: 0.16210938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 31
+      originalHeight: 16
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_liuhai
+      x: 400
+      y: 454
+      width: 43
+      height: 54
+      u: 0.78125
+      v: 0.11328125
+      u2: 0.8652344
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 43
+      originalHeight: 54
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_piaodai1
+      x: 107
+      y: 381
+      width: 16
+      height: 46
+      u: 0.20898438
+      v: 0.25585938
+      u2: 0.29882812
+      v2: 0.22460938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 46
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_piaodai2
+      x: 2
+      y: 233
+      width: 21
+      height: 62
+      u: 0.00390625
+      v: 0.5449219
+      u2: 0.044921875
+      v2: 0.42382812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 21
+      originalHeight: 63
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_shouqiang1
+      x: 67
+      y: 166
+      width: 8
+      height: 8
+      u: 0.13085938
+      v: 0.67578125
+      u2: 0.14648438
+      v2: 0.66015625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 8
+      originalHeight: 8
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_shouqiang2
+      x: 286
+      y: 422
+      width: 15
+      height: 26
+      u: 0.55859375
+      v: 0.17578125
+      u2: 0.609375
+      v2: 0.14648438
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 15
+      originalHeight: 26
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_tou
+      x: 193
+      y: 451
+      width: 57
+      height: 72
+      u: 0.37695312
+      v: 0.119140625
+      u2: 0.5175781
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 57
+      originalHeight: 72
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_toufa1
+      x: 33
+      y: 190
+      width: 17
+      height: 41
+      u: 0.064453125
+      v: 0.62890625
+      u2: 0.09765625
+      v2: 0.5488281
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 41
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_toufa2
+      x: 53
+      y: 150
+      width: 12
+      height: 38
+      u: 0.103515625
+      v: 0.70703125
+      u2: 0.12695312
+      v2: 0.6328125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 12
+      originalHeight: 38
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_xiongbu
+      x: 54
+      y: 354
+      width: 28
+      height: 45
+      u: 0.10546875
+      v: 0.30859375
+      u2: 0.19335938
+      v2: 0.25390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 28
+      originalHeight: 45
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_youdabi
+      x: 235
+      y: 398
+      width: 16
+      height: 24
+      u: 0.45898438
+      v: 0.22265625
+      u2: 0.49023438
+      v2: 0.17578125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 24
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_youdatui
+      x: 34
+      y: 152
+      width: 17
+      height: 36
+      u: 0.06640625
+      v: 0.703125
+      u2: 0.099609375
+      v2: 0.6328125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 36
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_youshouzhang
+      x: 286
+      y: 409
+      width: 11
+      height: 15
+      u: 0.55859375
+      v: 0.20117188
+      u2: 0.5878906
+      v2: 0.1796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 11
+      originalHeight: 15
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_youxiaobi
+      x: 315
+      y: 437
+      width: 16
+      height: 21
+      u: 0.6152344
+      v: 0.14648438
+      u2: 0.65625
+      v2: 0.115234375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 21
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_youxiaotui
+      x: 52
+      y: 306
+      width: 19
+      height: 46
+      u: 0.1015625
+      v: 0.40234375
+      u2: 0.13867188
+      v2: 0.3125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 19
+      originalHeight: 46
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_zuodabi
+      x: 338
+      y: 437
+      width: 15
+      height: 26
+      u: 0.66015625
+      v: 0.14648438
+      u2: 0.7109375
+      v2: 0.1171875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 15
+      originalHeight: 26
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_zuodatui
+      x: 34
+      y: 114
+      width: 17
+      height: 36
+      u: 0.06640625
+      v: 0.77734375
+      u2: 0.099609375
+      v2: 0.70703125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 17
+      originalHeight: 36
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_zuoshouzhang
+      x: 433
+      y: 436
+      width: 16
+      height: 14
+      u: 0.8457031
+      v: 0.1484375
+      u2: 0.8730469
+      v2: 0.1171875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 16
+      originalHeight: 14
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_zuoxiaobi
+      x: 366
+      y: 436
+      width: 16
+      height: 21
+      u: 0.71484375
+      v: 0.1484375
+      u2: 0.7558594
+      v2: 0.1171875
+      offsetX: 0
+      offsetY: 4
+      originalWidth: 16
+      originalHeight: 25
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_zuoxiaotui
+      x: 118
+      y: 431
+      width: 14
+      height: 50
+      u: 0.23046875
+      v: 0.15820312
+      u2: 0.328125
+      v2: 0.13085938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 14
+      originalHeight: 50
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

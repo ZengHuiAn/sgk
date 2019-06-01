@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 12061_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: dfe430f2fb978fc4fb9fca7f4485b202, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8503de920a9506e448919b240b1b148f, type: 2}
+  atlas:
+    pages:
+    - name: 12061.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 8503de920a9506e448919b240b1b148f, type: 2}
+      width: 1024
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: 1
+      x: 2
+      y: 61
+      width: 434
+      height: 625
+      u: 0.001953125
+      v: 0.8808594
+      u2: 0.6123047
+      v2: 0.033203125
+      offsetX: 32
+      offsetY: 36
+      originalWidth: 497
+      originalHeight: 732
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2
+      x: 2
+      y: 2
+      width: 171
+      height: 57
+      u: 0.001953125
+      v: 0.99609375
+      u2: 0.16894531
+      v2: 0.8847656
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 171
+      originalHeight: 57
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 3
+      x: 629
+      y: 50
+      width: 186
+      height: 101
+      u: 0.6142578
+      v: 0.90234375
+      u2: 0.79589844
+      v2: 0.7050781
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 186
+      originalHeight: 101
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 4
+      x: 629
+      y: 153
+      width: 352
+      height: 342
+      u: 0.6142578
+      v: 0.7011719
+      u2: 0.9580078
+      v2: 0.033203125
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 352
+      originalHeight: 343
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

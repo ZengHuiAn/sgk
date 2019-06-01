@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_new13_1_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: bd75bb580b9b5ab4089e401c1cdbf873, type: 3}
+  materials:
+  - {fileID: 2100000, guid: d9eb27d386f37bf46ad7384eec4481ef, type: 2}
+  atlas:
+    pages:
+    - name: cg_new13_1.png
+      format: 6
+      minFilter: 0
+      magFilter: 0
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: d9eb27d386f37bf46ad7384eec4481ef, type: 2}
+      width: 1024
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: bg
+      x: 335
+      y: 118
+      width: 192
+      height: 334
+      u: 0.32714844
+      v: 0.76953125
+      u2: 0.6533203
+      v2: 0.39453125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: message
+      x: 335
+      y: 312
+      width: 588
+      height: 185
+      u: 0.32714844
+      v: 0.390625
+      u2: 0.9013672
+      v2: 0.029296875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 590
+      originalHeight: 187
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: word
+      x: 2
+      y: 2
+      width: 495
+      height: 331
+      u: 0.001953125
+      v: 0.99609375
+      u2: 0.3251953
+      v2: 0.029296875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 497
+      originalHeight: 333
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

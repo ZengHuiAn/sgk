@@ -1,0 +1,299 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_new5_1_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 2627de4c75966cd45b0127f235166754, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 132b432d99308b147a8eb9684947bdd5, type: 2}
+  atlas:
+    pages:
+    - name: cg_new5_1.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 132b432d99308b147a8eb9684947bdd5, type: 2}
+      width: 2048
+      height: 1024
+    regions:
+    - pageIndex: 0
+      name: 1bg
+      x: 389
+      y: 268
+      width: 391
+      height: 195
+      u: 0.1899414
+      v: 0.73828125
+      u2: 0.38085938
+      v2: 0.54785156
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 391
+      originalHeight: 195
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1ren
+      x: 879
+      y: 678
+      width: 376
+      height: 313
+      u: 0.42919922
+      v: 0.33789062
+      u2: 0.61279297
+      v2: 0.032226562
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 378
+      originalHeight: 315
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1wuqi
+      x: 434
+      y: 465
+      width: 447
+      height: 196
+      u: 0.21191406
+      v: 0.54589844
+      u2: 0.43017578
+      v2: 0.3544922
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 447
+      originalHeight: 196
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1wuqi2
+      x: 883
+      y: 480
+      width: 391
+      height: 196
+      u: 0.43115234
+      v: 0.53125
+      u2: 0.6220703
+      v2: 0.33984375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 391
+      originalHeight: 196
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2bg
+      x: 2
+      y: 2
+      width: 385
+      height: 146
+      u: 0.0009765625
+      v: 0.9980469
+      u2: 0.18896484
+      v2: 0.85546875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 146
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2leg
+      x: 1257
+      y: 681
+      width: 359
+      height: 310
+      u: 0.61376953
+      v: 0.33496094
+      u2: 0.7890625
+      v2: 0.032226562
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 361
+      originalHeight: 312
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2wuqi
+      x: 389
+      y: 80
+      width: 385
+      height: 186
+      u: 0.1899414
+      v: 0.921875
+      u2: 0.3779297
+      v2: 0.7402344
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 186
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 3ren
+      x: 2
+      y: 150
+      width: 385
+      height: 428
+      u: 0.0009765625
+      v: 0.8535156
+      u2: 0.18896484
+      v2: 0.43554688
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 429
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 3wuqi1
+      x: 434
+      y: 663
+      width: 349
+      height: 443
+      u: 0.21191406
+      v: 0.35253906
+      u2: 0.42822266
+      v2: 0.01171875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 349
+      originalHeight: 443
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 3wuqi2
+      x: 2
+      y: 580
+      width: 430
+      height: 432
+      u: 0.0009765625
+      v: 0.43359375
+      u2: 0.2109375
+      v2: 0.01171875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 431
+      originalHeight: 432
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: T3
+      x: 1612
+      y: 428
+      width: 279
+      height: 238
+      u: 0.7871094
+      v: 0.58203125
+      u2: 0.92333984
+      v2: 0.34960938
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 281
+      originalHeight: 240
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg
+      x: 1276
+      y: 487
+      width: 192
+      height: 334
+      u: 0.6230469
+      v: 0.52441406
+      u2: 0.7861328
+      v2: 0.33691406
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: fenceng
+      x: 879
+      y: 993
+      width: 768
+      height: 19
+      u: 0.42919922
+      v: 0.030273438
+      u2: 0.8041992
+      v2: 0.01171875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 770
+      originalHeight: 21
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: w1
+      x: 1618
+      y: 668
+      width: 286
+      height: 198
+      u: 0.79003906
+      v: 0.34765625
+      u2: 0.9296875
+      v2: 0.15429688
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 288
+      originalHeight: 200
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: w2
+      x: 1649
+      y: 868
+      width: 324
+      height: 144
+      u: 0.8051758
+      v: 0.15234375
+      u2: 0.9633789
+      v2: 0.01171875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 326
+      originalHeight: 146
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

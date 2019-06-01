@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: icon_yanjiuyuan_jinglian_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: c1bd735b2b2970c4781f2336d998bae0, type: 3}
+  materials:
+  - {fileID: 2100000, guid: ff018d874879b194ab67142ab8fe1fc9, type: 2}
+  atlas:
+    pages:
+    - name: icon_yanjiuyuan_jinglian.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: ff018d874879b194ab67142ab8fe1fc9, type: 2}
+      width: 128
+      height: 64
+    regions:
+    - pageIndex: 0
+      name: di
+      x: 2
+      y: 2
+      width: 61
+      height: 56
+      u: 0.015625
+      v: 0.96875
+      u2: 0.4921875
+      v2: 0.09375
+      offsetX: 8
+      offsetY: 9
+      originalWidth: 74
+      originalHeight: 68
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: xing1
+      x: 65
+      y: 37
+      width: 20
+      height: 21
+      u: 0.5078125
+      v: 0.421875
+      u2: 0.6640625
+      v2: 0.09375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 20
+      originalHeight: 21
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

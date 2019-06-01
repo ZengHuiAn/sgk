@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_sp_03_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: ac30c362088dbad42b9ddc7d01df6e9f, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 9ed885b68c1e2b14db49b626db4aaba5, type: 2}
+  atlas:
+    pages:
+    - name: cg_sp_03.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 9ed885b68c1e2b14db49b626db4aaba5, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: 1
+      x: 1004
+      y: 980
+      width: 553
+      height: 417
+      u: 0.49023438
+      v: 0.5214844
+      u2: 0.7602539
+      v2: 0.3178711
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 555
+      originalHeight: 419
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2
+      x: 561
+      y: 423
+      width: 380
+      height: 385
+      u: 0.27392578
+      v: 0.79345703
+      u2: 0.45947266
+      v2: 0.60546875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 382
+      originalHeight: 387
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 3
+      x: 2
+      y: 392
+      width: 557
+      height: 416
+      u: 0.0009765625
+      v: 0.80859375
+      u2: 0.27294922
+      v2: 0.60546875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 559
+      originalHeight: 418
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 4
+      x: 2
+      y: 2
+      width: 402
+      height: 388
+      u: 0.0009765625
+      v: 0.99902344
+      u2: 0.19726562
+      v2: 0.8095703
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 404
+      originalHeight: 390
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 5
+      x: 2
+      y: 1399
+      width: 1000
+      height: 587
+      u: 0.0009765625
+      v: 0.31689453
+      u2: 0.4892578
+      v2: 0.030273438
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 1002
+      originalHeight: 589
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 6
+      x: 1004
+      y: 1399
+      width: 1000
+      height: 587
+      u: 0.49023438
+      v: 0.31689453
+      u2: 0.9785156
+      v2: 0.030273438
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 1002
+      originalHeight: 589
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 7
+      x: 2
+      y: 810
+      width: 1000
+      height: 587
+      u: 0.0009765625
+      v: 0.6044922
+      u2: 0.4892578
+      v2: 0.3178711
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 1002
+      originalHeight: 589
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg
+      x: 1004
+      y: 786
+      width: 192
+      height: 334
+      u: 0.49023438
+      v: 0.61621094
+      u2: 0.6533203
+      v2: 0.52246094
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg2
+      x: 1559
+      y: 968
+      width: 192
+      height: 334
+      u: 0.76123047
+      v: 0.52734375
+      u2: 0.9243164
+      v2: 0.43359375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: he
+      x: 1559
+      y: 1162
+      width: 322
+      height: 235
+      u: 0.76123047
+      v: 0.4326172
+      u2: 0.91845703
+      v2: 0.3178711
+      offsetX: 11
+      offsetY: 6
+      originalWidth: 346
+      originalHeight: 244
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: rong1
+      x: 943
+      y: 562
+      width: 267
+      height: 222
+      u: 0.46044922
+      v: 0.72558594
+      u2: 0.5908203
+      v2: 0.6171875
+      offsetX: 5
+      offsetY: 14
+      originalWidth: 279
+      originalHeight: 238
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

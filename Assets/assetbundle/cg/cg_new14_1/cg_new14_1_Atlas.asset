@@ -1,0 +1,597 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_new14_1_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: f526a4db704881541884b23471fbea6b, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 85b41ee322202fb4ca9aaf296c74cbb8, type: 2}
+  - {fileID: 2100000, guid: 503929529d5bafa47aca0245e9dbce3d, type: 2}
+  atlas:
+    pages:
+    - name: cg_new14_1.png
+      format: 6
+      minFilter: 0
+      magFilter: 0
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 85b41ee322202fb4ca9aaf296c74cbb8, type: 2}
+      width: 2048
+      height: 2048
+    - name: cg_new14_12.png
+      format: 6
+      minFilter: 0
+      magFilter: 0
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 503929529d5bafa47aca0245e9dbce3d, type: 2}
+      width: 2048
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: 00
+      x: 1117
+      y: 1006
+      width: 384
+      height: 382
+      u: 0.54541016
+      v: 0.50878906
+      u2: 0.7319336
+      v2: 0.32128906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 384
+      originalHeight: 382
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: L1
+      x: 683
+      y: 675
+      width: 768
+      height: 39
+      u: 0.3334961
+      v: 0.67041016
+      u2: 0.35253906
+      v2: 0.29541016
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 770
+      originalHeight: 41
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: L2
+      x: 724
+      y: 707
+      width: 768
+      height: 136
+      u: 0.35351562
+      v: 0.65478516
+      u2: 0.7285156
+      v2: 0.5883789
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 770
+      originalHeight: 138
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: a1
+      x: 2
+      y: 2
+      width: 60
+      height: 45
+      u: 0.0009765625
+      v: 0.99902344
+      u2: 0.030273438
+      v2: 0.9770508
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 62
+      originalHeight: 47
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: a2
+      x: 644
+      y: 377
+      width: 296
+      height: 450
+      u: 0.31445312
+      v: 0.81591797
+      u2: 0.5341797
+      v2: 0.6713867
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 298
+      originalHeight: 452
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: a22
+      x: 1096
+      y: 449
+      width: 256
+      height: 432
+      u: 0.53515625
+      v: 0.7807617
+      u2: 0.74609375
+      v2: 0.6557617
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 258
+      originalHeight: 434
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: a3
+      x: 732
+      y: 1392
+      width: 648
+      height: 659
+      u: 0.35742188
+      v: 0.3203125
+      u2: 0.6791992
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 650
+      originalHeight: 661
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: a4
+      x: 1530
+      y: 500
+      width: 385
+      height: 249
+      u: 0.7470703
+      v: 0.7558594
+      u2: 0.9350586
+      v2: 0.63427734
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 249
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b1
+      x: 2
+      y: 49
+      width: 650
+      height: 307
+      u: 0.0009765625
+      v: 0.9760742
+      u2: 0.31835938
+      v2: 0.8261719
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 652
+      originalHeight: 309
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: b2
+      x: 1870
+      y: 1036
+      width: 385
+      height: 154
+      u: 0.91308594
+      v: 0.49414062
+      u2: 0.98828125
+      v2: 0.30615234
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 154
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: c1
+      x: 1780
+      y: 1423
+      width: 236
+      height: 248
+      u: 0.8691406
+      v: 0.30517578
+      u2: 0.9902344
+      v2: 0.1899414
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 238
+      originalHeight: 250
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: c2
+      x: 2
+      y: 358
+      width: 537
+      height: 640
+      u: 0.0009765625
+      v: 0.8251953
+      u2: 0.31347656
+      v2: 0.5629883
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 539
+      originalHeight: 642
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: c3
+      x: 1393
+      y: 1412
+      width: 385
+      height: 241
+      u: 0.6801758
+      v: 0.31054688
+      u2: 0.86816406
+      v2: 0.1928711
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 241
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: d1
+      x: 2
+      y: 1445
+      width: 728
+      height: 595
+      u: 0.0009765625
+      v: 0.2944336
+      u2: 0.3564453
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 730
+      originalHeight: 597
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: d3
+      x: 1393
+      y: 1655
+      width: 385
+      height: 366
+      u: 0.6801758
+      v: 0.19189453
+      u2: 0.8588867
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 366
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: d4
+      x: 1501
+      y: 1034
+      width: 367
+      height: 376
+      u: 0.73291016
+      v: 0.4951172
+      u2: 0.9121094
+      v2: 0.31152344
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 367
+      originalHeight: 376
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: e1
+      x: 2
+      y: 897
+      width: 546
+      height: 679
+      u: 0.0009765625
+      v: 0.5620117
+      u2: 0.33251953
+      v2: 0.29541016
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 548
+      originalHeight: 681
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: e2
+      x: 1494
+      y: 751
+      width: 253
+      height: 404
+      u: 0.7294922
+      v: 0.6333008
+      u2: 0.9267578
+      v2: 0.5097656
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 255
+      originalHeight: 406
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: e3
+      x: 1761
+      y: 1661
+      width: 209
+      height: 379
+      u: 0.8598633
+      v: 0.18896484
+      u2: 0.96191406
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 211
+      originalHeight: 381
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: e4
+      x: 1117
+      y: 884
+      width: 267
+      height: 120
+      u: 0.54541016
+      v: 0.5683594
+      u2: 0.67578125
+      v2: 0.5097656
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 269
+      originalHeight: 122
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: e5
+      x: 724
+      y: 845
+      width: 391
+      height: 545
+      u: 0.35351562
+      v: 0.58740234
+      u2: 0.5444336
+      v2: 0.32128906
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 393
+      originalHeight: 547
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: e8
+      x: 1110
+      y: 42
+      width: 405
+      height: 458
+      u: 0.5419922
+      v: 0.9794922
+      u2: 0.765625
+      v2: 0.7817383
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 407
+      originalHeight: 460
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: e9
+      x: 1570
+      y: 118
+      width: 385
+      height: 380
+      u: 0.76660156
+      v: 0.9423828
+      u2: 0.95458984
+      v2: 0.75683594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 385
+      originalHeight: 380
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: t2
+      x: 654
+      y: 59
+      width: 454
+      height: 316
+      u: 0.31933594
+      v: 0.9711914
+      u2: 0.5410156
+      v2: 0.81689453
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 456
+      originalHeight: 318
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 1
+      name: bg (2)
+      x: 1218
+      y: 318
+      width: 192
+      height: 334
+      u: 0.59472656
+      v: 0.37890625
+      u2: 0.7578125
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 1
+      name: d2
+      x: 899
+      y: 292
+      width: 218
+      height: 317
+      u: 0.43896484
+      v: 0.4296875
+      u2: 0.59375
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 220
+      originalHeight: 319
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 1
+      name: e6
+      x: 2
+      y: 148
+      width: 205
+      height: 362
+      u: 0.0009765625
+      v: 0.7109375
+      u2: 0.10107422
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 207
+      originalHeight: 364
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 1
+      name: e7
+      x: 568
+      y: 286
+      width: 224
+      height: 329
+      u: 0.27734375
+      v: 0.44140625
+      u2: 0.43798828
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 226
+      originalHeight: 331
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 1
+      name: t1
+      x: 1554
+      y: 331
+      width: 211
+      height: 179
+      u: 0.75878906
+      v: 0.35351562
+      u2: 0.8618164
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 213
+      originalHeight: 181
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 1
+      name: t3
+      x: 209
+      y: 2
+      width: 302
+      height: 205
+      u: 0.10205078
+      v: 0.99609375
+      u2: 0.20214844
+      v2: 0.40625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 304
+      originalHeight: 207
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 1
+      name: t4
+      x: 209
+      y: 306
+      width: 357
+      height: 204
+      u: 0.10205078
+      v: 0.40234375
+      u2: 0.2763672
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 359
+      originalHeight: 206
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

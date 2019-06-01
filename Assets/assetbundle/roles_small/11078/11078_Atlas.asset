@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 11078_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: d22b363e0f540f34da6b300a5844f84f, type: 3}
+  materials:
+  - {fileID: 2100000, guid: a2c9a6807f1c6d643838e1b82863ff6f, type: 2}
+  atlas:
+    pages:
+    - name: 11078.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: a2c9a6807f1c6d643838e1b82863ff6f, type: 2}
+      width: 512
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: b_jingzi
+      x: 2
+      y: 2
+      width: 138
+      height: 197
+      u: 0.00390625
+      v: 0.99609375
+      u2: 0.2734375
+      v2: 0.6113281
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 138
+      originalHeight: 197
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bc_jingzi
+      x: 2
+      y: 201
+      width: 138
+      height: 197
+      u: 0.00390625
+      v: 0.6074219
+      u2: 0.2734375
+      v2: 0.22265625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 138
+      originalHeight: 197
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: z_jingzi
+      x: 142
+      y: 204
+      width: 140
+      height: 194
+      u: 0.27734375
+      v: 0.6015625
+      u2: 0.55078125
+      v2: 0.22265625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 140
+      originalHeight: 194
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zc_jingzi
+      x: 142
+      y: 8
+      width: 140
+      height: 194
+      u: 0.27734375
+      v: 0.984375
+      u2: 0.55078125
+      v2: 0.60546875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 140
+      originalHeight: 194
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

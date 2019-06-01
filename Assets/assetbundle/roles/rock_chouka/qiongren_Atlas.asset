@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: qiongren_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: c3de6eeb90018554882f5c1f696ed301, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 93a8938f8cfe4a84b9bb5f87c8dd07b8, type: 2}
+  atlas:
+    pages:
+    - name: qiongren.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 93a8938f8cfe4a84b9bb5f87c8dd07b8, type: 2}
+      width: 512
+      height: 256
+    regions:
+    - pageIndex: 0
+      name: qiongren/1
+      x: 317
+      y: 108
+      width: 85
+      height: 130
+      u: 0.6191406
+      v: 0.578125
+      u2: 0.8730469
+      v2: 0.24609375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 85
+      originalHeight: 130
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: qiongren/2
+      x: 2
+      y: 10
+      width: 139
+      height: 183
+      u: 0.00390625
+      v: 0.9609375
+      u2: 0.27539062
+      v2: 0.24609375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 139
+      originalHeight: 183
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: qiongren/3
+      x: 143
+      y: 86
+      width: 172
+      height: 107
+      u: 0.27929688
+      v: 0.6640625
+      u2: 0.6152344
+      v2: 0.24609375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 172
+      originalHeight: 107
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: qiongren/4
+      x: 143
+      y: 2
+      width: 130
+      height: 82
+      u: 0.27929688
+      v: 0.9921875
+      u2: 0.5332031
+      v2: 0.671875
+      offsetX: 21
+      offsetY: 13
+      originalWidth: 172
+      originalHeight: 107
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: qiongren/dddd
+      x: 317
+      y: 30
+      width: 118
+      height: 76
+      u: 0.6191406
+      v: 0.8828125
+      u2: 0.8496094
+      v2: 0.5859375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 118
+      originalHeight: 76
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

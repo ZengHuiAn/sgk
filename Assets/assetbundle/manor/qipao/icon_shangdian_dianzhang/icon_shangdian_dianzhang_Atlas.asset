@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: icon_shangdian_dianzhang_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 60d7ae8d91baa4e4a8a9486129d4cb2f, type: 3}
+  materials:
+  - {fileID: 2100000, guid: d27f3f9441729b142a66c441803d038b, type: 2}
+  atlas:
+    pages:
+    - name: icon_shangdian_dianzhang.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: d27f3f9441729b142a66c441803d038b, type: 2}
+      width: 256
+      height: 256
+    regions:
+    - pageIndex: 0
+      name: 1
+      x: 2
+      y: 2
+      width: 202
+      height: 173
+      u: 0.0078125
+      v: 0.9921875
+      u2: 0.796875
+      v2: 0.31640625
+      offsetX: 17
+      offsetY: 12
+      originalWidth: 240
+      originalHeight: 196
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

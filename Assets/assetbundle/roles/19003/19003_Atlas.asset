@@ -1,0 +1,659 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19003_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 8dd2e0d84f649304fb4d01c18456340a, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 9069cf8e3ee8b2c49a140d5784beb64c, type: 2}
+  atlas:
+    pages:
+    - name: 19003.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 9069cf8e3ee8b2c49a140d5784beb64c, type: 2}
+      width: 2048
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: bozi
+      x: 601
+      y: 160
+      width: 59
+      height: 50
+      u: 0.29345703
+      v: 0.6875
+      u2: 0.3178711
+      v2: 0.5722656
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 59
+      originalHeight: 50
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shenti
+      x: 2
+      y: 205
+      width: 251
+      height: 305
+      u: 0.0009765625
+      v: 0.5996094
+      u2: 0.123535156
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 251
+      originalHeight: 305
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: si
+      x: 2
+      y: 4
+      width: 4
+      height: 180
+      u: 0.0009765625
+      v: 0.9921875
+      u2: 0.08886719
+      v2: 0.984375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 4
+      originalHeight: 180
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tou
+      x: 787
+      y: 297
+      width: 129
+      height: 143
+      u: 0.38427734
+      v: 0.41992188
+      u2: 0.44726562
+      v2: 0.140625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 129
+      originalHeight: 143
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui01_1
+      x: 255
+      y: 408
+      width: 102
+      height: 358
+      u: 0.12451172
+      v: 0.203125
+      u2: 0.2993164
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 102
+      originalHeight: 358
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui01_1_1
+      x: 615
+      y: 442
+      width: 68
+      height: 310
+      u: 0.30029297
+      v: 0.13671875
+      u2: 0.45166016
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 0
+      originalWidth: 69
+      originalHeight: 310
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui01_1_2
+      x: 255
+      y: 239
+      width: 167
+      height: 258
+      u: 0.12451172
+      v: 0.5332031
+      u2: 0.25048828
+      v2: 0.20703125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 167
+      originalHeight: 258
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui01_1_3
+      x: 922
+      y: 201
+      width: 103
+      height: 128
+      u: 0.4501953
+      v: 0.6074219
+      u2: 0.5004883
+      v2: 0.35742188
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 103
+      originalHeight: 128
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui01_2
+      x: 1162
+      y: 463
+      width: 47
+      height: 241
+      u: 0.5673828
+      v: 0.095703125
+      u2: 0.6850586
+      v2: 0.00390625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 53
+      originalHeight: 242
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui01_3
+      x: 918
+      y: 331
+      width: 52
+      height: 125
+      u: 0.4482422
+      v: 0.35351562
+      u2: 0.50927734
+      v2: 0.25195312
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 53
+      originalHeight: 125
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui02_1
+      x: 1405
+      y: 466
+      width: 44
+      height: 235
+      u: 0.68603516
+      v: 0.08984375
+      u2: 0.80078125
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 46
+      originalHeight: 236
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui02_1_1
+      x: 927
+      y: 446
+      width: 64
+      height: 233
+      u: 0.45263672
+      v: 0.12890625
+      u2: 0.56640625
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 64
+      originalHeight: 233
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui02_1_2
+      x: 264
+      y: 88
+      width: 198
+      height: 149
+      u: 0.12890625
+      v: 0.828125
+      u2: 0.22558594
+      v2: 0.5371094
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 198
+      originalHeight: 149
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui02_1_3
+      x: 1075
+      y: 340
+      width: 95
+      height: 73
+      u: 0.52490234
+      v: 0.3359375
+      u2: 0.57128906
+      v2: 0.19335938
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 95
+      originalHeight: 73
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui02_2
+      x: 515
+      y: 221
+      width: 136
+      height: 185
+      u: 0.25146484
+      v: 0.5683594
+      u2: 0.3178711
+      v2: 0.20703125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 136
+      originalHeight: 185
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui02_3
+      x: 653
+      y: 164
+      width: 103
+      height: 152
+      u: 0.31884766
+      v: 0.6796875
+      u2: 0.3930664
+      v2: 0.47851562
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 103
+      originalHeight: 152
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui03_1
+      x: 1836
+      y: 416
+      width: 94
+      height: 188
+      u: 0.8964844
+      v: 0.1875
+      u2: 0.98828125
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 94
+      originalHeight: 189
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui03_1_1
+      x: 2
+      y: 10
+      width: 27
+      height: 194
+      u: 0.0009765625
+      v: 0.98046875
+      u2: 0.095703125
+      v2: 0.9277344
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 27
+      originalHeight: 194
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui03_1_2
+      x: 1172
+      y: 338
+      width: 94
+      height: 79
+      u: 0.5722656
+      v: 0.33984375
+      u2: 0.61816406
+      v2: 0.18554688
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 94
+      originalHeight: 79
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui03_1_3
+      x: 922
+      y: 112
+      width: 87
+      height: 134
+      u: 0.4501953
+      v: 0.78125
+      u2: 0.515625
+      v2: 0.6113281
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 87
+      originalHeight: 134
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui03_2
+      x: 807
+      y: 152
+      width: 143
+      height: 113
+      u: 0.39404297
+      v: 0.703125
+      u2: 0.44921875
+      v2: 0.42382812
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 143
+      originalHeight: 113
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui03_3
+      x: 653
+      y: 269
+      width: 132
+      height: 171
+      u: 0.31884766
+      v: 0.47460938
+      u2: 0.38330078
+      v2: 0.140625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 132
+      originalHeight: 171
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui04_1
+      x: 1162
+      y: 419
+      width: 42
+      height: 170
+      u: 0.5673828
+      v: 0.18164062
+      u2: 0.6503906
+      v2: 0.099609375
+      offsetX: 0
+      offsetY: 8
+      originalWidth: 42
+      originalHeight: 178
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui04_1_1
+      x: 264
+      y: 45
+      width: 41
+      height: 180
+      u: 0.12890625
+      v: 0.9121094
+      u2: 0.21679688
+      v2: 0.83203125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 41
+      originalHeight: 180
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui04_1_2
+      x: 1027
+      y: 225
+      width: 53
+      height: 104
+      u: 0.50146484
+      v: 0.5605469
+      u2: 0.52734375
+      v2: 0.35742188
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 53
+      originalHeight: 104
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui04_1_3
+      x: 1642
+      y: 413
+      width: 97
+      height: 192
+      u: 0.8017578
+      v: 0.19335938
+      u2: 0.8955078
+      v2: 0.00390625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 97
+      originalHeight: 192
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui04_2
+      x: 464
+      y: 97
+      width: 135
+      height: 122
+      u: 0.2265625
+      v: 0.8105469
+      u2: 0.29248047
+      v2: 0.5722656
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 135
+      originalHeight: 122
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui04_3
+      x: 2
+      y: 39
+      width: 164
+      height: 260
+      u: 0.0009765625
+      v: 0.9238281
+      u2: 0.12792969
+      v2: 0.6035156
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 164
+      originalHeight: 260
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: ya01
+      x: 1075
+      y: 415
+      width: 29
+      height: 85
+      u: 0.52490234
+      v: 0.18945312
+      u2: 0.56640625
+      v2: 0.1328125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 29
+      originalHeight: 85
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: ya01_1
+      x: 601
+      y: 129
+      width: 23
+      height: 29
+      u: 0.29345703
+      v: 0.7480469
+      u2: 0.3046875
+      v2: 0.69140625
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 23
+      originalHeight: 30
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: ya01_2
+      x: 198
+      y: 2
+      width: 25
+      height: 35
+      u: 0.09667969
+      v: 0.99609375
+      u2: 0.10888672
+      v2: 0.9277344
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 25
+      originalHeight: 36
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: ya02
+      x: 1268
+      y: 334
+      width: 26
+      height: 83
+      u: 0.6191406
+      v: 0.34765625
+      u2: 0.63183594
+      v2: 0.18554688
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 26
+      originalHeight: 83
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: ya02_1
+      x: 615
+      y: 408
+      width: 26
+      height: 32
+      u: 0.30029297
+      v: 0.203125
+      u2: 0.31298828
+      v2: 0.140625
+      offsetX: 1
+      offsetY: 0
+      originalWidth: 27
+      originalHeight: 32
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: ya02_2
+      x: 1334
+      y: 428
+      width: 25
+      height: 33
+      u: 0.6513672
+      v: 0.1640625
+      u2: 0.6635742
+      v2: 0.099609375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 25
+      originalHeight: 33
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yanguang
+      x: 927
+      y: 385
+      width: 146
+      height: 59
+      u: 0.45263672
+      v: 0.24804688
+      u2: 0.5239258
+      v2: 0.1328125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 146
+      originalHeight: 59
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

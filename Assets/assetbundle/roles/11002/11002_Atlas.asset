@@ -1,0 +1,497 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 11002_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: fb0308d128c061141b5ffe9d03d7b259, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 72975e298b159884fbe3cb82697a169c, type: 2}
+  atlas:
+    pages:
+    - name: 11002.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 72975e298b159884fbe3cb82697a169c, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: face_battle
+      x: 266
+      y: 1394
+      width: 108
+      height: 90
+      u: 0.12988281
+      v: 0.31933594
+      u2: 0.18261719
+      v2: 0.27539062
+      offsetX: 0
+      offsetY: 3
+      originalWidth: 112
+      originalHeight: 93
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: face_hit
+      x: 376
+      y: 1382
+      width: 102
+      height: 85
+      u: 0.18359375
+      v: 0.3251953
+      u2: 0.22509766
+      v2: 0.27539062
+      offsetX: 0
+      offsetY: 3
+      originalWidth: 106
+      originalHeight: 88
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: face_nomal
+      x: 139
+      y: 378
+      width: 95
+      height: 84
+      u: 0.067871094
+      v: 0.8154297
+      u2: 0.10888672
+      v2: 0.76904297
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 97
+      originalHeight: 84
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: face_win
+      x: 866
+      y: 1565
+      width: 106
+      height: 89
+      u: 0.42285156
+      v: 0.23583984
+      u2: 0.47460938
+      v2: 0.19238281
+      offsetX: 0
+      offsetY: 3
+      originalWidth: 110
+      originalHeight: 92
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair_0
+      x: 1734
+      y: 1903
+      width: 143
+      height: 184
+      u: 0.8466797
+      v: 0.07080078
+      u2: 0.93652344
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 143
+      originalHeight: 184
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair_1
+      x: 231
+      y: 1349
+      width: 144
+      height: 33
+      u: 0.11279297
+      v: 0.3413086
+      u2: 0.12890625
+      v2: 0.2709961
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 144
+      originalHeight: 33
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair_2
+      x: 866
+      y: 1656
+      width: 183
+      height: 107
+      u: 0.42285156
+      v: 0.19140625
+      u2: 0.47509766
+      v2: 0.10205078
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 183
+      originalHeight: 107
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair_3
+      x: 2
+      y: 156
+      width: 224
+      height: 131
+      u: 0.0009765625
+      v: 0.9238281
+      u2: 0.064941406
+      v2: 0.8144531
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 224
+      originalHeight: 131
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair_4
+      x: 1306
+      y: 1892
+      width: 230
+      height: 154
+      u: 0.6376953
+      v: 0.076171875
+      u2: 0.75
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 230
+      originalHeight: 154
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair_5
+      x: 135
+      y: 310
+      width: 48
+      height: 66
+      u: 0.06591797
+      v: 0.8486328
+      u2: 0.08935547
+      v2: 0.81640625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 48
+      originalHeight: 66
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hair_shiwu
+      x: 2
+      y: 2
+      width: 134
+      height: 52
+      u: 0.0009765625
+      v: 0.99902344
+      u2: 0.06640625
+      v2: 0.9736328
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 134
+      originalHeight: 52
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: pigu
+      x: 1538
+      y: 1870
+      width: 194
+      height: 176
+      u: 0.75097656
+      v: 0.08691406
+      u2: 0.8457031
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 194
+      originalHeight: 176
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: qunzihou
+      x: 600
+      y: 1841
+      width: 372
+      height: 205
+      u: 0.29296875
+      v: 0.10107422
+      u2: 0.47460938
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 372
+      originalHeight: 205
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shadow1
+      x: 1306
+      y: 1871
+      width: 65
+      height: 19
+      u: 0.6376953
+      v: 0.08642578
+      u2: 0.6694336
+      v2: 0.07714844
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 65
+      originalHeight: 24
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shenti1
+      x: 268
+      y: 1585
+      width: 330
+      height: 461
+      u: 0.13085938
+      v: 0.22607422
+      u2: 0.2919922
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 330
+      originalHeight: 461
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shou1
+      x: 456
+      y: 1506
+      width: 128
+      height: 77
+      u: 0.22265625
+      v: 0.26464844
+      u2: 0.28515625
+      v2: 0.22705078
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 128
+      originalHeight: 77
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shoubi1
+      x: 139
+      y: 475
+      width: 173
+      height: 74
+      u: 0.067871094
+      v: 0.7680664
+      u2: 0.104003906
+      v2: 0.68359375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 173
+      originalHeight: 74
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shoubi2
+      x: 1920
+      y: 1879
+      width: 167
+      height: 103
+      u: 0.9375
+      v: 0.08251953
+      u2: 0.98779297
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 167
+      originalHeight: 103
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shoubi3
+      x: 600
+      y: 1586
+      width: 253
+      height: 264
+      u: 0.29296875
+      v: 0.22558594
+      u2: 0.421875
+      v2: 0.10205078
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 253
+      originalHeight: 264
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shoubi4
+      x: 2
+      y: 56
+      width: 130
+      height: 98
+      u: 0.0009765625
+      v: 0.97265625
+      u2: 0.064453125
+      v2: 0.9248047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 130
+      originalHeight: 98
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui1
+      x: 2
+      y: 650
+      width: 193
+      height: 384
+      u: 0.0009765625
+      v: 0.6826172
+      u2: 0.095214844
+      v2: 0.4951172
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 193
+      originalHeight: 384
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tui2
+      x: 2
+      y: 1495
+      width: 264
+      height: 551
+      u: 0.0009765625
+      v: 0.27001953
+      u2: 0.12988281
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 264
+      originalHeight: 551
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: weapon1
+      x: 268
+      y: 1486
+      width: 186
+      height: 97
+      u: 0.13085938
+      v: 0.27441406
+      u2: 0.22167969
+      v2: 0.22705078
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 186
+      originalHeight: 97
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: weapon2
+      x: 974
+      y: 1868
+      width: 178
+      height: 330
+      u: 0.47558594
+      v: 0.087890625
+      u2: 0.63671875
+      v2: 0.0009765625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 178
+      originalHeight: 330
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: wuqi1
+      x: 2
+      y: 1036
+      width: 227
+      height: 457
+      u: 0.0009765625
+      v: 0.49414062
+      u2: 0.111816406
+      v2: 0.2709961
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 227
+      originalHeight: 457
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: yifuhou
+      x: 2
+      y: 382
+      width: 266
+      height: 135
+      u: 0.0009765625
+      v: 0.81347656
+      u2: 0.06689453
+      v2: 0.68359375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 266
+      originalHeight: 135
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

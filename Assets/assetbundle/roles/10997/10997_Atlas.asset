@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 10997_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 2ae3cd18003ac044cabb0dcc09fe79b2, type: 3}
+  materials:
+  - {fileID: 2100000, guid: e9ecd7862ba58d84789cec8cc3796c97, type: 2}
+  atlas:
+    pages:
+    - name: 10997.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: e9ecd7862ba58d84789cec8cc3796c97, type: 2}
+      width: 1024
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: n1
+      x: 2
+      y: 2
+      width: 104
+      height: 311
+      u: 0.001953125
+      v: 0.99609375
+      u2: 0.30566406
+      v2: 0.79296875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 104
+      originalHeight: 311
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: n2
+      x: 2
+      y: 192
+      width: 234
+      height: 1000
+      u: 0.001953125
+      v: 0.625
+      u2: 0.9785156
+      v2: 0.16796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 234
+      originalHeight: 1000
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: n3
+      x: 2
+      y: 108
+      width: 82
+      height: 358
+      u: 0.001953125
+      v: 0.7890625
+      u2: 0.3515625
+      v2: 0.62890625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 82
+      originalHeight: 358
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

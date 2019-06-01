@@ -1,0 +1,317 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_new6_82_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: cbfb4f3a1c7b77c47b7b9d0cb86fb4a0, type: 3}
+  materials:
+  - {fileID: 2100000, guid: cdc1e40164a0a074b9000c7b4098c496, type: 2}
+  atlas:
+    pages:
+    - name: cg_new6_82.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: cdc1e40164a0a074b9000c7b4098c496, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: T1
+      x: 376
+      y: 18
+      width: 318
+      height: 164
+      u: 0.18359375
+      v: 0.99121094
+      u2: 0.3388672
+      v2: 0.9111328
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 320
+      originalHeight: 166
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: T2
+      x: 2
+      y: 2
+      width: 372
+      height: 180
+      u: 0.0009765625
+      v: 0.99902344
+      u2: 0.18261719
+      v2: 0.9111328
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 374
+      originalHeight: 182
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg
+      x: 760
+      y: 200
+      width: 192
+      height: 334
+      u: 0.37109375
+      v: 0.90234375
+      u2: 0.5341797
+      v2: 0.80859375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: eff1
+      x: 766
+      y: 394
+      width: 653
+      height: 515
+      u: 0.37402344
+      v: 0.8076172
+      u2: 0.6928711
+      v2: 0.55615234
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 655
+      originalHeight: 517
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: eff2
+      x: 2
+      y: 184
+      width: 756
+      height: 689
+      u: 0.0009765625
+      v: 0.91015625
+      u2: 0.3701172
+      v2: 0.57373047
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 758
+      originalHeight: 691
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: eff3
+      x: 2
+      y: 875
+      width: 762
+      height: 1166
+      u: 0.0009765625
+      v: 0.5727539
+      u2: 0.37304688
+      v2: 0.0034179688
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 764
+      originalHeight: 1168
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai1
+      x: 1421
+      y: 684
+      width: 225
+      height: 192
+      u: 0.69384766
+      v: 0.6660156
+      u2: 0.78759766
+      v2: 0.55615234
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 227
+      originalHeight: 194
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai2
+      x: 1536
+      y: 1697
+      width: 389
+      height: 344
+      u: 0.75
+      v: 0.17138672
+      u2: 0.9399414
+      v2: 0.0034179688
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 391
+      originalHeight: 346
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai3
+      x: 1536
+      y: 959
+      width: 246
+      height: 211
+      u: 0.75
+      v: 0.5317383
+      u2: 0.8701172
+      v2: 0.42871094
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 248
+      originalHeight: 213
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai4
+      x: 1096
+      y: 185
+      width: 234
+      height: 207
+      u: 0.53515625
+      v: 0.90966797
+      u2: 0.64941406
+      v2: 0.80859375
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 236
+      originalHeight: 209
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai5
+      x: 1421
+      y: 548
+      width: 125
+      height: 134
+      u: 0.69384766
+      v: 0.7324219
+      u2: 0.7548828
+      v2: 0.6669922
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 127
+      originalHeight: 136
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai6
+      x: 1421
+      y: 413
+      width: 126
+      height: 133
+      u: 0.69384766
+      v: 0.79833984
+      u2: 0.7553711
+      v2: 0.73339844
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 128
+      originalHeight: 135
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai7
+      x: 1536
+      y: 1172
+      width: 288
+      height: 265
+      u: 0.75
+      v: 0.42773438
+      u2: 0.890625
+      v2: 0.29833984
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 290
+      originalHeight: 267
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai8
+      x: 1927
+      y: 1734
+      width: 307
+      height: 104
+      u: 0.94091797
+      v: 0.15332031
+      u2: 0.9916992
+      v2: 0.0034179688
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 309
+      originalHeight: 106
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: kuai9
+      x: 1536
+      y: 1439
+      width: 320
+      height: 256
+      u: 0.75
+      v: 0.29736328
+      u2: 0.90625
+      v2: 0.17236328
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 322
+      originalHeight: 258
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shouji
+      x: 766
+      y: 911
+      width: 768
+      height: 1130
+      u: 0.37402344
+      v: 0.5551758
+      u2: 0.74902344
+      v2: 0.0034179688
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 770
+      originalHeight: 1132
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: yjs_caozuotai2_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: dbdb6b31e00e6264db1bb73cba8ac7ba, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 00e9db425a2a67549ab0e207dce0b292, type: 2}
+  atlas:
+    pages:
+    - name: yjs_caozuotai2.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 00e9db425a2a67549ab0e207dce0b292, type: 2}
+      width: 256
+      height: 128
+    regions:
+    - pageIndex: 0
+      name: guanzi1
+      x: 157
+      y: 2
+      width: 94
+      height: 113
+      u: 0.61328125
+      v: 0.984375
+      u2: 0.98046875
+      v2: 0.1015625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 94
+      originalHeight: 113
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huan1
+      x: 2
+      y: 29
+      width: 53
+      height: 6
+      u: 0.0078125
+      v: 0.7734375
+      u2: 0.21484375
+      v2: 0.7265625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 53
+      originalHeight: 6
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: toujing1
+      x: 2
+      y: 37
+      width: 78
+      height: 153
+      u: 0.0078125
+      v: 0.7109375
+      u2: 0.60546875
+      v2: 0.1015625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 78
+      originalHeight: 153
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    Loaded: 1

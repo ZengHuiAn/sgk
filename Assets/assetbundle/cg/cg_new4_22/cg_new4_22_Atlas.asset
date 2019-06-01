@@ -1,0 +1,425 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: cg_new4_22_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 39fdbe086ff79fb46b4e359d01ff7d9f, type: 3}
+  materials:
+  - {fileID: 2100000, guid: fa05e26cd7d235948ad85f99143bd063, type: 2}
+  atlas:
+    pages:
+    - name: cg_new4_22.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: fa05e26cd7d235948ad85f99143bd063, type: 2}
+      width: 2048
+      height: 2048
+    regions:
+    - pageIndex: 0
+      name: 1bg
+      x: 2
+      y: 679
+      width: 768
+      height: 643
+      u: 0.0009765625
+      v: 0.66845703
+      u2: 0.37597656
+      v2: 0.3544922
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 770
+      originalHeight: 645
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1qunzhong0
+      x: 774
+      y: 1477
+      width: 570
+      height: 291
+      u: 0.3779297
+      v: 0.2788086
+      u2: 0.65625
+      v2: 0.13671875
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 572
+      originalHeight: 293
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1qunzhong1
+      x: 1682
+      y: 1465
+      width: 225
+      height: 252
+      u: 0.82128906
+      v: 0.28466797
+      u2: 0.93115234
+      v2: 0.1616211
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 227
+      originalHeight: 254
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1qunzhong2
+      x: 1346
+      y: 1343
+      width: 277
+      height: 180
+      u: 0.65722656
+      v: 0.34423828
+      u2: 0.79248047
+      v2: 0.25634766
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 279
+      originalHeight: 182
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 1qunzhong3
+      x: 1625
+      y: 1266
+      width: 256
+      height: 197
+      u: 0.79345703
+      v: 0.38183594
+      u2: 0.91845703
+      v2: 0.28564453
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 258
+      originalHeight: 199
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2bg
+      x: 803
+      y: 1260
+      width: 193
+      height: 215
+      u: 0.39208984
+      v: 0.38476562
+      u2: 0.48632812
+      v2: 0.27978516
+      offsetX: 0
+      offsetY: 1
+      originalWidth: 193
+      originalHeight: 217
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2biyan
+      x: 1346
+      y: 1724
+      width: 95
+      height: 44
+      u: 0.65722656
+      v: 0.15820312
+      u2: 0.7036133
+      v2: 0.13671875
+      offsetX: 1
+      offsetY: 5
+      originalWidth: 97
+      originalHeight: 50
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2body
+      x: 774
+      y: 1770
+      width: 722
+      height: 239
+      u: 0.3779297
+      v: 0.13574219
+      u2: 0.73046875
+      v2: 0.019042969
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 724
+      originalHeight: 241
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2daimao
+      x: 192
+      y: 6
+      width: 70
+      height: 79
+      u: 0.09375
+      v: 0.9970703
+      u2: 0.13232422
+      v2: 0.9628906
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 72
+      originalHeight: 81
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2toufa1
+      x: 1873
+      y: 1833
+      width: 71
+      height: 176
+      u: 0.9145508
+      v: 0.10498047
+      u2: 0.94921875
+      v2: 0.019042969
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 73
+      originalHeight: 178
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2toufa2
+      x: 998
+      y: 1268
+      width: 185
+      height: 207
+      u: 0.4873047
+      v: 0.38085938
+      u2: 0.5776367
+      v2: 0.27978516
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 187
+      originalHeight: 209
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2toufa3
+      x: 702
+      y: 531
+      width: 67
+      height: 146
+      u: 0.34277344
+      v: 0.74072266
+      u2: 0.37548828
+      v2: 0.6694336
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 69
+      originalHeight: 148
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 2toupixue
+      x: 2
+      y: 496
+      width: 698
+      height: 181
+      u: 0.0009765625
+      v: 0.7578125
+      u2: 0.34179688
+      v2: 0.6694336
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 700
+      originalHeight: 183
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 3bg
+      x: 2
+      y: 1324
+      width: 770
+      height: 685
+      u: 0.0009765625
+      v: 0.35351562
+      u2: 0.37695312
+      v2: 0.019042969
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 770
+      originalHeight: 685
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 4biyan
+      x: 2
+      y: 2
+      width: 188
+      height: 74
+      u: 0.0009765625
+      v: 0.99902344
+      u2: 0.09277344
+      v2: 0.9628906
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 190
+      originalHeight: 76
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 4eye1
+      x: 1625
+      y: 1486
+      width: 41
+      height: 37
+      u: 0.79345703
+      v: 0.27441406
+      u2: 0.81347656
+      v2: 0.25634766
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 43
+      originalHeight: 39
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 4eye2
+      x: 1883
+      y: 1432
+      width: 23
+      height: 31
+      u: 0.9194336
+      v: 0.30078125
+      u2: 0.93066406
+      v2: 0.28564453
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 25
+      originalHeight: 33
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 4xiaowu
+      x: 2
+      y: 78
+      width: 413
+      height: 416
+      u: 0.0009765625
+      v: 0.96191406
+      u2: 0.20263672
+      v2: 0.75878906
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 415
+      originalHeight: 418
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: bg
+      x: 1346
+      y: 1525
+      width: 192
+      height: 334
+      u: 0.65722656
+      v: 0.2553711
+      u2: 0.8203125
+      v2: 0.1616211
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 192
+      originalHeight: 334
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: hx1
+      x: 772
+      y: 554
+      width: 768
+      height: 29
+      u: 0.37695312
+      v: 0.7294922
+      u2: 0.39111328
+      v2: 0.3544922
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 770
+      originalHeight: 31
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: w1
+      x: 417
+      y: 36
+      width: 458
+      height: 294
+      u: 0.20361328
+      v: 0.9824219
+      u2: 0.34716797
+      v2: 0.75878906
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 460
+      originalHeight: 296
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: w2
+      x: 1498
+      y: 1719
+      width: 373
+      height: 290
+      u: 0.7314453
+      v: 0.16064453
+      u2: 0.9135742
+      v2: 0.019042969
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 375
+      originalHeight: 292
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

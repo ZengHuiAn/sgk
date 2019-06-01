@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19044_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: c3b5f2b9dd2f2c74faab89ad10f24982, type: 3}
+  materials:
+  - {fileID: 2100000, guid: aba3cfabebcf22d499d3c70a78ccc46f, type: 2}
+  atlas:
+    pages:
+    - name: 19044.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: aba3cfabebcf22d499d3c70a78ccc46f, type: 2}
+      width: 512
+      height: 256
+    regions:
+    - pageIndex: 0
+      name: mubei_1
+      x: 2
+      y: 2
+      width: 185
+      height: 375
+      u: 0.00390625
+      v: 0.9921875
+      u2: 0.7363281
+      v2: 0.26953125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 185
+      originalHeight: 375
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: mubei_fuw
+      x: 379
+      y: 77
+      width: 99
+      height: 110
+      u: 0.7402344
+      v: 0.69921875
+      u2: 0.93359375
+      v2: 0.26953125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 99
+      originalHeight: 110
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

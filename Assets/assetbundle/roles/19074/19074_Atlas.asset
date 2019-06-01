@@ -1,0 +1,353 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 19074_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: c2074d1dbf166554a9f042aa05728911, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 5fb230503488f024285f122e51a6fba7, type: 2}
+  atlas:
+    pages:
+    - name: 19074.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 5fb230503488f024285f122e51a6fba7, type: 2}
+      width: 2048
+      height: 1024
+    regions:
+    - pageIndex: 0
+      name: body
+      x: 745
+      y: 405
+      width: 415
+      height: 304
+      u: 0.36376953
+      v: 0.6044922
+      u2: 0.56640625
+      v2: 0.3076172
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 415
+      originalHeight: 304
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_chibang-1
+      x: 745
+      y: 711
+      width: 472
+      height: 305
+      u: 0.36376953
+      v: 0.30566406
+      u2: 0.5942383
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 472
+      originalHeight: 305
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_chibang-2
+      x: 1162
+      y: 380
+      width: 399
+      height: 327
+      u: 0.5673828
+      v: 0.62890625
+      u2: 0.76220703
+      v2: 0.3095703
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 399
+      originalHeight: 327
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_chibang-3
+      x: 2
+      y: 527
+      width: 410
+      height: 489
+      u: 0.0009765625
+      v: 0.48535156
+      u2: 0.20117188
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 410
+      originalHeight: 489
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_houjiao
+      x: 656
+      y: 9
+      width: 148
+      height: 163
+      u: 0.3203125
+      v: 0.99121094
+      u2: 0.39990234
+      v2: 0.8466797
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 148
+      originalHeight: 163
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_houxiaotui
+      x: 1778
+      y: 149
+      width: 125
+      height: 228
+      u: 0.86816406
+      v: 0.8544922
+      u2: 0.9291992
+      v2: 0.63183594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 125
+      originalHeight: 228
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_jiao
+      x: 1030
+      y: 167
+      width: 211
+      height: 279
+      u: 0.5029297
+      v: 0.83691406
+      u2: 0.63916016
+      v2: 0.6308594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 211
+      originalHeight: 279
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: l_xiaotui
+      x: 1311
+      y: 124
+      width: 191
+      height: 254
+      u: 0.6401367
+      v: 0.87890625
+      u2: 0.73339844
+      v2: 0.6308594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 191
+      originalHeight: 254
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: r_chibang-1
+      x: 1219
+      y: 709
+      width: 462
+      height: 307
+      u: 0.59521484
+      v: 0.3076172
+      u2: 0.8208008
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 462
+      originalHeight: 307
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: r_chibang-2
+      x: 1563
+      y: 379
+      width: 386
+      height: 328
+      u: 0.7631836
+      v: 0.6298828
+      u2: 0.95166016
+      v2: 0.3095703
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 386
+      originalHeight: 328
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: r_chibang-3
+      x: 2
+      y: 33
+      width: 395
+      height: 492
+      u: 0.0009765625
+      v: 0.96777344
+      u2: 0.19384766
+      v2: 0.4873047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 395
+      originalHeight: 492
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: r_jiao
+      x: 399
+      y: 2
+      width: 155
+      height: 255
+      u: 0.19482422
+      v: 0.9980469
+      u2: 0.31933594
+      v2: 0.8466797
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 155
+      originalHeight: 255
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: r_xiaotui
+      x: 700
+      y: 164
+      width: 239
+      height: 328
+      u: 0.34179688
+      v: 0.83984375
+      u2: 0.5019531
+      v2: 0.6064453
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 239
+      originalHeight: 328
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: tou
+      x: 414
+      y: 532
+      width: 329
+      height: 484
+      u: 0.20214844
+      v: 0.48046875
+      u2: 0.36279297
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 329
+      originalHeight: 484
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: weiba1
+      x: 399
+      y: 159
+      width: 366
+      height: 299
+      u: 0.19482422
+      v: 0.84472656
+      u2: 0.3408203
+      v2: 0.4873047
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 366
+      originalHeight: 299
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: weiba2
+      x: 1504
+      y: 116
+      width: 272
+      height: 261
+      u: 0.734375
+      v: 0.88671875
+      u2: 0.8671875
+      v2: 0.63183594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 272
+      originalHeight: 261
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: weiba3
+      x: 1683
+      y: 720
+      width: 347
+      height: 296
+      u: 0.82177734
+      v: 0.296875
+      u2: 0.99121094
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 347
+      originalHeight: 296
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: zhangzui
+      x: 1905
+      y: 206
+      width: 130
+      height: 171
+      u: 0.9301758
+      v: 0.7988281
+      u2: 0.99365234
+      v2: 0.63183594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 130
+      originalHeight: 171
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

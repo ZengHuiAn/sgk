@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: tjp_duanzao_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 4e79c46d76b805447a5d20c013033090, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 930a220e0c03dbc46b52e440c71dea3a, type: 2}
+  atlas:
+    pages:
+    - name: tjp_duanzao.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 930a220e0c03dbc46b52e440c71dea3a, type: 2}
+      width: 1024
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: duanzao
+      x: 2
+      y: 255
+      width: 356
+      height: 253
+      u: 0.001953125
+      v: 0.5019531
+      u2: 0.34960938
+      v2: 0.0078125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 356
+      originalHeight: 253
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: duanzao_b
+      x: 2
+      y: 69
+      width: 259
+      height: 184
+      u: 0.001953125
+      v: 0.8652344
+      u2: 0.2548828
+      v2: 0.5058594
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 259
+      originalHeight: 184
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: duanzao_c
+      x: 341
+      y: 88
+      width: 103
+      height: 82
+      u: 0.3330078
+      v: 0.828125
+      u2: 0.43359375
+      v2: 0.66796875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 103
+      originalHeight: 82
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_18
+      x: 360
+      y: 341
+      width: 218
+      height: 167
+      u: 0.3515625
+      v: 0.33398438
+      u2: 0.5644531
+      v2: 0.0078125
+      offsetX: 18
+      offsetY: 0
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_20
+      x: 580
+      y: 341
+      width: 218
+      height: 167
+      u: 0.56640625
+      v: 0.33398438
+      u2: 0.7792969
+      v2: 0.0078125
+      offsetX: 18
+      offsetY: 0
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_22
+      x: 800
+      y: 341
+      width: 218
+      height: 167
+      u: 0.78125
+      v: 0.33398438
+      u2: 0.9941406
+      v2: 0.0078125
+      offsetX: 18
+      offsetY: 0
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_24
+      x: 360
+      y: 172
+      width: 213
+      height: 167
+      u: 0.3515625
+      v: 0.6640625
+      u2: 0.5595703
+      v2: 0.33789062
+      offsetX: 21
+      offsetY: 0
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_26
+      x: 575
+      y: 176
+      width: 205
+      height: 163
+      u: 0.56152344
+      v: 0.65625
+      u2: 0.76171875
+      v2: 0.33789062
+      offsetX: 25
+      offsetY: 4
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_28
+      x: 2
+      y: 2
+      width: 162
+      height: 65
+      u: 0.001953125
+      v: 0.99609375
+      u2: 0.16015625
+      v2: 0.8691406
+      offsetX: 65
+      offsetY: 38
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_30
+      x: 263
+      y: 88
+      width: 165
+      height: 76
+      u: 0.25683594
+      v: 0.828125
+      u2: 0.3310547
+      v2: 0.5058594
+      offsetX: 65
+      offsetY: 29
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_32
+      x: 782
+      y: 258
+      width: 120
+      height: 81
+      u: 0.7636719
+      v: 0.49609375
+      u2: 0.8808594
+      v2: 0.33789062
+      offsetX: 65
+      offsetY: 20
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: huohua/boo_34
+      x: 782
+      y: 185
+      width: 124
+      height: 71
+      u: 0.7636719
+      v: 0.6386719
+      u2: 0.8847656
+      v2: 0.5
+      offsetX: 60
+      offsetY: 20
+      originalWidth: 258
+      originalHeight: 167
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 74002_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: d1c1bdfa0a08f1b499c2099c94f3c591, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 18dd3566a673a9b4bac0bb46d486e3aa, type: 2}
+  atlas:
+    pages:
+    - name: 74002.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 18dd3566a673a9b4bac0bb46d486e3aa, type: 2}
+      width: 128
+      height: 64
+    regions:
+    - pageIndex: 0
+      name: mg_st
+      x: 78
+      y: 16
+      width: 46
+      height: 44
+      u: 0.609375
+      v: 0.75
+      u2: 0.96875
+      v2: 0.0625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 46
+      originalHeight: 44
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: mg_tou
+      x: 2
+      y: 9
+      width: 74
+      height: 51
+      u: 0.015625
+      v: 0.859375
+      u2: 0.59375
+      v2: 0.0625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 74
+      originalHeight: 51
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: mg_yan1
+      x: 78
+      y: 3
+      width: 40
+      height: 11
+      u: 0.609375
+      v: 0.953125
+      u2: 0.921875
+      v2: 0.78125
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 40
+      originalHeight: 11
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: mg_yan2
+      x: 2
+      y: 2
+      width: 40
+      height: 5
+      u: 0.015625
+      v: 0.96875
+      u2: 0.328125
+      v2: 0.890625
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 40
+      originalHeight: 5
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1
