@@ -1,0 +1,98 @@
+local obj = ...
+local TypeName = StringSplit(obj.name,"_")
+local gid = tonumber(TypeName[2])
+obj = module.NPCModule.GetNPCALL(gid)
+obj.IsClick = 0
+
+local NpcType = 1
+
+local function RandomNum(min,max)
+	return math.random(min,max)
+end
+
+local Group = math.floor((gid % 1000)/100)
+if Group == 1 or Group == 2 then
+	NpcType = 1
+elseif Group == 3 or Group == 4 then
+	NpcType = 2
+elseif Group == 5 then
+	NpcType = 3
+elseif Group == 6 or Group == 7 then
+	NpcType = 4
+else
+	NpcType = 5
+end
+
+local Dialog = {
+	[1] = {--小兵
+			{"我要成为海贼王！",4},
+			{"出发吧！向着伟大航路！",4},
+			{"弱者是没有资格谈正义的！",4},
+			{"其实我想要寻找千年龙的龙穴",4},
+			{"肉!哪里有肉!",4},
+			{"忠义当先，有进无退",4}},
+	[2] = {--精英
+			{"灾难总是接踵而至，这正是世间的常理！",4},
+			{"能够原谅女人谎话的，才是男人！",4},
+			{"去他的世界罪行！我们只不过..打架而已！",4},
+			{"我能揍扁你！",4},
+			{"只有胜者，才是正义啊！",4}},
+	[3] = {--船长
+			{"我不管这个世上的人怎么说我，我只想依照我的信念做事！",4},
+			{"为什么遇到如此强大的敌人你也不愿逃跑？",4},
+			{"不要弄哭我的航海士！！",4},
+			{"我的船上没有手下……只有伙伴",4}},
+	[4] = {--衰弱的小兵
+			{"啊啊啊!我的帽子!",4},
+			{"老大....他..死了5555",4},
+			{"自己人，别开枪！",4},
+			{"又要失败了吗？好不甘心！",4},
+			{"梦想终止了吗...",4},
+			{"不行，还没吃到肉啊，不能走",4},
+			{"难过的时候也要继续笑喔。",4}},
+	[5] = {--衰弱的精英
+			{"命中注定吗？",4},
+			{"杀，或是被杀，自己选择吧",4},
+			{"孤掌难鸣啊",4},
+			{"此生多的是生不由己，待来世再结真心",4},
+			{"唉，此祸终至",4},
+			{"没地方逃了吗？",4},
+			{"弱者，连自己的死法都无权选择",4}},
+}
+
+local function NpcDialog(gid,NpcType)
+	local index = RandomNum(1,#Dialog[NpcType])
+	-- LoadNpcDesc(gid,Dialog[NpcType][index][1],nil,2,Dialog[NpcType][index][2])
+end
+
+local NpcPos
+local function NpcMove(gid)
+
+	if utils.SGKTools.GameObject_null(obj.gameObject) == true then
+		return;
+	end
+	NpcPos = NpcPos or obj.transform.position
+	local OffsetX = RandomNum(-300,300)/100
+	local OffsetZ = RandomNum(-300,300)/100
+   	obj[SGK.MapPlayer]:MoveTo(NpcPos.x + OffsetX,NpcPos.y,NpcPos.z + OffsetZ)
+end
+
+local SleepTime = RandomNum(0,10)
+local CurrentTime = 0;
+while true do
+	Sleep(0.1);
+	if utils.SGKTools.GameObject_null(obj.gameObject) == true then
+		return;
+	end
+	CurrentTime = CurrentTime + 0.1;
+	if SleepTime <= CurrentTime and obj.IsClick == 0 then
+		CurrentTime = 0;
+		SleepTime = RandomNum(10,50)
+		NpcDialog(gid,NpcType)
+		NpcMove(gid)
+	end
+	if obj.IsClick ~= 0 then
+		obj[SGK.MapPlayer]:Stop()
+		--朝向
+	end
+end

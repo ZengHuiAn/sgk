@@ -1,0 +1,19 @@
+local obj = ...
+local TypeName = StringSplit(obj.name,"_")
+local gid = tonumber(TypeName[2])
+
+
+local Talk = {
+	{"钓鱼了解一下！",3},
+	{"靠近船边可以钓鱼",3},
+	{"有概率钓到稀有鱼哦！！！",3},
+}
+
+local index = 0;
+if gid == 2344001 or gid == 2344002 or gid == 2344003 then
+	while true do
+		index = index + 1;
+		LoadNpcDesc(gid,Talk[index % 3 + 1][1],nil,Talk[index % 3 + 1][2])
+	    Sleep(5)
+	end
+end

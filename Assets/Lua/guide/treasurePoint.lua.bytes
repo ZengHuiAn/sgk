@@ -1,0 +1,17 @@
+local TreasureModule = require "module.TreasureModule"
+
+local mapid,npcid = ...
+if npcid then
+	local npc = module.NPCModule.GetNPCALL(tonumber(npcid))
+	if npc then
+		local inter = npc[CS.SGK.MapColliderMenu].interaction;
+		if inter == 1 then
+			TreasureModule.SetNpcid(tonumber(npcid))	--触碰发npcid
+		elseif inter == 0 then
+			TreasureModule.SetNpcid()	--触碰发npcid
+		end
+	end
+
+end
+
+--点击采集/战斗

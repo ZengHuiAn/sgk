@@ -1,0 +1,46 @@
+----------------军团npc----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+--打开
+if gid == 10250000 or gid == 2025000 or gid == 10250001 then
+    utils.MapHelper.OpUnionInfo()     --打开军团界面
+end
+
+--打开
+if gid == 2025100 then
+	DialogStack.PushPref("guild/elevatorFrame")
+    --utils.MapHelper.OpUnionExplore()  --打开电梯楼层
+end
+
+--打开
+if gid == 2251100 then
+	DialogStack.PushPref("guild/elevatorFrame")
+    --utils.MapHelper.OpUnionExplore()  --打开电梯楼层1
+end
+
+--打开
+if gid == 10250003 then
+    utils.MapHelper.OpUnionShop()     --打开军团商店界面
+end
+
+--打开
+if gid == 10250004 then
+    utils.MapHelper.OpUnionWish() --打开军团祈愿界面
+end
+
+--打开
+if gid == 10250005 then
+    utils.MapHelper.OpUnionMember()   --打开军团成员界面
+end
+
+--打开
+if gid == 10250006 then
+    utils.MapHelper.OpUnionJoin()     --打开加入军团界面
+end
+
+--打开
+if gid == 10250007 then
+    utils.MapHelper.OpUnionList()      --打开军团列表
+end
+

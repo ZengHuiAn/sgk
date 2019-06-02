@@ -1,0 +1,56 @@
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local MapHelper = require "utils.MapHelper"
+
+local key_table = MapHelper.GetConfigTable("bounty_quest","activity_id")
+
+AssociatedLuaScript("guide/NpcTalk.lua",...)
+
+
+local function CloseFrame()
+    DispatchEvent("KEYDOWN_ESCAPE")
+end
+
+local menus = {}
+for k,v in pairs(key_table) do
+    info = module.BountyModule.Get(k);
+
+    if info.quest then
+        table.insert(menus, {name = string.format("放弃任务：%s(%d/%d)", info.quest.name, info.count+1, info.quest.times), action = function()
+            CloseFrame()
+            module.BountyModule.Cancel(k)
+        end } )
+    else
+        table.insert(menus, {name = string.format("开始任务:%s",v[1].map_id), action = function()
+            CloseFrame()
+            --print("--------------------------bountytype,mapid",k,v[1].map_id)  
+            module.BountyModule.Start(k)
+            module.EncounterFightModule.GUIDE.EnterMap(v[1].map_id)
+
+            local map_idd = map_id
+            if map_id < 10 then
+                map_idd = "0"..map_idd
+            end
+            if map_id < 100 then
+                map_idd = "0"..map_idd
+            end
+        
+            for i = 1, 10 do
+                local bounty_id1 = tonumber("4"..map_idd.."990")
+                local bounty_id2 = tonumber("4"..map_idd.."991")
+                local bounty_id3 = tonumber("4"..map_idd.."992")
+                local bounty_id4 = tonumber("4"..map_idd.."993")
+            
+                Interact(bounty_id1)
+                Interact(bounty_id2)
+                Interact(bounty_id3)
+                Interact(bounty_id4)
+            end
+        end } )
+    end
+end
+
+
+
+SetStoryOptions(menus)

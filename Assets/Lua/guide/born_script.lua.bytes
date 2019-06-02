@@ -1,0 +1,8 @@
+local NPC_OBJ,gid = ...
+
+print("--------------------------------2040801")
+if gid == 2040801 or 2066000 then	
+	print("1--------------------------------2040801")
+	NPC_OBJ[UnityEngine.BoxCollider].center = Vector3(0,3,-2)
+	NPC_OBJ[UnityEngine.BoxCollider].size = Vector3(7.8,9,0.2)
+end	

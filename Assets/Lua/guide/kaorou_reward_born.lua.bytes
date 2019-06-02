@@ -1,0 +1,78 @@
+local gid = ...
+
+gid = tonumber(gid)
+
+local multiple = {
+   [6346601] ={ 
+        {"effect/UI/gh_yh_food_0","effect/UI/gh_yh_food_1","effect/UI/gh_yh_food_2"},
+        {"effect/UI/gh_yh_food_cai","effect/UI/gh_yh_food_fish","effect/UI/gh_yh_food_xia"},
+    },
+}
+
+
+local guildTaskCfg = require "config.guildTaskConfig"
+local guildTaskModule = require "module.guildTaskModule"
+local function GetQuestStatus( quest_id )
+    if quest_id then
+        local quest_list = guildTaskModule.GetGuild_task_list()
+        if quest_list and quest_list[1] and quest_list[1][quest_id] and quest_list[1][quest_id][0].status == 1 then
+            -- ERROR_LOG(sprinttb(quest_list[1]),quest_id,sprinttb(quest_list[1][quest_id]))
+            return 
+        end
+    end
+    return true
+end
+
+if multiple[gid] then
+    -- 20012001
+    local ret = multiple[gid];
+
+    if GetQuestStatus(20012001) then
+
+        for k,v in pairs(ret[2]) do
+            utils.SGKTools.DelEffect(v, gid)
+        end
+        for k,v in pairs(ret[1]) do
+            utils.SGKTools.loadEffect(v, gid)
+        end
+    else
+         for k,v in pairs(ret[1]) do
+            utils.SGKTools.DelEffect(v, gid)
+        end
+        for k,v in pairs(ret[2]) do
+            utils.SGKTools.loadEffect(v, gid)
+        end
+    end
+    return true
+end
+local pid = module.playerModule.Get().id
+local function GetCoinStatus(_gid)
+    local cfg = guildTaskCfg.GetguildTaskByNpc(_gid)
+    if cfg then
+        local quest_list = guildTaskModule.GetGuild_task_list()
+        if (quest_list and quest_list[1] and quest_list[1][cfg[1].depend_quest_id] and quest_list[1][cfg[1].depend_quest_id][0].status == 1) and quest_list[1][cfg[1].depend_quest_id][0].next_time_to_accept >= module.Time.now() then
+            if quest_list[2] and quest_list[2][cfg[1].quest_id] then
+                -- ERROR_LOG("任务信息",cfg[1].quest_id,sprinttb(quest_list[2][cfg[1].quest_id]));
+                local collect = quest_list[2][cfg[1].quest_id]
+                local count = 0;
+                for k,v in pairs(collect) do
+                    if v and v.status ==1 then
+                        count = count +1
+                    end
+                end
+                -- ERROR_LOG("当前次数"..count,cfg[1].finish_count);
+                if count >= cfg[1].finish_count then
+                    return nil
+                else
+
+                    return true
+                end
+            else
+                return true
+            end
+        end
+    end
+end
+
+return GetCoinStatus(gid)
+

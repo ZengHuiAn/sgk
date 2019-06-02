@@ -1,0 +1,28 @@
+---彩蛋NPC
+
+local gid = ...
+gid = tonumber(gid)
+
+
+local _cfg = module.sharedQuestModule.GetCfg(nil, nil, gid)
+if _cfg then
+    -- ERROR_LOG("==============>>>>",sprinttb(_cfg));
+    for i,v in ipairs(_cfg) do
+        local _quest = module.sharedQuestModule.GetQuestInfo(v.posIdx)
+        if _quest then
+            local _questCfg = module.sharedQuestModule.GetCfg(_quest.questId)
+            -- ERROR_LOG("==============>>>>",sprinttb(_questCfg));
+            if _questCfg and _questCfg.npcId == gid then
+                -- if _quest.finishCount ~= v.finishCount then
+
+                    local ret = module.sharedQuestModule.GetShareQuestPeroid(_questCfg);
+                    if _quest.startTime <= module.Time.now() and ret - module.Time.now()  >0 then
+                        return true
+                    end
+                -- end
+            end
+        end
+    end
+end
+
+return false

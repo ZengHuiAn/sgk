@@ -1,0 +1,33 @@
+-- 生成NPC的同时，脚底出现特效
+local obj,gid = ...
+gid = tonumber(gid)
+
+local npc_table = {
+	[2052106] = "shixinzichuchang",
+	[2040802] = "UI/fx_longzi_red",
+	[2040803] = "UI/fx_longzi_red",
+	[2040804] = "UI/fx_longzi_red",
+	[2027112] = "xuejianqiang_map",
+	[2052113] = "UI/fx_chhg",
+	[2900993] = "UI/fx_chhg",
+	[2900994] = "fx_laolongjingu",
+	[2029111] = "fx_boos_atk_11010",
+}
+
+local map_npc_table = utils.MapHelper.GetConfigTable("all_npc","gid")
+if npc_table[gid] then
+	utils.SGKTools.loadEffect(npc_table[gid],gid)
+elseif (map_npc_table[gid] and map_npc_table[gid][1].burn_effect ~= "0") then
+	-- ERROR_LOG(map_npc_table[gid][1].burn_effect);
+	utils.SGKTools.loadEffect(map_npc_table[gid][1].burn_effect,gid)
+else
+	utils.SGKTools.loadEffect("effect/UI/fx_box_kai_gold",gid)
+end
+
+--[[
+if module.CemeteryModule.GetMonsterg_state(gid) and obj.Root.spine.gameObject.transform.childCount == 1 then
+	local tempObj = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_box_kai_gold.prefab")
+	local EffectObj = CS.UnityEngine.GameObject.Instantiate(tempObj,obj.Root.spine.gameObject.transform)
+	EffectObj.transform.localPosition = Vector3.zero
+end
+]]

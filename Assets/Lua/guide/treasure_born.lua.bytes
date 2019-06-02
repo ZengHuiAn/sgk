@@ -1,0 +1,29 @@
+local gid = ...
+gid = tonumber(gid)
+-- ERROR_LOG("公会活动","==============>>>>",gid);
+local guildTaskCfg = require "config.guildTaskConfig"
+local guildTaskModule = require "module.guildTaskModule"
+local cfg = guildTaskCfg.GetguildTaskByNpc(gid)
+if cfg then
+	local quest_list = guildTaskModule.GetGuild_task_list()
+	if quest_list and quest_list[1] and quest_list[1][cfg[1].quest_id-1] and quest_list[1][cfg[1].quest_id-1][0].status == 1 then
+		if quest_list[2] and quest_list[2][cfg[1].quest_id] then
+			local collect = quest_list[2][cfg[1].quest_id]
+			local count = 0
+
+			for k,v in pairs(collect) do
+				if v and v.count ==1 then
+					count = count +1
+				end
+			end
+			if count >= cfg[1].finish_count then
+				return nil
+			end
+
+
+		end
+		return true
+	end
+end
+-- ERROR_LOG("刷新成功",gid);
+return nil

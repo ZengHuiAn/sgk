@@ -1,0 +1,552 @@
+--获取角色身上的参数
+local mapid,gid = ...
+gid = tonumber(gid)
+local menus = {}
+local StoryConfig = require "config.StoryConfig"
+local MapHelper = require "utils.MapHelper"
+local MapConfig = require "config.MapConfig"
+local ItemHelper = require "utils.ItemHelper"
+local TeamModule = require "module.TeamModule"
+local SGKTools = require "utils.SGKTools"
+local QuestModule = require "module.QuestModule"
+
+--可接任务
+local acceptableQuests = MapHelper.GetQuestConfigByNPC(gid, true)
+--已接任务  0 未完成   1 完成  2  取消
+local allQuests = QuestModule.GetList(nil,0)
+
+--主线任务
+local mainQuests = {}
+--支线任务
+local branchQuests = {}
+--建设城市
+local cityQuest = nil
+--随机任务
+local randomQuests = {}
+
+--所有任务
+local quests = {}
+
+for _,v in ipairs(allQuests) do
+    if v.type >= 41 and v.type <= 44 then
+        cityQuest = v
+        table.insert(quests,v)
+    end
+
+    if v.type == 10 then
+        table.insert(mainQuests,v)
+        table.insert(quests,v)
+    end
+
+    if v.type == 11 then
+        table.insert(branchQuests,v)
+        table.insert(quests,v)
+    end
+
+    if v.type == 12 then
+        table.insert(randomQuests,v)
+        table.insert(quests,v)
+    end
+
+    if v.type == 13 then
+        table.insert(randomQuests,v)
+        table.insert(quests,v)
+    end
+
+    if v.type == 14 then
+        table.insert(randomQuests,v)
+        table.insert(quests,v)
+    end
+
+    if v.type == 17 then
+        table.insert(quests,v)
+    end
+
+    if v.type == 23 then
+        table.insert(quests,v)
+    end
+
+    if v.type == 32 then
+        table.insert(quests,v)
+    end
+end
+
+local function CloseFrame()
+    SGKTools.CloseFrame()
+end
+
+--------------------------------------------领取、放弃任务----------------------------------
+--底层接任务函数
+local function AcceptQuest(k,quest_type)
+    if not k then
+        --建设城市任务
+        local current_group = QuestModule.CityContuctInfo().current_city;
+        --数量未达20个，就继续接任务
+        if QuestModule.CityContuctInfo().today_count < 20 then
+            --建设城市奖励计数道具
+            local CityContuctSingleStatisticsId = 2041
+            local CityContuctDoubleStatisticsId = 1041
+            --第一次单倍奖励任务领取提示
+            if module.ItemModule.GetItemCount(CityContuctDoubleStatisticsId) <= 0 and module.ItemModule.GetItemCount(CityContuctSingleStatisticsId) >= 10 then
+                showDlgMsg(SGK.Localize:getInstance():getValue("jiansherenwu_01"), 
+                    function ()
+                        QuestModule.CityContuctAcceptQuest(current_group)
+                    end,
+                    function () end, 
+                    SGK.Localize:getInstance():getValue("common_queding_01"), --确定
+                    SGK.Localize:getInstance():getValue("common_cancle_01") --取消
+                )
+            else
+                QuestModule.CityContuctAcceptQuest(current_group)
+            end
+        else
+            showDlg(nil,"您今日已完成20次建设关卡任务，无法领取新的任务")
+        end
+    elseif quest_type and (quest_type == 14 or quest_type == 23) then
+        if quest_type == 23 then
+            local _list = QuestModule.GetList(23, 0)
+            if #_list > 0 then
+                showDlgError(nil, "做事情要一心一意哦，您当前已经有任务啦！")
+            else
+                module.ManorRandomQuestNPCModule.Interact(nil, gid, 0);
+            end
+        else
+            module.ManorRandomQuestNPCModule.Interact(nil, gid, 0);
+        end        
+    else
+        --其他任务
+        QuestModule.Accept(k)
+        --TeamQuestModuleAccept(k)
+    end
+end
+
+--尝试接任务函数
+local function StoryBeforeAccept(k,quest_type)
+    if QuestModule.CanAccept(k, true) then
+        local story_id = tonumber(k.."01")
+        if StoryConfig.GetStoryConf(story_id) then
+            TeamStory(story_id)
+            LoadStory(story_id,function()
+                AcceptQuest(k, quest_type)
+                CloseFrame()
+            end)
+        else
+            AcceptQuest(k, quest_type)
+            CloseFrame()
+        end
+    end
+end
+
+local function AcceptStoryQuest()
+    for k,v in pairs(acceptableQuests) do
+        if v.type == 10 or v.type == 11 or v.type == 12 or v.type == 14 or v.type == 17 or v.type == 23 or v.type == 32 then
+            if QuestModule.CanAccept(v.id) then
+                local aa = {name = v.name,icon = "bg_db_duihuarenwu", auto = false, action = function()
+                    StoryBeforeAccept(v.id, v.type)
+                end}
+                if v.is_fuben_quest ~= 0 then
+                    aa.effect = "effect/UI/fx_guide_kuan"
+                end
+                table.insert(menus, aa)
+            end
+        end
+    end
+end
+
+--领取任务
+AcceptStoryQuest()
+--------------------------------------完成任务----------------------------------------
+--完成任务
+local function FinishQuest(v,nextId)
+    local fun = function()
+        if v.type >= 41 and v.type <= 44 then
+            QuestModule.CityContuctSubmitQuest()
+        -- elseif v.type == 14 or v.type == 23 then
+        --     module.ManorRandomQuestNPCModule.Interact(module.playerModule.GetSelfID(), nil, 1, v.id);
+        else
+            QuestModule.Submit(v.id,{nextId = nextId})
+            --TeamQuestModuleSubmit(v.id)
+        end
+
+        ---查找是否存在下个要接的列表
+        local _autoAcceptfunc = function()
+            if module.QuestModule.AutoAcceptNextIdList[v.uuid] then
+                module.QuestModule.Accept(module.QuestModule.AutoAcceptNextIdList[v.uuid])
+                module.QuestModule.AutoAcceptNextIdList[v.uuid] = nil
+            end
+        end
+
+        --完成任务后对话
+        local story_id = tonumber(v.id.."81")
+        if StoryConfig.GetStoryConf(story_id) then
+            TeamStory(story_id)
+            LoadStory(story_id,function()
+                --如果是建设城市任务则尝试接下一个任务
+                if v.type >= 41 and v.type <= 44 then
+                    AcceptQuest(nil,v.type)
+                end
+                _autoAcceptfunc()
+                CloseFrame()
+            end)
+        else
+            _autoAcceptfunc()
+            CloseFrame()
+        end
+
+        --删除剧情npc
+        if v.npc_id ~= 0 then
+            local npc_conf = MapConfig.GetMapMonsterConf(v.npc_id)
+            if npc_conf.type == 1 then
+                module.NPCModule.deleteNPC(v.npc_id)
+            end
+        end
+
+        --领取新的建设城市
+        if v.type >= 41 and v.type <= 44 then
+            AcceptQuest(nil,v.type)
+        end
+
+        --庄园流言
+        -- if v.type == 17 then
+        --     DispatchEvent("MANOR_TALKER_LEAVE");
+        -- end
+    end
+
+    ---[===[--questModule统一处理
+    fun()
+    --[==[]===]
+    --点击领取后完成任务
+    -- if v.reward_value1 > 0 or v.reward_value2 > 0 or v.reward_value3 > 0 then
+    --     SGKTools.ShowTaskItem(v,fun)
+    -- else
+    --     fun()
+    -- end
+    --]==]
+end
+
+--完成任务前对话
+local function StoryBeforeFinish(v)
+
+    local story_id = tonumber(v.id.."61")
+    SceneStack.savedValues.NotMenuFlag = true
+    local quest_menu = utils.SGKTools.TaskQuery(v.id)
+    if quest_menu then
+        local menus = {}
+        for i = 1,#quest_menu do
+            table.insert(menus, {name = quest_menu[i].desc, auto = false, action = function()
+                FinishQuest(v,quest_menu[i].quest)
+                --LoadStory(quest_menu[i].storyid,function ()
+                --    FinishQuest(v,quest_menu[i].quest)
+                --end)
+            end,childAlignment = 0,lock = true})
+        end
+        SetStoryOptions(menus,nil,story_id)
+        TeamStory(story_id)
+        LoadStory(story_id,function ()
+            LoadStoryOptions(story_id)
+        end,true,true)
+
+    elseif StoryConfig.GetStoryConf(story_id) then
+        TeamStory(story_id)
+        LoadStory(story_id,function()
+            FinishQuest(v)
+        end)
+    else
+        FinishQuest(v)
+    end
+end
+
+--上交物品
+local function SubmitItem(v, item_list)
+    item_list = item_list or {
+        [1] = {id = v.consume_id1, type = v.consume_type1, value = v.consume_value1},
+        [2] = {id = v.consume_id2, type = v.consume_type2, value = v.consume_value2}
+    }
+    MapHelper.OpTaskBag(item_list, function()
+    --SGKTools.CloseFrame()
+    CloseFrame()
+    DialogStack.Pop()
+        --上交物品后对话
+        local story_id = tonumber(v.id.."51")
+        if StoryConfig.GetStoryConf(story_id) then
+            TeamStory(story_id)
+            LoadStory(story_id,function()
+                StoryBeforeFinish(v)
+            end)
+        else
+            StoryBeforeFinish(v)
+        end
+    end)
+end
+
+--上交物品前检查和对话
+local function BeforeSubmitItem(v)
+    --检查上交物品是否足够
+    local result = QuestModule.CanSubmit(v.id)
+    --if result == true then
+        local list = QuestModule.GetQuestSubmitItemList(v.id);
+        if list then
+            --上交物品前对话
+            local story_id = tonumber(v.id.."41")
+            if StoryConfig.GetStoryConf(story_id) then
+                TeamStory(story_id)
+                LoadStory(story_id,function()
+                    SubmitItem(v, list)
+                end)
+            else
+                SubmitItem(v, list)
+            end
+        else
+            StoryBeforeFinish(v)
+        end
+    --else
+        --CloseFrame()
+    --end
+end
+
+
+
+local function FindMapId(quest)
+    local map_id = quest.map_id
+    local npc_conf
+
+    if quest.npc_id and quest.npc_id > 0 then
+        npc_conf = MapConfig.GetMapMonsterConf(quest.npc_id)
+    elseif quest.monster_id and quest.monster_id > 0 then
+        npc_conf = MapConfig.GetMapMonsterConf(quest.monster_id)
+    end
+
+    if npc_conf then
+        map_id = npc_conf.mapid
+    end
+    return map_id
+end
+
+local function ReallyStartFight(v)
+    local count = 0
+    local teamMember = TeamModule.GetTeamMembers()
+
+    if v.event_type1 == 2 then
+        module.fightModule.StartFightInThread(v.event_id1)
+        count = 1
+    elseif v.event_type2 == 2 then
+        module.fightModule.StartFightInThread(v.event_id2)
+        count = 2
+    elseif v.event_type1 == 88 then
+        if teamMember and #teamMember > 1 then
+            SGKTools.StartTeamFight(v.event_id1)
+        else
+            module.fightModule.StartFightInThread(v.event_id1)
+        end
+        count = 1
+    elseif v.event_type2 == 88 then
+        if teamMember and #teamMember > 1 then
+            SGKTools.StartTeamFight(v.event_id2)
+        else
+            module.fightModule.StartFightInThread(v.event_id2)
+        end
+        count = 2
+    end
+
+    return count
+end
+
+--战斗函数
+local function StartFight(v)
+    local beforeRecord = {v.records[1],v.records[2]}
+    local count = ReallyStartFight(v)
+    local afterRecord = {v.records[1],v.records[2]}
+    local win = false
+    if count == 1 and afterRecord[1] > beforeRecord[1] or count == 2 and afterRecord[2] > beforeRecord[2] then
+        win = true
+    end
+
+    if win == true then
+        local npc_conf = MapConfig.GetMapMonsterConf(v.npc_id)
+        if npc_conf.type == 1 then
+            --删除击败的怪
+            SGKTools.loadEffect("UI/fx_chuan_ren",v.npc_id)
+            Sleep(0.5)
+            module.NPCModule.deleteNPC(v.npc_id)
+
+            --如果还要打怪则生成新的怪
+            local _,result_type = QuestModule.CanSubmit(v.id)
+            if result_type == 2 then
+                --读取随机点的表
+                local key_table = MapHelper.GetConfigTable("all_position","map_id")
+                local location = nil
+                local map_id = FindMapId(v)
+                for k,v in pairs(key_table) do
+                    if k == map_id then
+                        local num = math.random(1,#v)
+                        location = {v[num].Position_x,v[num].Position_y,v[num].Position_z}
+                        break
+                    end
+                end
+                if location then
+                    module.NPCModule.LoadNpcOBJ(v.npc_id,Vector3(location[1],location[2],location[3]))
+                else
+                    module.NPCModule.LoadNpcOBJ(v.npc_id)
+                end
+            end
+        end
+        --战斗后剧情
+        local story_id = tonumber(v.id.."31")
+        if StoryConfig.GetStoryConf(story_id) then
+            TeamStory(story_id)
+            LoadStory(story_id,function()
+                BeforeSubmitItem(v)
+            end)
+        else
+            BeforeSubmitItem(v)
+        end
+    else
+        CloseFrame()
+    end
+end
+
+--跳转地图
+local function ChangeMap(v)
+    local map_id = v.go_where
+    if map_id > 0 then
+
+        SGKTools.loadEffect("UI/fx_chuan_ren")
+
+        SGKTools.PlayerMoveZERO()
+        SGKTools.PLayerConceal(true)
+        Sleep(0.5)
+        module.EncounterFightModule.GUIDE.EnterMap(map_id)
+    end
+    local result,result_type = QuestModule.CanSubmit(v.id)
+    if result then
+        StoryBeforeFinish(v)
+    else
+        StartFight(v)
+    end
+end
+
+--战斗前剧情
+local function BeforeFight(v)
+    local story_id = tonumber(v.id.."21")
+    if StoryConfig.GetStoryConf(story_id) then
+        TeamStory(story_id)
+        LoadStory(story_id,function ()
+            StartFight(v)
+        end)
+    else
+        StartFight(v)
+    end
+end
+
+--完成任务
+if #quests > 0 then
+    local result,result_type = {},{}
+    for k,v in ipairs(quests) do
+        local isAuto = false
+        local isLock = false
+        if gid == v.npc_id then
+            local npc_conf = MapConfig.GetMapMonsterConf(v.npc_id)
+            --使用物品任务
+            if npc_conf and npc_conf.type == 4 then
+                --0：不自动    1：自动交   2：自动引导  3：都自动
+                if v.is_auto and (v.is_auto == 1 or v.is_auto == 3) then
+                    isAuto = true
+                    SGKTools.LockMapClick(true)
+                    isLock = true
+                end
+                local TableTalking = {
+                        [80029] = {"开饭啦！",1},
+                        [80031] = {"究竟是怎么一回事？",1},
+                        [80032] = {"小猫咪快下来！",1},
+                        [80034] = {"今天种下一棵树，明天收获一片林！",1},
+                        [80036] = {"不要怪我啊！",1},
+                        [80037] = {"不要怪我啊！",1},
+                        [79040] = {"招人了！招人了！",1},
+                        [80041] = {"让我听听他们在说什么……",1},
+                        [80042] = {"宝藏会在哪里呢？",1},
+                        [80043] = {"砍砍砍，一切为了建设发展！",1},
+                        [80044] = {"这些石块应该没有要吧？",1},
+                        [80045] = {"泉水中好像有股味道……",1},
+                        [80046] = {"我的，我的，都是我的！",1},
+                        [79027] = {"我是勤劳的扫地工！",1},
+                        [79028] = {"我是勤劳的扫地工！",1},
+                        [79035] = {"我是勤劳的扫地工！",1},
+                }
+                if TableTalking[v.give_id] then
+                   LoadNpcDesc(nil,TableTalking[v.give_id][1],nil,TableTalking[v.give_id][2])
+                end
+                MapHelper.QuickToUse(v.give_type, v.give_id,v.play_effect_name, 1.5,1,v.play_icon,v.play_text, v.button_name, isAuto, function()
+                    if isLock then
+                        SGKTools.LockMapClick(false)
+                    end
+                    
+                    module.NPCModule.deleteNPC(v.npc_id)
+                    ChangeMap(v)
+                end)
+            else
+                --常规任务
+                local activity_id = SGKTools.GetActivityIDByQuest(v.id)
+
+                result[k],result_type[k] = QuestModule.CanSubmit(v.id)
+
+                local icon_resouce = "bg_db_duihuarenwu"
+                if result_type[k] == 2 or v.id == 102143 then
+                    icon_resouce = "bg_db_zhandourenwu"
+                end
+                if v.type == 60  and result_type[k] ~= 2 and QuestModule.CanSubmit(v.id) ~= true then
+                    icon_resouce = "bg_db_weidacheng"
+                end
+                local button_desc = v.button_des
+                if activity_id and activity_id > 0 then
+                    button_desc = button_desc .. "\n(推荐组队)"
+                    table.insert(menus, {name="前往组队", icon = "bg_db_gongneng", action = function()
+                        --打开队伍列表
+                        SGKTools.CloseStory()
+                        SGKTools.OpenActivityTeamList(activity_id)
+                        --开启匹配
+                        --SGKTools.StartActivityMatching(activity_id)
+                    end})
+                end
+
+                local aa = {name = button_desc, icon = icon_resouce, action = function()
+                    if result[k] then
+                        BeforeSubmitItem(v)
+                    elseif result_type[k] == 2  or result_type[k] == 7 and (v.event_type1 == 88 or v.event_type2 == 88) then
+                        --任务战斗
+                        BeforeFight(v)
+                    else
+                        QuestModule.CanSubmit(v.id)
+                        -----没有任务物品
+                        local story_id = tonumber(v.id.."91")
+                        if StoryConfig.GetStoryConf(story_id) then
+                            LoadStory(story_id,function()
+                                --CloseFrame()
+                                BeforeSubmitItem(v)
+                            end)
+                        else
+                            --CloseFrame()
+                            BeforeSubmitItem(v)
+                        end
+                    end
+                end}
+
+                local cur_quest = SGKTools.GetTaskId()
+                if v.id == cur_quest then
+                    aa.effect = "effect/UI/fx_guide_kuan"
+                    --0：不自动    1：自动交   2：自动引导  3：都自动
+                    if v.is_auto and (v.is_auto == 1 or v.is_auto == 3) then
+                        aa.auto = true
+                    end
+                end
+
+                if v.is_auto == 4 then
+                    aa.action()
+                else
+                    table.insert(menus, aa)
+                end
+            end
+        end
+    end
+end
+
+SetStoryOptions(menus)

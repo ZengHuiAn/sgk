@@ -1,0 +1,28 @@
+local mapid,gid = ...
+gid = tostring(gid)
+local ActivityConfig = require "config.activityConfig"
+local menus = {}
+
+local npcTable = ActivityConfig.GetActivityNpcList()
+
+if not npcTable[gid] then
+	return
+end
+print(sprinttb(npcTable[gid]))
+local my_level = module.playerModule.Get().level
+LoadStory(999993,nil,true)
+for i,v in ipairs(npcTable[gid]) do
+	if my_level >= v.lv then
+		local activity_id = v.id
+		local activity_name = v.name
+		table.insert(menus, {name = activity_name,icon = "bg_db_zhandourenwu", guideName = "options"..activity_id, action = function()
+			local CemeteryConf = require "config.cemeteryConfig"
+			if CemeteryConf.Getteam_battle_activity(activity_id) then
+				DispatchEvent("CloseStoryReset")
+				DialogStack.Replace("TeamPveEntrance",{gid = activity_id,is_on = true},"UGUIRootTop")
+			end
+		end})
+	end
+end
+SetStoryOptions(menus)
+LoadStoryOptions()

@@ -1,0 +1,29 @@
+local mapid,gid = ...
+id = tonumber(gid)
+
+local MapHelper = require "utils.MapHelper"
+
+--需要钥匙宝箱
+local function KeyBag(id)
+    local key_id = nil
+    local key_table = MapHelper.GetConfigTable("gift_bag","gid")
+    for k,v in pairs(key_table) do
+        if k == id then 
+            key_id = v[1].item_id
+        end 
+    end
+
+    local key = utils.ItemHelper.Get(41, key_id);
+    if key.count < 1 then
+        showDlgError(nil, key.name .. '数量不足');
+        MapHelper.ShowQuickBuy(key_id,41,1);
+    else
+        showDlg(nil,string.format("需要消耗1个%s\n(当前拥有：%d )\n是否打开",key.name,key.count), function()
+            module.ItemModule.OpenGiftBag(id)
+            module.NPCModule.deleteNPC(id)
+        end, function() end)
+    end
+end
+
+--免费宝箱
+module.ItemModule.OpenGiftBag(id)

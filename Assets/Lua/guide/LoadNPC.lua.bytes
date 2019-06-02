@@ -1,0 +1,60 @@
+--[[
+if module.QuestModule.CanSubmit(101031) then
+   module.NPCModule.LoadNpcOBJ(1029100)
+end
+if module.QuestModule.CanSubmit(101031) then
+   module.NPCModule.LoadNpcOBJ(1028105,Vector3(-2.63,0,3.86),true)
+else 
+   module.NPCModule.LoadNpcOBJ(2028104,Vector3(-3.28,0,19.9),true)
+end  
+]]
+
+local data = ...
+local story_id = data.id
+
+
+--[[
+local StoryConfig = require "config.StoryConfig"
+local nextid = StoryConfig.GetStoryConf(data.id).next_id
+loadRollingSubtitles(nextid,function()
+	LoadStory(StoryConfig.GetStoryConf(nextid).next_id,function()
+		ERROR_LOG("ok")
+	end)
+end)
+]]
+local npc_list ={
+    [10001120] = {2052108},
+    [9990101] = {2052108},
+    [10009167] = {1052105},
+    [90000171] = {2052117},
+    [90000272] = {2052117},
+    [90101166] = {1029100},
+    [10503161] = {2019107},
+    [10801162] = {2037101},
+    [11002174] = {2007100},
+    [90101365] = {2029104,2029105},
+    [90102365] = {2029104,2029105},
+    [10008162] = {2052106},
+    [3400561] = {2010107},
+    [3402961] = {2010107},
+    [10304163] = {2070109},
+    [10304165] = {2070108},
+    [10304161] = {2070107},
+    [10506164] = {2030120,2030113},
+    [20506164] = {2030121,2030115},
+}
+
+local gid = npc_list[story_id][1]
+gid = tonumber(gid)
+
+for _,v in ipairs(npc_list[story_id]) do
+    if story_id == 90101365 or story_id == 90102365 then
+        module.NPCModule.deleteNPC(2029101)
+        module.NPCModule.deleteNPC(2029102)
+        module.NPCModule.LoadNpcOBJ(v,nil,true)
+    else
+        module.NPCModule.LoadNpcOBJ(v,nil,true)
+    end
+end
+local obj = module.NPCModule.GetNPCALL(gid)
+

@@ -1,0 +1,12 @@
+-- 满足条件才生成该NPC（主线/支线剧情用到的NPC和怪）
+
+local gid = ...
+gid = tonumber(gid)
+local status = false
+module.QuestModule.GetNpcStatus(gid,function (NpcStatus,isShow)
+	if NpcStatus and NpcStatus ~= 2 then
+		status = true;
+	end
+end)
+
+return status;

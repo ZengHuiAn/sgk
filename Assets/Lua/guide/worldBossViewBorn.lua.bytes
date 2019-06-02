@@ -1,0 +1,30 @@
+local gid = ...
+local MapConfig = require "config.MapConfig"
+gid = tonumber(gid)
+
+local _type = 1
+local _monsterCfg = MapConfig.GetMapMonsterConf(gid)
+local _mapId = _monsterCfg.mapid
+if _mapId == 251 then
+    _type = 2
+else
+    _type = 1
+end
+
+local _bossInfo = module.worldBossModule.GetBossInfo(_type)
+
+if _bossInfo and _bossInfo.type == _type then
+    local npc_info = module.NPCModule.GetNPCALL(_bossInfo.id);
+    
+    local _npcCfg = MapConfig.GetMapMonsterConf(_bossInfo.id)
+    if _npcCfg then
+        if _npcCfg.mapid == _mapId then
+            local _time = _bossInfo.beginTime + _bossInfo.duration - module.Time.now()
+            if _time > 0 then
+                return true
+            end
+        end
+    end
+end
+
+return false

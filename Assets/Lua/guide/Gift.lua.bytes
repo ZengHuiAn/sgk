@@ -1,0 +1,42 @@
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local gift_list = {
+    {89900,"获得角色碎片"},
+    {89901,"获得盗具碎片"},
+    {89902,"获得材料和资源"},
+    {89903,"获得盗具进阶材料"},
+    {89904,"获得角色进阶材料"},
+    {89905,"获得护符"},
+    {89906,"获得铭文"},
+    {89907,"获得主角经验"},
+}
+local menus = {}
+
+--打开宝箱
+for k,v in ipairs(gift_list) do
+table.insert(menus, {name = v[2], action = function()
+        DispatchEvent("KEYDOWN_ESCAPE")
+        module.ItemModule.OpenGiftBag(v[1]);
+    end})
+end
+
+--生成宝箱
+local bag_list = {
+    3010000,
+    3010001,
+    3010002,
+    3010003,
+    3010004,
+    3010005,
+}
+
+table.insert(menus, {name = "生成宝箱", action = function()
+    DispatchEvent("KEYDOWN_ESCAPE")
+    for _,v in ipairs(bag_list) do
+        --module.NPCModule.LoadNpcOBJ(v,Vector3(0,0,0))
+        module.NPCModule.LoadNpcOBJ(v)
+    end
+end})
+
+SetStoryOptions(menus)

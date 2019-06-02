@@ -1,0 +1,49 @@
+----------------保卫基地采集物NPC----------------------
+local activity_id,gid,uuid = ...
+activity_id = tonumber(activity_id)
+gid = tonumber(gid)
+uuid = tonumber(uuid)
+
+print(activity_id,gid,uuid)
+if gid >= 9067101 and gid <= 9067112 then                                                                                    --id是否为炸弹怪
+	--print("gid")                                                                                  
+	utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})                              --地图广播采集状态                                      
+	local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+    local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+    local _view = CS.SGK.UIReference.Setup(_obj)
+    _view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("拆卸炸弹")
+    _view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. 79013)
+	CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+	Sleep(1.5)
+	local battleData = module.TeamActivityModule.Get(2)
+	--print("fight", sprinttb(battleData))  
+    if battleData.npcs[uuid].value[3] == 1 then    
+		showDlgError(nil,"炸弹正在被其他玩家拆卸!")
+	else
+	    --showDlgError(nil,"进入战斗!")	
+		--print("toserver")  
+		module.ProtectBaseModule.SetCurFightUUID(uuid)
+	    module.TeamActivityModule.Interact(activity_id, uuid, 1)                      --传战斗消息给服务器
+		--print("over")  
+	end
+elseif gid >= 9067113 and gid <= 9067116 then 
+    --print("gid")                                                                                    --id是否为补给箱怪
+	utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})                              --地图广播采集状态                                      
+	local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+    local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+    local _view = CS.SGK.UIReference.Setup(_obj)
+    _view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("打开补给")
+    _view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. 79013)
+	CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+    Sleep(1.5)
+	local battleData = module.TeamActivityModule.Get(2)
+	--print("collection", sprinttb(battleData))  
+    if battleData.npcs[uuid].value[3] == 1 then    
+		showDlgError(nil,"补给箱已经被选取!")
+	else
+	    --showDlgError(nil,"获得补给!")	
+		--print("toserver")  
+	    module.TeamActivityModule.Interact(activity_id, uuid, 2)                      --传发奖励消息给服务器
+		--print("over")  
+	end
+end

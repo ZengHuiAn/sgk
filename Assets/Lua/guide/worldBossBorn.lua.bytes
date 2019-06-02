@@ -1,0 +1,23 @@
+local gid = ...
+gid = tonumber(gid)
+
+local _cfg = module.worldBossModule.GetBossCfg(gid)
+
+
+-- npc_init_succeed
+
+
+if _cfg then
+    local _bossInfo = module.worldBossModule.GetBossInfo(_cfg.type)
+    if gid == _bossInfo.id then
+        if _bossInfo and _bossInfo.type == _cfg.type then
+            local _time = _bossInfo.beginTime + _bossInfo.duration - module.Time.now()
+            if _bossInfo.hp >= 0 and _time >= 0 then
+            	-- ERROR_LOG(gid.."开启");
+                return true
+            end
+        end
+    end
+end
+-- ERROR_LOG(gid.."未开启");
+return false

@@ -1,0 +1,46 @@
+-- 生成NPC的同时，脚底出现特效
+local obj = module.NPCModule.GetNPCALL(2052101)
+local gid = 2052101
+local skeleton_ani = obj:GetComponentInChildren(typeof(CS.Spine.Unity.SkeletonAnimation))
+
+
+local function Npc_showDialog(id, desc, duration, type)
+    LoadNpcDesc(id, desc, nil, type, duration)
+end
+
+local function Npc_changeDirection(obj, direction)
+    obj[SGK.MapPlayer]:SetDirection(direction)
+end
+
+local function Npc_move(obj, Vector)
+    local x,y,z = Vector[1],Vector[2],Vector[3]
+    obj[SGK.MapPlayer]:MoveTo(x,y,z)
+end
+
+local fun_list = {}
+
+function fun_list:Npc_2052101(gid) 
+    print("---------------------------luyouqi")
+    utils.SGKTools.LockMapClick(true)
+    utils.SGKTools.StopPlayerMove()
+    utils.SGKTools.ClearMapPlayer(true)
+    utils.SGKTools.MapCameraMoveTo(2052101)
+    Npc_showDialog(2052101 ,"喜欢爷爷为你准备的欢迎仪式吗？",0.5, 2, 1)
+    Npc_move(obj ,{-1.94, 0, 19.05}, 0.5)
+    -- Npc_changeDirection(obj, 6 ,0.5 )
+    Sleep(4)
+    utils.SGKTools.MapCameraMoveTo()
+    utils.SGKTools.ClearMapPlayer(false)
+    utils.SGKTools.LockMapClick(false)
+end
+
+function fun_list:Npc_88888(gid) 
+    Npc_showDialog(gid ,"!!!",0.5, 1, 2)
+    Npc_move(obj ,{2.24, 0, 6.16}, 0.5)
+end
+
+
+local fun_name = "Npc_".. gid
+if fun_list[fun_name] then
+    fun_list[fun_name]()
+end

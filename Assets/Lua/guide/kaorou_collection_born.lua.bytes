@@ -1,0 +1,19 @@
+local obj,gid = ...
+gid = tonumber(gid)
+
+local npc_table = {
+
+	[6346101] = "effect/UI/NpcButtle2",
+	[6346201] = "effect/UI/NpcButtle1",
+    [6346301] = "effect/UI/NpcButtle3",
+    [6346102] = "effect/UI/NpcButtle2",
+	[6346202] = "effect/UI/NpcButtle1",
+    [6346302] = "effect/UI/NpcButtle3",
+}
+
+local map_npc_table = utils.MapHelper.GetConfigTable("all_npc","gid")
+if npc_table[gid] then
+    -- ERROR_LOG(npc_table[gid]);
+    utils.SGKTools.loadEffect(npc_table[gid],gid)
+    return
+end

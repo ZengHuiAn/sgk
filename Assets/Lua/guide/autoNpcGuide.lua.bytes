@@ -1,0 +1,6 @@
+local gid, script = ...
+
+local _obj = module.NPCModule.GetNPCALL(tonumber(gid))
+if _obj then
+    _obj[SGK.MapInteractableMenu].enabled = false
+end

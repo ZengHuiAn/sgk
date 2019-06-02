@@ -1,0 +1,39 @@
+local gid ,mapid= ...
+local MapConfig = require "config.MapConfig"
+gid = tonumber(gid)
+
+
+local _cfg = module.sharedQuestModule.GetCfg(nil, nil, gid)
+if _cfg then
+    for i,v in ipairs(_cfg) do
+        local _quest = module.sharedQuestModule.GetQuestInfo(v.posIdx)
+        if _quest then
+            local _questCfg = module.sharedQuestModule.GetCfg(_quest.questId)
+            
+            if _questCfg and _questCfg.npcId == gid then
+                if _quest.finishCount ~= v.finishCount then
+                    if _quest.startTime <= module.Time.now() then
+                        local _bossInfo = module.worldBossModule.GetBossInfo(1)
+
+                        if _bossInfo and next(_bossInfo) then
+                            local MapHelper = require "utils.MapHelper"
+                            local npc_table = MapHelper.GetConfigTable("all_npc","gid")
+                            -- ERROR_LOG(npc_table[_bossInfo.id][1].mapid)
+                            if  npc_table[_bossInfo.id][1].mapid == npc_table[gid][1].mapid then
+
+                                local _time = _bossInfo.beginTime + _bossInfo.duration - module.Time.now()
+                                if _time > 0 and _bossInfo.hp >0 then
+                                    return true
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+
+
+return false

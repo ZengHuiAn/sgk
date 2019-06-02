@@ -1,0 +1,34 @@
+local type,npcid,gid = ...
+
+local inter = this.interaction;
+local _gid = gid
+local npc_id = tonumber(npcid)
+
+
+
+-- print(inter,"============",_gid)
+ERROR_LOG(type,npcid,gid)
+if inter == 1 then
+    local born = module.TreasureMapModule.GetNPCOBJ(tonumber(_gid)).born;
+
+    local born_view = CS.SGK.UIReference.Setup(born.gameObject);
+    if module.TreasureMapModule.GetAnswerByID(tonumber(_gid)) then
+        born_view.fx_mig_box_light.mig_box_ani[UnityEngine.Animator]:SetInteger("status",2)
+    else
+        born_view.fx_mig_box_light.mig_box_ani[UnityEngine.Animator]:SetInteger("status",1)
+    end
+
+
+    module.TreasureMapModule.SetAnswer(tonumber(_gid),tonumber(npcid))
+end
+
+-- end
+
+
+local function GetConfigIcon( npc_id )
+    local mazeConfig = require "config.mazeConfig"
+    local info = mazeConfig.GetInfo(tonumber(npc_id));
+    if info then
+        return info.icon
+    end
+end

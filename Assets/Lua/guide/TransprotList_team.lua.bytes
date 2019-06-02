@@ -1,0 +1,125 @@
+local mapid,gid,target_map = ...
+gid = tonumber(gid)
+
+
+local MapHelper = require "utils.MapHelper"
+local MapConfig = require "config.MapConfig"
+local map_table = MapHelper.GetConfigTable("all_map","gid")
+local npc_table = MapHelper.GetConfigTable("all_npc","gid")
+
+
+local curMap = SceneStack.CurrentSceneID()
+
+--选择可去地图（多个选项）
+local map_list = {
+    [13] = {1,{201,202,203,204}},
+    [23] = {2,{21,22,49}},
+    [21] = {3,{22,23,49}},
+    [22] = {2,{21,23,49}},
+    [49] = {2,{21,23,22}}, 
+    [37] = {1,{66}},
+    [10] = {1,{9,52}},
+    [19] = {1,{15,16}}, 
+    [27] = {1,{39,41}},  
+}
+
+--火车移动点（地图上隐藏不可见）
+local huoche_enter_position = {
+    [21] = 6021981,  
+    [22] = 6022981,
+    [23] = 6023982,
+    [49] = 6049981,  
+}
+
+--人传送点（一个选项直接传送）
+local man_enter_position = {
+    [21] = 6021980,  
+    [22] = 6022980,
+    [23] = 6023981,
+    [49] = 6049980, 
+    [50] = 6050980,
+    [37] = 6037982,
+    [10] = 6010980,  
+}
+
+local function HuoChe(npc_id)
+    --如果是传送后触发则隐藏玩家
+    if npc_id ~= huoche_enter_position[curMap] then
+        utils.SGKTools.LockMapClick(true)
+        if module.TeamModule.GetTeamInfo().id <= 0 then
+            utils.SGKTools.PLayerConceal(true,0,0)
+        else
+            utils.SGKTools.TeamConceal(true,0,0)
+        end
+    end
+    local npc_object = npc_table[npc_id][1]
+    --默认火车特效遮住玩家
+    local effect1 = "zhengqihuoche_1"
+    local effect2 = "zhengqihuoche_2"
+    local curMap2 = SceneStack.CurrentSceneID()
+    --如果火车在地图上层，玩家遮住火车
+    if map_list[curMap2][1] == 3 then
+        effect1 = "zhengqihuoche_3"
+        effect2 = "zhengqihuoche_4"
+    end
+    --加载火车入场
+    utils.SGKTools.DestroySceneEffect(effect1)
+    utils.SGKTools.loadSceneEffect(effect1,Vector3(npc_object.Position_x,npc_object.Position_y,npc_object.Position_z))
+    Sleep(5)
+    --玩家特效
+    module.TeamModule.SetmapPlayStatus(module.playerModule.Get().id,{8})--清空
+    DispatchEvent("UpdataPlayteStatus",{pid = module.playerModule.Get().id});
+    if npc_id == huoche_enter_position[curMap] then
+        --上车，隐藏玩家
+        if module.TeamModule.GetTeamInfo().id <= 0 then
+            utils.SGKTools.PLayerConceal(true)
+        else
+            utils.SGKTools.TeamConceal(true)
+        end
+    else
+
+        --销毁火车入场特效
+        utils.SGKTools.DestroySceneEffect(effect1,0,function()
+            --加载火车离场特效
+            utils.SGKTools.loadSceneEffect(effect2,Vector3(npc_object.Position_x,npc_object.Position_y,npc_object.Position_z))
+        end)
+        --下车，显示玩家
+        if module.TeamModule.GetTeamInfo().id <= 0 then
+            utils.SGKTools.PLayerConcealtwo(2.4)
+        else
+            utils.SGKTools.TeamConcealtwo(2.4)
+        end
+    end
+    Sleep(1)
+end
+if map_list[curMap][1] == 1 then
+    local toMap =  target_map and MapConfig.GetMapConf(tonumber(target_map))
+
+    -- toMap
+    local level = module.playerModule.Get().level;
+
+    if level < toMap.depend_level  then
+        return showDlgError(nil,SGK.Localize:getInstance():getValue("tongyong_02",toMap.depend_level));
+    end
+
+
+    --非火车特殊传送
+    utils.SGKTools.loadEffect("UI/fx_chuan_ren")
+    Sleep(0.5)
+    utils.SGKTools.PLayerConceal(true)
+   ERROR_LOG(target_map);
+    SceneStack.EnterMap(target_map)
+    utils.SGKTools.LockMapClick(false)
+    
+elseif map_list[curMap][1] >= 2 then
+    --火车传送
+    HuoChe(huoche_enter_position[curMap])
+    local manMove = npc_table[man_enter_position[target_map]][1]
+    
+    local myPos = {manMove.Position_x,manMove.Position_y,manMove.Position_z}
+
+    module.EncounterFightModule.GUIDE.EnterMap(target_map,{pos = myPos,effectName = "",})
+    HuoChe(huoche_enter_position[target_map])
+    utils.SGKTools.LockMapClick(false)
+    utils.SGKTools.LockMapClick(false)
+end

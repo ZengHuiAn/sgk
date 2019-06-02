@@ -1,0 +1,10 @@
+--[[
+    军团答题对NPC
+]]
+
+local inter = this.interaction;
+if inter == 1 then   --进入对的npc
+	module.WorldAnswerModule.SetAnswer(1);
+else
+	module.WorldAnswerModule.SetAnswer();
+end

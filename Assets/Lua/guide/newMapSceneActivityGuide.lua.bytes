@@ -1,0 +1,9 @@
+local cfg = ...
+
+local mapList = {8,9,10,19,13,28,30,27,22,21,23,48}
+
+if cfg.id == 2101 then
+    EnterMap(mapList[math.random(1, #mapList)], {func = function()
+        showDlgError(nil, "已传送至可能刷新陵兽场景")
+    end})
+end

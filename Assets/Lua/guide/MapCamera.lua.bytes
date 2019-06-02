@@ -1,0 +1,21 @@
+local data = ...
+local story_id = data.id
+
+local npc_list ={
+    [10304167] = {2070107},
+    [90300363] = {0},
+    [90300463] = {0},
+    [10408111] = {2019106},
+    [10408112] = {0},
+}
+
+local gid = npc_list[story_id][1]
+gid = tonumber(gid)
+
+for _,v in ipairs(npc_list[story_id]) do
+    if story_id == 90300363 or story_id == 90300463 or story_id == 10408112 then
+        utils.SGKTools.MapCameraMoveTo()
+    else
+        utils.SGKTools.MapCameraMoveTo(v)
+    end
+end

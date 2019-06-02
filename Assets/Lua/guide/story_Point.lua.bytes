@@ -1,0 +1,9 @@
+local inter = this.interaction;
+if inter == 1 then
+	LoadStory(10105112,function()
+        utils.SGKTools.LockMapClick(true)
+        utils.SGKTools.PlayerMove(-4.34, -0.023, 5.37)
+        Sleep(1.5)
+        utils.SGKTools.LockMapClick(false)
+    end)
+end

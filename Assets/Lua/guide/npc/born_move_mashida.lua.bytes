@@ -1,0 +1,44 @@
+local obj = module.NPCModule.GetNPCALL(2027119)
+local gid = 2027119
+local skeleton_ani = obj:GetComponentInChildren(typeof(CS.Spine.Unity.SkeletonAnimation))
+
+
+local function Npc_showDialog(id, desc, duration, type)
+    LoadNpcDesc(id, desc, nil, type, duration)
+end
+
+local function Npc_changeDirection(obj, direction)
+    obj[SGK.MapPlayer]:SetDirection(direction)
+end
+
+local function Npc_move(obj, Vector)
+    local x,y,z = Vector[1],Vector[2],Vector[3]
+    obj[SGK.MapPlayer]:MoveTo(x,y,z)
+end
+
+local fun_list = {}
+
+function fun_list:Npc_2027119(gid) 
+    utils.SGKTools.StopPlayerMove()
+    utils.SGKTools.LockMapClick(true)
+    utils.SGKTools.ClearMapPlayer(true)
+    utils.SGKTools.MapCameraMoveTo(2027119)
+    Sleep(2)
+    Npc_move(obj ,{3.78, 6.3, 16.25})
+    Sleep(1)
+    Npc_showDialog(2027119 ,"传送戒指全部发放完毕。", 1.5, 1)
+    Sleep(1.5)
+    Npc_showDialog(2027118 ,"嗯……开始吧。", 1, 1)
+    Sleep(1.5)
+    Npc_showDialog(2027119 ,"是！", 1, 1)
+    -- Npc_changeDirection(obj, 6)
+    Sleep(2)
+    utils.SGKTools.MapCameraMoveTo()
+    utils.SGKTools.ClearMapPlayer(false)
+    utils.SGKTools.LockMapClick(false)
+end
+
+local fun_name = "Npc_".. gid
+if fun_list[fun_name] then
+    fun_list[fun_name]()
+end

@@ -1,0 +1,16 @@
+function Guide(quest)
+	local MapConfig = require "config.MapConfig"
+	local npc_conf = MapConfig.GetMapMonsterConf(quest.find_npc)
+	local mapid = npc_conf.mapid
+	if SceneStack.GetStack()[SceneStack.Count()].savedValues.mapId ~= mapid then
+        --SceneStack.EnterMap(mapid, {mapid = mapid,pos = quest.pos});
+    	module.EncounterFightModule.GUIDE.EnterMap(mapid,{mapid = mapid,pos = quest.pos})
+    	if quest.Accomplish then
+    		module.CemeteryModule.RestCemetery(function ()
+		        module.QuestModule.Cancel(module.CemeteryModule.GetTEAM_PveStateUid(module.CemeteryModule.Getactivityid()))
+                module.QuestModule.SetOldUuid(nil)
+		    end)
+    	end
+    end
+    Interact("NPC_"..quest.find_npc);
+end

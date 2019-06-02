@@ -1,0 +1,5 @@
+local menus = {{name = "1",auto = false,action = function ( ... )
+		             			print("1号选择")
+		             			LoadStory(1010106)
+		             		end}}
+SetStoryOptions(menus)

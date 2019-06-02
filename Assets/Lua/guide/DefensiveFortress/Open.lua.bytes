@@ -1,0 +1,4 @@
+local siteId = ...
+siteId=tonumber(siteId)
+
+DispatchEvent("CLICK_OPEN_BOX",{siteId=siteId});

@@ -1,0 +1,80 @@
+local mapid,gid = ...
+gid = tonumber(gid)
+mapid = tonumber(mapid)
+
+
+--建设城市npc
+local ActivityConfig = require "config.activityConfig"
+local OpenLevelConfig = require "config.openLevel"
+local cityCfgByMonsterNpc = ActivityConfig.GetCityConfig(nil,nil,nil,gid)
+local buildCityOpenLv = 4008
+if OpenLevelConfig.GetStatus(buildCityOpenLv) then
+	local cityCfgByNpc = ActivityConfig.GetCityConfig(nil,nil,gid)
+	if cityCfgByNpc then
+		DialogStack.Push("buildCity/buildCityFrame",{map_Id = cityCfgByNpc.map_id})
+	end
+end
+
+local menus = {}
+local function SetFightBtnShow(info)
+	local lastLv = ActivityConfig.GetCityLvAndExp(info,cityCfgByMonsterNpc.type)
+	if lastLv then
+		local cityLvCfg = ActivityConfig.GetBuildCityConfig(cityCfgByMonsterNpc.type,lastLv)
+		local  fight_id = cityLvCfg.fight_id
+		if fight_id then
+			local SmallTeamDungeonConf = require "config.SmallTeamDungeonConf"
+			local conf = SmallTeamDungeonConf.GetTeam_pve_fight_gid(fight_id)
+			if conf then
+				if conf and conf.gid_id then
+					local battleCongfig = SmallTeamDungeonConf.GetTeam_battle_conf(conf.gid_id)
+					if battleCongfig then
+						if battleCongfig.limit_level and module.playerModule.Get().level < battleCongfig.limit_level then
+							showDlgError(nil,SGK.Localize:getInstance():getValue("tongyong_01",battleCongfig.limit_level))
+							return
+						end
+					else
+						ERROR_LOG("battleCongfig is nil,battleId",conf.gid_id)
+					end
+				else
+					ERROR_LOG("conf.gid_id is nil",conf.gid_id)
+				end
+				if utils.SGKTools.BuildBossStatus(gid,8) then
+					if module.playerModule.Get().level >= conf.depend_level_id  then				
+						table.insert(menus, {name = "挑战",icon = "bg_db_zhandourenwu",auto = false, action = function()
+							ERROR_LOG(cityCfgByMonsterNpc.type)
+							module.QuestModule.CityContructFightBoss(cityCfgByMonsterNpc.type)
+							utils.SGKTools.CloseFrame()
+						end}) 
+				
+						SetStoryOptions(menus)
+						LoadStoryOptions()
+					else
+						showDlgError(nil,SGK.Localize:getInstance():getValue("tongyong_01",conf.depend_level_id))
+					end
+				end
+            end
+		end
+	end
+end
+
+
+--建设城市Boss
+if cityCfgByMonsterNpc then
+	local info = module.QuestModule.CityContuctInfo(nil,true)
+	if info and info.boss and next(info.boss)~=nil then
+		SetFightBtnShow(info)
+	else
+		coroutine.resume(coroutine.create(function()
+			local data = utils.NetworkService.SyncRequest(11049)
+			local _cityContuctInfo = {boss = {}};
+			_cityContuctInfo.round_index  = data[3];
+			_cityContuctInfo.today_count  = data[4];
+			_cityContuctInfo.current_city = data[6];
+
+			for _, v in ipairs(data[5] or {}) do
+				_cityContuctInfo.boss[v[1]] = { id = v[1], exp = v[2], quest_group = v[3] }
+			end
+			SetFightBtnShow(_cityContuctInfo)
+		end))
+	end
+end

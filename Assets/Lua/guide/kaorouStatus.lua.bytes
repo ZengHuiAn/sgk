@@ -1,0 +1,21 @@
+local gid = ...
+local shop = module.ShopModule.GetManager(4001)
+--ERROR_LOG(sprinttb(shop))
+for k,v in pairs(shop.shoplist)do
+	local count = module.ItemModule.GetItemCount(v.consume_item_id1)
+	if gid == 2346000 then
+		--空桌子
+		--if count == 0 then
+		--	return true
+		--else
+		--	return false
+		--end
+	else
+		if count >= v.consume_item_value1 then
+			return true
+		else
+			return false
+		end
+	end
+end
+return false

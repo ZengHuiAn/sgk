@@ -1,0 +1,111 @@
+local cfg = ...
+if not cfg then
+    return
+end
+
+local openLevel = require "config.openLevel"
+
+local heroId = cfg.heroId or 11000
+local strongerCfg = cfg.cfg
+local openLevel = cfg.openlev_id
+
+if openLevel then
+    if not openLevel.GetStatus(openLevel) then
+        showDlgError(nil, openLevel.GetCloseInfo(openLevel))
+        return
+    end
+end
+
+local guideValue = strongerCfg.guideValue
+print("配置表类型",guideValue)
+if guideValue == 1 then -----------------上阵
+    DialogStack.Push("FormationDialog")
+elseif guideValue == 2 then  -----------------主线副本
+    DialogStack.Push("newSelectMap/selectMap", {idx = 1})
+elseif guideValue == 3 then  -----------------支线副本
+    DialogStack.Push("newSelectMap/selectMap", {idx = 2})
+elseif guideValue == 4 then  -----------------占卜
+    DialogStack.Push("DrawCard/newDrawCardFrame")
+elseif guideValue == 5 then  -----------------限时商店
+    DialogStack.Push("ShopFrame",{index = 1});
+elseif guideValue == 6 then  -----------------角色品质
+    DialogStack.Push("newRole/roleFramework", {heroid = heroId , idx = 2})
+elseif guideValue == 7 then  -----------------角色升星
+    DialogStack.Push("newRole/roleFramework", {heroid = heroId , idx = 3})
+elseif guideValue == 8 then  -----------------英雄比拼
+    DialogStack.Push("PveArenaFrame")
+elseif guideValue == 9 then  -----------------元素暴走
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 21 })
+elseif guideValue == 10 then -----------------装备品质
+    DialogStack.Push("newRole/roleFramework", {heroid = heroId , idx = 1})
+elseif guideValue == 11 then  -----------------试练塔
+    DialogStack.Push("trial/trialTower")
+elseif guideValue == 12 then  -----------------神陵秘宝
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 2107, filter = {flag = false, id = 1003}})
+elseif guideValue == 13 then  -----------------领主降临
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 2102, filter = {flag = false, id = 1003}})
+elseif guideValue == 14 then  -----------------活动主界面
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {filter = {flag = false, id = 1003}})
+elseif guideValue == 15 then  -----------------钻石商店
+    DialogStack.Push("ShopFrame",{index = 2})
+elseif guideValue == 16 then  -----------------财力竞技场
+    DialogStack.Push("PvpArena_Frame")
+elseif guideValue == 17 then  -----------------组队副本
+    DialogStack.Push("newSelectMap/selectMap", {idx = 3})
+elseif guideValue == 18 then  -----------------悬门建设
+    DialogStack.Push("mapSceneUI/CityBuilding",3010008)
+elseif guideValue == 19 then  -----------------矿脉建设
+    DialogStack.Push("mapSceneUI/CityBuilding",3019000)
+elseif guideValue == 20 then  -----------------要塞建设
+    DialogStack.Push("mapSceneUI/CityBuilding",3008000)
+elseif guideValue == 21 then  -----------------新港建设
+    DialogStack.Push("mapSceneUI/CityBuilding",3030000)
+elseif guideValue == 22 then  -----------------痛苦磨练
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 51 })
+elseif guideValue == 23 then  -----------------眼之战端
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 52 })
+elseif guideValue == 24 then  -----------------元素试炼
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 54 })
+elseif guideValue == 25 then  -----------------人物传记
+    DialogStack.Push("dataBox/NpcRelationship")
+elseif guideValue == 26 then  -----------------零号计划
+    DialogStack.Push("mapSceneUI/guideLayer/zeroPlan")
+elseif guideValue == 27 then  -----------------好感度
+    DialogStack.Push("FriendSystemList", {idx = 2})
+elseif guideValue == 28 then  -----------------主线副本（第一章）
+    DialogStack.Push("newSelectMap/selectMap", {idx = 1,openFlag = true})
+elseif guideValue == 29 then  -----------------趣味答题
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 6, filter = {flag = false, id = 1003}})
+elseif guideValue == 30 then  -----------------限时挑战
+    DialogStack.Push("mapSceneUI/timeBoss")
+elseif guideValue == 31 then  -----------------关卡争夺
+    DialogStack.Push("buildCity/buildCityFrame")
+elseif guideValue == 32 then  -----------------公会寻宝
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 4061, filter = {flag = false, id = 1003}})
+elseif guideValue == 33 then  -----------------公会宴会
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 4051, filter = {flag = false, id = 1003}})
+elseif guideValue == 34 then  -----------------海盗入侵
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 4041, filter = {flag = false, id = 1003}})
+elseif guideValue == 35 then  -----------------公会钓鱼
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 4031, filter = {flag = false, id = 1003}})
+elseif guideValue == 36 then  -----------------公会答题
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 4021, filter = {flag = false, id = 1003}})
+elseif guideValue == 37 then  -----------------棱镜探险
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 22, filter = {flag = false, id = 1003}})
+elseif guideValue == 38 then  -----------------基地保卫战
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 23, filter = {flag = false, id = 1003}})
+elseif guideValue == 39 then  -----------------答题竞赛
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 7, filter = {flag = false, id = 1003}})
+elseif guideValue == 40 then  -----------------公会领主
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 4011, filter = {flag = false, id = 1003}})
+elseif guideValue == 41 then  -----------------公会战
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {activityId = 4071, filter = {flag = false, id = 1003}})
+elseif guideValue == 42 then  -----------------竞技主界面
+    DialogStack.Push("mapSceneUI/newMapSceneActivity", {filter = {flag = true, id = 1003}})
+elseif guideValue == 43 then  -----------------跳转基地地图
+    SceneStack.EnterMap(26)
+elseif guideValue == 44 then  -----------------资料柜
+    DialogStack.Push("dataBox/DataBox")
+else
+    showDlgError(nil, "暂未配置跳转界面")
+end

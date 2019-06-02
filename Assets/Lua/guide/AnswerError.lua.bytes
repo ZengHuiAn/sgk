@@ -1,0 +1,12 @@
+--[[
+    军团答题错NPC
+]]
+
+
+local inter = this.interaction;
+
+if inter == 1 then
+	module.WorldAnswerModule.SetAnswer(2);
+else
+	module.WorldAnswerModule.SetAnswer();
+end

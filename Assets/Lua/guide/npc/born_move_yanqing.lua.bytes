@@ -1,0 +1,38 @@
+local obj = module.NPCModule.GetNPCALL(2027112)
+local gid = 2027112
+local skeleton_ani = obj:GetComponentInChildren(typeof(CS.Spine.Unity.SkeletonAnimation))
+
+
+local function Npc_showDialog(id, desc, duration, type)
+    LoadNpcDesc(id, desc, nil, type, duration)
+end
+
+local function Npc_changeDirection(obj, direction)
+    obj[SGK.MapPlayer]:SetDirection(direction)
+end
+
+local function Npc_move(obj, Vector)
+    local x,y,z = Vector[1],Vector[2],Vector[3]
+    obj[SGK.MapPlayer]:MoveTo(x,y,z)
+end
+
+local fun_list = {}
+
+function fun_list:Npc_2027112(gid) 
+    utils.SGKTools.LockMapClick(true)
+    utils.SGKTools.ClearMapPlayer(true)
+    utils.SGKTools.MapCameraMoveTo(2027112)
+    Sleep(0.5)
+    Npc_showDialog(2027112 ,"劣等之血，死！！", 1, 2)
+    Sleep(1)
+    --Npc_move(obj ,{-3.13, 0.07, 19.21})
+    -- Npc_changeDirection(obj, 6)
+    utils.SGKTools.MapCameraMoveTo()
+    utils.SGKTools.LockMapClick(false)
+    --utils.SGKTools.ClearMapPlayer(false) 
+end
+
+local fun_name = "Npc_".. gid
+if fun_list[fun_name] then
+    fun_list[fun_name]()
+end

@@ -1,0 +1,19 @@
+----------------争夺战buff球----------------------
+local map_id, uuid = ...
+map_id = tonumber(map_id)
+uuid = tonumber(uuid)
+
+local info = module.GuildGrabWarModule.Get(map_id)
+local player_info = info:GetPlayerInfo(module.playerModule.GetSelfID());
+if player_info then
+    if player_info.next_time_to_born > module.Time.now() then
+        showDlgError(nil, SGK.Localize:getInstance():getValue("shuxingqiu05"))
+        return;
+    end
+    if player_info.pos ~= 0 then
+        print("在资源点里不能捡buff")
+        return;
+    end
+end
+info:GetBuff(uuid);
+-- utils.SGKTools.EffectGather(nil, 79013 , "获取中",time)

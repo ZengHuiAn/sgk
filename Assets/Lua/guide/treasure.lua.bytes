@@ -1,0 +1,40 @@
+local guildTaskCfg = require "config.guildTaskConfig"
+local guildTaskModule = require "module.guildTaskModule"
+local EventManager = require 'utils.EventManager';
+
+local mapid,npcid = ...
+npcid = tonumber(npcid)
+local pid = module.playerModule.Get().id
+local guildTask = guildTaskCfg.GetguildTaskByNpc(npcid,1003)
+if guildTask then
+	local TaskID = guildTask[1].quest_id
+
+	utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})
+	local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+    local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+    local _view = CS.SGK.UIReference.Setup(_obj)
+    _view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("拾取中...")
+    _view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. 79013)
+	CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+	Sleep(1.5)
+	local quest_list = guildTaskModule.GetGuild_task_list() --所有军团任务
+	if not quest_list or #quest_list==0 then
+		return
+	end
+	local IsAccept = quest_list[2][TaskID]
+	if not IsAccept or not IsAccept[pid] or IsAccept[pid].status == 2 then
+		local ret = guildTaskModule.Start_GUILD_QUEST(TaskID)--接受采集任务(自动交)
+		if ret == 0 then
+			local TaskGroup = guildTask[1].group
+			if math.floor(TaskGroup/100) == 1 then
+				showDlgError(nil,"获得黑甲胄的碎片（披风）")
+			elseif math.floor(TaskGroup/100) == 2 then
+				showDlgError(nil,"获得黑甲胄的碎片（黑盾）")
+			end
+		else
+			showDlgError(nil,"有其他玩家正在拾取，请稍后！")
+		end
+	elseif IsAccept[pid].status == 1 then
+		showDlgError(nil,"您已经拾取过了哦，无法再次拾取！")
+	end
+end

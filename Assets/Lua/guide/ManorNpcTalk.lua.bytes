@@ -1,0 +1,59 @@
+----------------庄园访客说话----------------------
+local mapid,gid = ...
+gid = tonumber(gid)
+
+local function IsNextQuest(id)
+    local quest = module.QuestModule.Get(id);
+    if quest then
+        if quest.status == 0 then
+            print("任务未完成", id);
+            return true;
+        elseif quest.status == 1 then
+            local branch = utils.SGKTools.TaskQuery(id)
+            print("分支任务", sprinttb(branch))
+            if branch and #branch > 0 then
+                local finish = 0;
+                for j,v in ipairs(branch) do
+                    local _quest = module.QuestModule.Get(v.quest);
+                    if _quest and _quest.status == 0 then
+                        print("分支任务未完成", v.quest)
+                        finish = finish + 1;
+                    elseif _quest == nil then
+                        print("分支任务不存在", v.quest)
+                    else
+                        print("分支任务状态", _quest.status)
+                    end
+                end
+                if finish == 0 then
+                    return true;
+                end
+            else
+                return false
+            end
+        end
+    else
+        print("任务不存在", id)
+    end
+    return false
+end
+
+local talker = module.ManorManufactureModule.CheckTalker();
+if talker and talker.step then
+    local quest = module.QuestModule.Get(talker.cfg["quest"..talker.step])
+    if quest == nil then
+        print("没接到任务", talker.cfg["quest"..talker.step])
+    else
+        IsNextQuest(talker.cfg["quest"..talker.step])
+        print("状态", quest.status)
+    end
+    -- if gid == talker.cfg["npc_id"..talker.step] then
+    --     -- LoadStory(talker.cfg["speak_id"..talker.step], nil, true)
+    --     print("正常")
+    -- else
+    --     AssociatedLuaScript("guide/NpcTalk.lua",...)
+    -- end
+    print("正常")
+    AssociatedLuaScript("guide/NpcTalk.lua",...)
+    AssociatedLuaScript("guide/Story.lua", ...)
+end
+

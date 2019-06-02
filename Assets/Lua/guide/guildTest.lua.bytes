@@ -1,0 +1,22 @@
+﻿--获取角色身上的参数
+local mapid,gid = ...
+gid = tonumber(gid)
+local teamMember = module.TeamModule.GetTeamMembers()
+				
+local menus = {}
+table.insert(menus, {name = "离开",icon = "bg_db_chuansong", action = function()
+    SceneStack.EnterMap(10);
+end})
+
+table.insert(menus, {name = "测试",icon = "bg_db_copper", action = function()
+	if teamMember and #teamMember >= 1 then
+		utils.SGKTools.StartTeamFight(50101) 
+		--DispatchEvent("KEYDOWN_ESCAPE") 
+	else
+	    showDlgError(nil,"请先组队!")
+		DispatchEvent("KEYDOWN_ESCAPE") 
+	end 
+end})
+
+SetStoryOptions(menus)
+LoadStoryOptions()

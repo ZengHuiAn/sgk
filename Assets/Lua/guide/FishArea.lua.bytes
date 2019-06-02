@@ -1,0 +1,8 @@
+-- --------------- 打开钓鱼相关UI-------------------
+local area = ...
+local inter = this.interaction;
+if inter == 1 then
+	DispatchEvent("FISH_AREA_ENTER",area)
+else
+	DispatchEvent("FISH_AREA_EXIT")
+end

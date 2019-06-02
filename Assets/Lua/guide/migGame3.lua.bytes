@@ -1,0 +1,16 @@
+local arg = ...
+
+
+local id = tonumber(arg)
+local inter = this.interaction;
+if inter == 1 then
+    utils.SGKTools.StopPlayerMove()
+    DispatchEvent("PLAYER_DEAD_EFFECT",{pid = module.playerModule.Get().id,time = 4})
+    DispatchEvent("PLAYSCREENEFFECT",{2,SGK.Localize:getInstance():getValue("migong_shibai")})
+    utils.SGKTools.LockMapClick(true,2)
+    module.TreasureMapModule.Start(999,2,function ( ... )
+        module.TreasureMapModule.ExitSmallGame()
+    end)
+else
+    print(inter)
+end

@@ -1,0 +1,5 @@
+local mapid,gid = ...
+print(gid)
+local s = AssociatedLuaScript("guide/10003.lua",...)
+print(s)
+LoadStory(1010101)

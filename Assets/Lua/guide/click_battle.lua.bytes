@@ -1,0 +1,84 @@
+local mapid,monster_id = ...
+monster_id = tonumber(monster_id);
+mapid = tonumber(mapid);
+
+local battle_id = module.CemeteryModule.Getactivityid()
+local stage,max = module.CemeteryModule.GetTeam_stage(battle_id);
+
+local TeamModule = require "module.TeamModule"
+local SmallTeamDungeonConf = require "config.SmallTeamDungeonConf"
+local MapHelper = require "utils.MapHelper"
+
+local fightList = SmallTeamDungeonConf.GetTeam_pve_fight(battle_id)
+if not fightList then
+	print('fightList not found in ', battle_id)
+	return;
+end
+
+
+local MonsterList = SmallTeamDungeonConf.Getteam_pve_fightMonster(monster_id)
+for i = 1,#MonsterList do
+	if MonsterList[i].gid_id == battle_id and MonsterList[i].sequence == (stage+1) and MonsterList[i].monster_id == monster_id then
+		local conf = MonsterList[i]
+		--ERROR_LOG(conf.story_id)
+		TeamStory(conf.story_id)
+		LoadStory(conf.story_id,function()
+			local menus = {}
+			local teamInfo = TeamModule.GetTeamInfo()
+			--判断队伍和队长
+			if teamInfo.group ~= 0 and teamInfo.leader.pid == module.playerModule.GetSelfID() then
+				--判断副本等级
+				local activity_list = MapHelper.GetConfigTable("team_battle_config","gid_id")
+				local activity_level = activity_list[battle_id][1].limit_level
+				local reach_level = true
+				local reach_name = ""
+				local teamMember = TeamModule.GetTeamMembers()
+				for _,v in ipairs(teamMember) do
+					if v.level < activity_level then
+						reach_level = false
+						reach_name = v.name
+						break
+					end
+				end
+				if reach_level then
+					if conf.is_fight_npc == 1 then
+						table.insert(menus, {name = "挑战",icon = "bg_db_zhandourenwu", action = function()
+							if TeamModule.GetPubRewardStatus() then
+								showDlgError(nil,"公共掉落尚未分配完成")
+							else
+								DispatchEvent("KEYDOWN_ESCAPE")								
+								--战前确认
+								--TeamModule.NewReadyToFight(conf.gid)
+								utils.NetworkService.Send(16070, {nil,conf.gid})
+							end
+						end})
+					else
+						utils.NetworkService.Send(16086,{nil,conf.gid})
+					end
+				else
+					--showDlgError(nil,"队伍中有成员未达到副本所需等级:"..activity_level)
+					--showDlg(nil,"队伍中有成员未达到副本所需等级:"..activity_level, function() end)
+					module.TeamModule.SyncTeamData(107,{"","队伍成员"..reach_name.."未达到副本所需等级:"..activity_level})
+				end
+			end
+			SetStoryOptions(menus)
+		end,true)
+		return
+	end
+end
+
+local npc_list = {
+    [2018800] = 1102310,
+	[2016802] = 1100410,
+	[2040802] = 1101110,
+	[2040803] = 1101210,
+	[2040804] = 1100910,
+}
+
+    if npc_list[monster_id] then
+        LoadStory(npc_list[monster_id],function ()
+        end,true)
+    else
+        AssociatedLuaScript("guide/NpcTalk.lua",...)
+    end
+

@@ -1,0 +1,60 @@
+local uuid,gid = ...
+gid = tonumber(gid)
+local mazeModule = require "module.mazeModule"
+
+local function Collection( gid )
+    local _item = SGK.ResourcesManager.Load("prefabs/effect/UI/fx_woring_ui.prefab")
+    local _obj = CS.UnityEngine.GameObject.Instantiate(_item, UnityEngine.GameObject.FindWithTag("UGUIRootTop").transform)
+    local _view = CS.SGK.UIReference.Setup(_obj)
+    _view.fx_woring_ui_1.gzz_ani.text_working[UI.Text].text = SGK.Localize:getInstance():getValue("zhuangyuan_caiji_01")
+    _view.fx_woring_ui_1.gzz_ani.icon_working[UI.Image]:LoadSprite("icon/" .. 79013)
+    utils.SGKTools.SynchronousPlayStatus({5, {2, module.playerModule.GetSelfID(),"pick",1.5}})
+    CS.UnityEngine.GameObject.Destroy(_obj, 1.5)
+    Sleep(1.5)
+    if gid == 1601400 then
+        module.mazeModule.Interact(uuid,1,{callback = function(error)
+            if error ~= 0 then
+                showDlg(nil,SGK.Localize:getInstance():getValue("common_yicaiji"));--已被采集
+            end
+        end})
+    elseif gid == 1601401 then 
+        local act = math.random(1,2)
+        if act == 1 then
+            module.mazeModule.Interact(uuid,act,{callback = function(error)
+                if error == 0 then
+                    DialogStack.PushPrefStact("mazeMonster",{Consume = {nil},
+                        Reward = {nil},
+                        desc = SGK.Localize:getInstance():getValue("maze_fumo1"),--宝箱中力量喷涌而出，你和你的队友获得攻击上的增强（造成伤害增加20%)
+                        name = SGK.Localize:getInstance():getValue("maze_fumo");})--附魔宝箱
+                else
+                    showDlg(nil,SGK.Localize:getInstance():getValue("common_yicaiji"));--已被采集
+                end
+            end})
+        else
+            module.mazeModule.Interact(uuid,act,{callback = function(error)
+                if error == 0 then
+                    DialogStack.PushPrefStact("mazeMonster",{Consume = {nil},
+                        Reward = {nil},
+                        desc = SGK.Localize:getInstance():getValue("maze_fumo2"),--宝箱中力量喷涌而出，你和你的队友获得防御上的增强（受到伤害减少20%）
+                        name = SGK.Localize:getInstance():getValue("maze_fumo");})--附魔宝箱
+                else
+                    showDlg(nil,SGK.Localize:getInstance():getValue("common_yicaiji"));--已被采集
+                end
+            end})
+        end
+    elseif gid == 1601402 then 
+        module.mazeModule.Interact(uuid,1,{callback = function(error)
+            if error == 103 then
+                showDlg(nil,SGK.Localize:getInstance():getValue("common_zhengzaicaiji"));--其他玩家正在采集中
+            end
+        end})
+    elseif gid  == 1601403 then
+        module.mazeModule.Interact(uuid,1,{callback = function(error)
+            if error ~= 0 then
+                showDlg(nil,SGK.Localize:getInstance():getValue("common_yicaiji"));--已被采集
+            end
+        end})   
+    end
+end
+
+Collection(gid)

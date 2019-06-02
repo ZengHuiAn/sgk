@@ -1,0 +1,21 @@
+
+local mapid,gid = ...
+local SmallTeamDungeonConf = require "config.SmallTeamDungeonConf"
+local conf = SmallTeamDungeonConf.Getteam_pve_fightMonster(tonumber(gid))[1]
+
+LoadStory(conf.story_id,function()
+	local menus = {}
+	local teamInfo = module.TeamModule.GetTeamInfo()
+	if teamInfo.group ~= 0 and teamInfo.leader.pid == module.playerModule.GetSelfID() then
+		table.insert(menus, {name = "挑战", action = function()
+			DispatchEvent("KEYDOWN_ESCAPE")
+			--showDlgError(nil,"您发起了一场gid为:"..conf.gid.."的战斗.")
+			local TeamModule = require "module.TeamModule"
+			--local teamInfo = TeamModule.GetTeamInfo();
+			TeamModule.NewReadyToFight(conf.gid)--战前确认
+			--SceneStack.EnterMap("cemetery_scene", {pos = {1.5,0,6.5},target = false});
+		end})
+	end
+	SetStoryOptions(menus)
+end,true)
+

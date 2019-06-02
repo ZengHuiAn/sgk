@@ -1,0 +1,6 @@
+local mapid,npcid = ...
+
+print(mapid,npcid);
+
+
+DialogStack.PushPref("GuildFishShop",npcid);

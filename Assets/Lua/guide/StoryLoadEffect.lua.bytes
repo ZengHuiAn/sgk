@@ -1,0 +1,31 @@
+﻿local info = ...
+local id = info.id
+
+local function load_cg(name ,duration)
+    local eff = CS.UnityEngine.GameObject.Instantiate((SGK.ResourcesManager.Load("prefabs/effect/"..name .. ".prefab")))
+    UnityEngine.GameObject.Destroy(eff.gameObject, duration)
+end
+
+if id == 10000101 then
+    load_cg("op_cg_1", 3000)
+end
+
+if id == 10000104 then
+    load_cg("op_cg_3", 3000)
+end
+
+if id == 10000206 then
+    load_cg("op_cg_5", 3000)
+end
+
+if id == 10000207 then
+    load_cg("op_cg_6", 3000)
+end
+
+if id == 10000302 then
+    load_cg("op_cg_7", 3000)
+end
+
+if id == 10000306 then
+    load_cg("op_cg_8", 3000)
+end

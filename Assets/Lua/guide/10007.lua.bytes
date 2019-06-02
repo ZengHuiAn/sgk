@@ -1,0 +1,9 @@
+return (function (...)
+	local mapid,gid = ...
+	local SmallTeamDungeonConf = require "config.SmallTeamDungeonConf"
+	local conf = SmallTeamDungeonConf.Getteam_pve_fightMonster(tonumber(gid))[1]
+	LoadStory(conf.story_id,function()
+		utils.NetworkService.Send(16086,{nil,conf.gid})
+		--对话直接击败
+	end)
+end)(...)

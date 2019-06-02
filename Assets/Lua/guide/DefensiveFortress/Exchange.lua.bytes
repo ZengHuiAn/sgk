@@ -1,0 +1,15 @@
+local menus = {}
+table.insert(menus, 
+				{	
+					name = "兑换资源",
+					icon = "bg_db_zhandourenwu", 
+					action = function()
+						DispatchEvent("CloseStoryReset");
+						DispatchEvent("CLICK_OPEN_EXCHANGEPANEL");
+					end
+				}
+			)
+
+SetStoryOptions(menus)
+LoadStory(55101001,function ()            
+            end,true)

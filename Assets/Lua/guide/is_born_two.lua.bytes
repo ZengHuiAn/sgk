@@ -1,0 +1,35 @@
+-- 满足条件才生成该NPC（主线/支线剧情用到的NPC和怪）
+
+local gid = ...
+gid = tonumber(gid)
+
+--已接任务  0 未完成   1 完成  2  取消
+local cur_quests = module.QuestModule.GetList(12,0);
+local npc_table = utils.MapHelper.GetConfigTable("all_npc","gid")
+local quest_1 = module.QuestModule.Get(npc_table[gid][1].quest1)
+local quest_2 = module.QuestModule.Get(npc_table[gid][1].quest2)
+
+
+--[[
+	满足条件时生成npc：
+	身上已领取一个任务，该任务id >= 出现任务id 且该任务id <= 消失任务id
+]]
+
+if (quest_1 and quest_1.status == 0) or ((quest_1 and quest_1.status == 1) and (not quest_2 or quest_2.status ~= 1)) then
+	return true
+end
+return false
+
+--[[
+if npc_list[gid] then
+	for _,v1 in ipairs(cur_quests) do
+		for _,v2 in ipairs(npc_list[gid]) do
+			if v1.id >= v2[1] and v1.id <= v2[2] then
+				return true
+			end
+		end
+	end
+end
+
+return false
+]]

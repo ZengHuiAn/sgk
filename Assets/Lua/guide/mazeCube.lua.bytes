@@ -1,0 +1,28 @@
+local cubeID = ...
+local mazeModule = require "module.mazeModule"
+
+
+local arr = mazeModule.GetCubeInter(cubeID);
+print(arr);
+if arr== false then
+	showDlgError(nil,"请先开辟出通往该棱块的通道")
+	return;
+end
+
+print("1601200怪物是否死亡",mazeModule.GetNpcIsKill(1601200));
+
+local function errorback(err)
+	if err == 107 then 
+		showDlgError(nil,"棱块正在被伙伴翻开") 
+	end	
+end
+
+mazeModule.changeIDClick(cubeID,1.5);
+
+utils.SGKTools.EffectGather(nil,79013,"开启中")
+Sleep(1.5)
+if cubeID then
+	mazeModule.Interact(1,cubeID,errorback);
+end
+
+

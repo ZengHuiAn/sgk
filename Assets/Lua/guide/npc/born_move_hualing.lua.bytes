@@ -1,0 +1,41 @@
+local obj = module.NPCModule.GetNPCALL(2030121)
+local gid = 2030121
+local skeleton_ani = obj:GetComponentInChildren(typeof(CS.Spine.Unity.SkeletonAnimation))
+
+
+local function Npc_showDialog(id, desc, duration, type)
+    LoadNpcDesc(id, desc, nil, type, duration)
+end
+
+local function Npc_changeDirection(obj, direction)
+    obj[SGK.MapPlayer]:SetDirection(direction)
+end
+
+local function Npc_move(obj, Vector)
+    local x,y,z = Vector[1],Vector[2],Vector[3]
+    obj[SGK.MapPlayer]:MoveTo(x,y,z)
+end
+
+local fun_list = {}
+
+function fun_list:Npc_2030121(gid) 
+    utils.SGKTools.LockMapClick(true)
+    utils.SGKTools.ClearMapPlayer(true)
+    utils.SGKTools.MapCameraMoveTo(2030121)
+    Sleep(0.5)
+    Npc_showDialog(2030115 ,"小妹妹，要去哪儿啊？", 2, 1)
+    Sleep(1.5)
+    Npc_showDialog(2030121 ,"哪来的癞皮狗？", 2, 1)
+    --Npc_move(obj ,{-3.13, 0.07, 19.21})
+    skeleton_ani.AnimationState:SetAnimation(0 , "animation1", false)  
+    -- Npc_changeDirection(obj, 6)
+    Sleep(2)
+    utils.SGKTools.MapCameraMoveTo()
+    utils.SGKTools.ClearMapPlayer(false)
+    utils.SGKTools.LockMapClick(false)
+end
+
+local fun_name = "Npc_".. gid
+if fun_list[fun_name] then
+    fun_list[fun_name]()
+end

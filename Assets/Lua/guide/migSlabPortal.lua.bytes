@@ -1,0 +1,12 @@
+local _,npcid = ...
+
+
+print(npcid)
+local npc_id = tonumber(npcid)
+local mazeConfig = require "config.mazeConfig"
+local cfg = mazeConfig.GetInfo(npc_id);
+module.QuestModule.Accept(cfg.fight_id);
+
+module.TreasureMapModule.SaveGamePlayerPos()
+DispatchEvent("LOCAL_CLOSE_MINIMAP");
+utils.SGKTools.PlayerTransfer(24.3,0,77.62)

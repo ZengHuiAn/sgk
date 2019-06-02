@@ -1,0 +1,16 @@
+local gid = ...
+gid = tonumber(gid)
+-- ERROR_LOG("公会活动","==============>>>>",gid);
+local guildTaskCfg = require "config.guildTaskConfig"
+local guildTaskModule = require "module.guildTaskModule"
+
+local cfg = guildTaskCfg.GetguildTaskByNpc(gid)
+if cfg then
+	local quest_list = guildTaskModule.GetGuild_task_list()
+	-- ERROR_LOG(sprinttb(quest_list[1]),cfg[1].quest_id,sprinttb(quest_list[1][cfg[1].quest_id]))
+	if quest_list and quest_list[1] and quest_list[1][cfg[1].quest_id] and quest_list[1][cfg[1].quest_id][0].status == 1 then
+		return nil
+	end
+end
+-- ERROR_LOG("刷新成功",gid);
+return true

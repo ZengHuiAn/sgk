@@ -1,0 +1,14 @@
+local arg = ...
+
+
+local inter = this.interaction;
+
+local id = tonumber(arg)
+if inter == 1 then
+    print("进入"..id)
+    module.TreasureMapModule.StartGame2();
+    module.TreasureMapModule.EnterCube(id)
+else
+    -- print("离开"..id)
+    -- module.TreasureMapModule.ExitCube(id)
+end
