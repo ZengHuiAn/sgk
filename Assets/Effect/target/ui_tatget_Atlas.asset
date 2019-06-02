@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: ui_tatget_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 9cdadc145461a2049ad23ec66ebd9dd7, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 613755d7339c2eb42a975e960507bf55, type: 2}
+  atlas:
+    pages:
+    - name: ui_tatget.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 613755d7339c2eb42a975e960507bf55, type: 2}
+      width: 512
+      height: 128
+    regions:
+    - pageIndex: 0
+      name: 01
+      x: 277
+      y: 65
+      width: 61
+      height: 61
+      u: 0.5410156
+      v: 0.4921875
+      u2: 0.66015625
+      v2: 0.015625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 63
+      originalHeight: 63
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 02
+      x: 200
+      y: 51
+      width: 75
+      height: 75
+      u: 0.390625
+      v: 0.6015625
+      u2: 0.5371094
+      v2: 0.015625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 77
+      originalHeight: 77
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 03
+      x: 107
+      y: 35
+      width: 91
+      height: 91
+      u: 0.20898438
+      v: 0.7265625
+      u2: 0.38671875
+      v2: 0.015625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 93
+      originalHeight: 93
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: 04
+      x: 2
+      y: 23
+      width: 103
+      height: 103
+      u: 0.00390625
+      v: 0.8203125
+      u2: 0.20507812
+      v2: 0.015625
+      offsetX: 1
+      offsetY: 1
+      originalWidth: 105
+      originalHeight: 105
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: jiantou
+      x: 107
+      y: 2
+      width: 25
+      height: 31
+      u: 0.20898438
+      v: 0.984375
+      u2: 0.2578125
+      v2: 0.7421875
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 25
+      originalHeight: 31
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

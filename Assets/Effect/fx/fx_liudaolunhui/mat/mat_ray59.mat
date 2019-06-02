@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: mat_ray59
+  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: 4000
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: a85e1f8dc26cf3d41a69a7eed434f355, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _flash
+      second:
+        m_Texture: {fileID: 2800000, guid: 16b512ee082bae842ae3f45d50ccf859, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _noiseTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 16b512ee082bae842ae3f45d50ccf859, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _CutOut
+      second: 0.1
+    - first:
+        name: _InvFade
+      second: 3
+    - first:
+        name: _Light
+      second: 3.91
+    - first:
+        name: _Lighting
+      second: 2
+    - first:
+        name: _Outline
+      second: 0
+    - first:
+        name: _Scale
+      second: 1
+    - first:
+        name: _alpha
+      second: 1
+    - first:
+        name: _lightValue
+      second: 0.5
+    - first:
+        name: _lineSize
+      second: 0.1
+    - first:
+        name: _mask
+      second: 0.552
+    - first:
+        name: _range
+      second: 0.01
+    - first:
+        name: _reverse
+      second: 0
+    - first:
+        name: _size
+      second: 0.1
+    - first:
+        name: _speed
+      second: 1
+    m_Colors:
+    - first:
+        name: _OutlineColor
+      second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _TintColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _lineColor
+      second: {r: 0, g: 0, b: 0, a: 1}

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: JT_UV
+  m_Shader: {fileID: 4800000, guid: e5cd4e49557bf65489870b5f3fc87b24, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9f32bb0ff59dd2b4b925db7590bc9558, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PointLightMap:
+        m_Texture: {fileID: 8900000, guid: c34a3a609a191a8438a3cd8e22cd61a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: 24eedb19b2001e7429acf714c0366e44, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Amount: 0
+    - _DissSize: 0.2
+    - _Outline: 0
+    - _RimMax: 0.6
+    - _RimMin: 0.4
+    - _SpecularScale: 0
+    - _Tile: 0.7
+    - _White: 0.001
+    - _XSpeed: 0
+    - _YSpeed: 0
+    m_Colors:
+    - _AddColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _DissColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColorMult: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _GreyColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    - _Normal: {r: 0, g: 0, b: 1, a: 0}
+    - _OutlineColor: {r: 0.64705884, g: 0.43699813, b: 0.21885815, a: 1}
+    - _RimColor: {r: 0.20588237, g: 0.17247348, b: 0.08477509, a: 1}
+    - _Scale: {r: 1, g: 1, b: 1, a: 1}
+    - _Specular: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 0.375, g: 0.29889706, b: 0.18474264, a: 0.8627451}

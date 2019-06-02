@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: battleword_001_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 2d27e73cc8f3d84448a815e81532ec9d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 6c8a8e6794c097241ba31e5cffe28b7b, type: 2}
+  atlas:
+    pages:
+    - name: battleword_001.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 6c8a8e6794c097241ba31e5cffe28b7b, type: 2}
+      width: 512
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: images/dimian1
+      x: 2
+      y: 152
+      width: 269
+      height: 194
+      u: 0.00390625
+      v: 0.703125
+      u2: 0.5292969
+      v2: 0.32421875
+      offsetX: 4
+      offsetY: 7
+      originalWidth: 282
+      originalHeight: 204
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/he
+      x: 2
+      y: 2
+      width: 160
+      height: 148
+      u: 0.00390625
+      v: 0.99609375
+      u2: 0.31640625
+      v2: 0.70703125
+      offsetX: 0
+      offsetY: 4
+      originalWidth: 217
+      originalHeight: 152
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/tanhao
+      x: 273
+      y: 230
+      width: 47
+      height: 116
+      u: 0.5332031
+      v: 0.55078125
+      u2: 0.625
+      v2: 0.32421875
+      offsetX: 0
+      offsetY: 4
+      originalWidth: 51
+      originalHeight: 120
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

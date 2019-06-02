@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: chaofeng_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 43abb1438b0db1044bc0377eec83053c, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4d128ffb33780e34194b35c4f38b38fe, type: 2}
+  atlas:
+    pages:
+    - name: chaofeng.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: 4d128ffb33780e34194b35c4f38b38fe, type: 2}
+      width: 512
+      height: 512
+    regions:
+    - pageIndex: 0
+      name: chun
+      x: 2
+      y: 2
+      width: 75
+      height: 16
+      u: 0.00390625
+      v: 0.99609375
+      u2: 0.15039062
+      v2: 0.96484375
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 75
+      originalHeight: 16
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: ddd
+      x: 2
+      y: 85
+      width: 208
+      height: 208
+      u: 0.00390625
+      v: 0.8339844
+      u2: 0.41015625
+      v2: 0.42773438
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 208
+      originalHeight: 208
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: meitou
+      x: 2
+      y: 20
+      width: 153
+      height: 63
+      u: 0.00390625
+      v: 0.9609375
+      u2: 0.30273438
+      v2: 0.8378906
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 153
+      originalHeight: 63
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: shetou
+      x: 212
+      y: 206
+      width: 75
+      height: 87
+      u: 0.4140625
+      v: 0.59765625
+      u2: 0.5605469
+      v2: 0.42773438
+      offsetX: 0
+      offsetY: 0
+      originalWidth: 75
+      originalHeight: 87
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1

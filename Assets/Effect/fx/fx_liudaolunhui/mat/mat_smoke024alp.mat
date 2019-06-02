@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: mat_smoke024alp
+  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: ANIM_ON CLIP_ON LIGHTMAP_LOGLUV
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _ClipTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 88fd6662be1d80d47acf0d57980cac5e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 4d56259c7a2cf9c49aa8d4cfeb5eb1c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MaskTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 981a30aa2a109724f9ea671768aa3cf1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _noiseTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 88fd6662be1d80d47acf0d57980cac5e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: CLIPSCALE2C
+      second: 0
+    - first:
+        name: _Clip_Rotation
+      second: 1
+    - first:
+        name: _Clip_Scale
+      second: 5.3
+    - first:
+        name: _CoreStrength
+      second: 1
+    - first:
+        name: _CutOut
+      second: 0
+    - first:
+        name: _CutOutLightCore
+      second: 0.5
+    - first:
+        name: _InvFade
+      second: 1
+    - first:
+        name: _Light
+      second: 2.52
+    - first:
+        name: _Lighting
+      second: 3.95
+    - first:
+        name: _Main_Rotation
+      second: 0
+    - first:
+        name: _Main_Scale
+      second: 1
+    - first:
+        name: _Mask_Rotation
+      second: 0
+    - first:
+        name: _Mask_Scale
+      second: 1.45
+    - first:
+        name: _RimPower
+      second: 8
+    - first:
+        name: _TintStrength
+      second: 1
+    - first:
+        name: _lineSize
+      second: 0.0127
+    - first:
+        name: _mask
+      second: 0.069
+    - first:
+        name: _power
+      second: 0.001
+    - first:
+        name: _wind
+      second: 1
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 0.72008115, b: 0.11764705, a: 1}
+    - first:
+        name: _CoreColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - first:
+        name: _RimColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _TintColor
+      second: {r: 1, g: 0.6827585, b: 0, a: 0.266}
+    - first:
+        name: _color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _lineColor
+      second: {r: 0, g: 0, b: 0, a: 1}

@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: battleword_003_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 855b3d4a4ffab814cb2d5cd9e0cdb3cc, type: 3}
+  materials:
+  - {fileID: 2100000, guid: a3e6398199f0dc04192f7e2778a829ee, type: 2}
+  atlas:
+    pages:
+    - name: battleword_003.png
+      format: 6
+      minFilter: 1
+      magFilter: 1
+      uWrap: 1
+      vWrap: 1
+      rendererObject: {fileID: 2100000, guid: a3e6398199f0dc04192f7e2778a829ee, type: 2}
+      width: 512
+      height: 256
+    regions:
+    - pageIndex: 0
+      name: images/aaa
+      x: 2
+      y: 2
+      width: 98
+      height: 117
+      u: 0.00390625
+      v: 0.9921875
+      u2: 0.23242188
+      v2: 0.609375
+      offsetX: 9
+      offsetY: 6
+      originalWidth: 112
+      originalHeight: 124
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/ooo
+      x: 215
+      y: 160
+      width: 81
+      height: 92
+      u: 0.41992188
+      v: 0.375
+      u2: 0.578125
+      v2: 0.015625
+      offsetX: 1
+      offsetY: 5
+      originalWidth: 96
+      originalHeight: 108
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/ttt
+      x: 298
+      y: 198
+      width: 54
+      height: 105
+      u: 0.58203125
+      v: 0.2265625
+      u2: 0.7871094
+      v2: 0.015625
+      offsetX: 1
+      offsetY: 4
+      originalWidth: 61
+      originalHeight: 110
+      index: -1
+      rotate: 1
+      splits: 
+      pads: 
+    - pageIndex: 0
+      name: images/www
+      x: 2
+      y: 102
+      width: 211
+      height: 150
+      u: 0.00390625
+      v: 0.6015625
+      u2: 0.41601562
+      v2: 0.015625
+      offsetX: 0
+      offsetY: 18
+      originalWidth: 224
+      originalHeight: 184
+      index: -1
+      rotate: 0
+      splits: 
+      pads: 
+    Loaded: 1
